@@ -1,0 +1,148 @@
+2026-09-24 19:26:56 DEBUG app - core.config.json  
+2026-09-24 19:26:56 DEBUG ProxyMonitor - Proxy refresh started. Reason=startup  
+2026-09-24 19:26:57 DEBUG DefaultUserProxySource - Get Server Config Proxy Success  
+2026-09-24 19:26:58 DEBUG ProxyMonitor - Proxy refresh started. Reason=proxy ready  
+2026-09-24 19:26:58 DEBUG ProxyMonitor - Direct： AverageTime=893ms (1 iterations)  
+2026-09-24 19:26:58 DEBUG ProxyMonitor - faster proxy: Direct   
+2026-09-24 19:26:58 INFO app - eval_v  
+2026-09-24 19:26:58 DEBUG AppHelper - Current Model:Release  
+2026-09-24 19:26:58 DEBUG AppHelper - Current Process Is NOT Admin  
+2026-09-24 19:26:58 DEBUG AppHelper - Current App Version:1.0.194.0  
+2026-09-24 19:26:59 DEBUG AppConfig - Start init app config  
+2026-09-24 19:26:59 DEBUG LocaleProvider - Init Start, Wait Ready  
+2026-09-24 19:26:59 DEBUG LocaleProvider - OBS Use Language:en-US，LocaleProvider Use Language:en-US  
+2026-09-24 19:26:59 DEBUG LocaleProvider - Init Inner Locale:zh-CN Count:240  
+2026-09-24 19:26:59 DEBUG LocaleProvider - Init End, Ready Set  
+2026-09-24 19:26:59 DEBUG OBSPlusHelper - obs is ready:True  
+2026-09-24 19:26:59 DEBUG ShopService - GetPluginList From Init Start  
+2026-09-24 19:26:59 DEBUG PluginMessageControl - IsReady:True  
+2026-09-24 19:26:59 DEBUG ProxyMonitor - Direct： AverageTime=1183ms (1 iterations)  
+2026-09-24 19:26:59 DEBUG ProxyMonitor - faster proxy: Direct   
+2026-09-24 19:26:59 DEBUG PluginConfigService - Start Init Plugin Config  
+2026-09-24 19:27:07 INFO HttpSpeedTester - Domain:obsworks Url:https://oauth.obsworks.com/api/session Test TotalCount:3 SuccessCount:3 FailureCount:0 AverageResponseTime:891 ms  
+2026-09-24 19:27:07 INFO HttpSpeedTester - Domain:ourobs Url:https://oauth.ourobs.com/api/session Test TotalCount:3 SuccessCount:3 FailureCount:0 AverageResponseTime:1025 ms  
+2026-09-24 19:27:07 INFO HttpSpeedTester - Primary domain:obsworks selected: SuccessCount 3 > 0  
+2026-09-24 19:27:07 DEBUG AppHelper - Better Domain:obsworks  
+2026-09-24 19:27:07 DEBUG PluginConfigService - End Init Plugin Config  
+2026-09-24 19:27:07 INFO app - eval_k4  
+2026-09-24 19:27:07 INFO app - eval_kb  
+2026-09-24 19:27:07 INFO app - eval_ka  
+2026-09-24 19:27:07 INFO app - eval_k9  
+2026-09-24 19:27:07 INFO app - eval_r0  
+2026-09-24 19:27:07 INFO app - eval_rz  
+2026-09-24 19:27:07 INFO app - eval_rc  
+2026-09-24 19:27:07 INFO app - eval_rj  
+2026-09-24 19:27:07 INFO app - eval_rx  
+2026-09-24 19:27:07 INFO app - eval_rv  
+2026-09-24 19:27:07 INFO app - eval_rf  
+2026-09-24 19:27:07 INFO app - eval_yt  
+2026-09-24 19:27:07 INFO app - eval_yc  
+2026-09-24 19:27:07 INFO app - eval_va  
+2026-09-24 19:27:07 DEBUG app - 应用程序初始化耗时：11,837224秒  
+2026-09-24 19:27:08 DEBUG LocaleProvider - Init Server Locale:ui-en-US Count:240  
+2026-09-24 19:27:08 DEBUG ShopService - LocalProvider Update Completed, Update Plugin List  
+2026-09-24 19:27:08 DEBUG app - http://localhost:56594  
+2026-09-24 19:27:09 DEBUG Main - Init -> GetPluginList  
+2026-09-24 19:27:09 DEBUG Main - OBS所在屏幕的工作区域为：1920x1032，安全的窗口高度为：980,4，插件中心窗口默认高度为：758，在此屏幕上高度设为：758  
+2026-09-24 19:27:09 DEBUG ShopService - this.briefCDNResults is null, RequestPluginCDNList  
+2026-09-24 19:27:09 DEBUG ShopService - Request Plugins CDN Description:allinfo-en-US  
+2026-09-24 19:27:09 DEBUG ShopService - GetPluginList From Init End, Use Total 10,3766892s  
+2026-09-24 19:27:09 DEBUG SoftwareGreenInstallService - Start Init Green Software Config  
+2026-09-24 19:27:09 DEBUG SoftwareGreenInstallService - End Init Green Software Config  
+2026-09-24 19:27:10 DEBUG Main - 获取插件分类数据结束，ServerCategories Count:9  
+2026-09-24 19:27:10 DEBUG Main - 加载插件列表开始  
+2026-09-24 19:27:10 DEBUG Main - 加载插件列表 获取插件列表数据开始  
+2026-09-24 19:27:10 DEBUG Main - 加载插件列表 获取插件列表数据结束，ServerPlugins Count:69  
+2026-09-24 19:27:10 DEBUG SoftwareGreenInstallService - audolinktools start file path:C:\Users\fourk\AppData\Roaming\obsplus\software\audolinktools\PCAudioLinkTools.exe  
+2026-09-24 19:27:10 DEBUG SoftwareGreenInstallService - file C:\Users\fourk\AppData\Roaming\obsplus\software\audolinktools\PCAudioLinkTools.exe don't exists!  
+2026-09-24 19:27:10 DEBUG SoftwareInstallService - registry avermediacolorkeypro uninstall path:  
+2026-09-24 19:27:10 DEBUG SoftwareInstallService - registry avermediabgremoval uninstall path:  
+2026-09-24 19:27:10 DEBUG SoftwareInstallService - registry avermediacoloreditorpro uninstall path:  
+2026-09-24 19:27:10 DEBUG SoftwareGreenInstallService - zoomit start file path:C:\Users\fourk\AppData\Roaming\obsplus\software\zoomit\ZoomIt64.exe  
+2026-09-24 19:27:10 DEBUG SoftwareGreenInstallService - file C:\Users\fourk\AppData\Roaming\obsplus\software\zoomit\ZoomIt64.exe don't exists!  
+2026-09-24 19:27:10 DEBUG Main - 加载插件列表 实例化插件列表数据结束，AllPlugins Count:69  
+2026-09-24 19:27:10 DEBUG Main - 加载插件列表结束，ShowPlugins Count:67，耗时0,5307668s  
+2026-09-24 19:27:13 DEBUG OBSPLUSAPP - currentDir:C:\Program Files\obs-studio\bin\64bit, rootDir:C:\Program Files\obs-studio  
+2026-09-24 19:27:13 DEBUG OBSPLUSAPP - Change --palette_link value:var(--blue2) to:rgb(77,166,255)  
+2026-09-24 19:27:13 DEBUG OBSPLUSAPP - Change --palette_linkVisited value:var(--blue2) to:rgb(77,166,255)  
+2026-09-24 19:27:13 ERROR OBSPLUSAPP - ModifyOBSTheme C:\Program Files\obs-studio\data\obs-studio\themes\Yami.obt Exception:Access to the path 'C:\Program Files\obs-studio\data\obs-studio\themes\Yami.obt' is denied.  
+2026-09-24 19:27:13 DEBUG OBSPLUSAPP - C:\ProgramData\obs-studio\plugins\obsplus\bin\32bit\obsplus.dll sign time:29/07/2026 13:29:08  
+2026-09-24 19:27:13 DEBUG OBSPLUSAPP - C:\ProgramData\obs-studio\plugins\obsplus\bin\64bit\obsplus.dll sign time:29/07/2026 13:29:12  
+2026-09-24 19:27:14 DEBUG OBSPLUSAPP - camera_beauty_source is not add in source, don't need tip  
+2026-09-24 19:27:39 DEBUG WindowManager - Register Window:广告弹窗  
+2026-09-24 19:27:39 DEBUG AppHelper - RumCmd arguments:wmic os get Caption, ruanAsAdmin:False  
+2026-09-24 19:27:39 DEBUG AppHelper - RunCmd current process is NOT admin, but runAsAdmin=false, don't set Verb = Runas  
+2026-09-24 19:27:39 DEBUG AppHelper - RumCmd arguments:wmic os get Version, ruanAsAdmin:False  
+2026-09-24 19:27:39 DEBUG AppHelper - RunCmd current process is NOT admin, but runAsAdmin=false, don't set Verb = Runas  
+2026-09-24 19:27:39 DEBUG AppHelper - RumCmd arguments:wmic os get OSArchitecture, ruanAsAdmin:False  
+2026-09-24 19:27:39 DEBUG AppHelper - RunCmd current process is NOT admin, but runAsAdmin=false, don't set Verb = Runas  
+2026-09-24 19:27:39 DEBUG ReportService - 发送日志：{"message":{"Title":"多款插件更新重大功能","Action":1,"PhoneNumber":"","DeviceId":"FE01871B-CE17-4267-99F0-E9EBCCF3C1A7","System":"(2009)"},"messageType":"popup","type":"other"}  
+2026-09-24 19:27:42 DEBUG OBSPlusHelper - request login  
+2026-09-24 19:27:42 DEBUG LoginNew - Set TitleSize:32 TipSize:20  
+2026-09-24 19:27:42 DEBUG LoginNew - Local Country:+1 Selected Country:+1  
+2026-09-24 19:27:42 DEBUG LoginNew - Update Country_Code: CurCountry:+1 Phone_Number: CurPhone:  
+2026-09-24 19:27:42 DEBUG WindowManager - Register Window:Login  
+2026-09-24 19:27:45 DEBUG WindowManager - Window:Login Closed  
+2026-09-24 19:27:45 DEBUG WindowManager - Remove Window:Login Result:True  
+2026-09-24 19:27:46 DEBUG WindowManager - Window:广告弹窗 Closed  
+2026-09-24 19:27:46 DEBUG WindowManager - Remove Window:广告弹窗 Result:True  
+2026-09-24 19:28:10 DEBUG OBSPlusHelper - request login  
+2026-09-24 19:28:10 DEBUG LoginNew - Set TitleSize:32 TipSize:20  
+2026-09-24 19:28:10 DEBUG LoginNew - Local Country:+1 Selected Country:+1  
+2026-09-24 19:28:10 DEBUG LoginNew - Update Country_Code: CurCountry:+1 Phone_Number: CurPhone:  
+2026-09-24 19:28:10 DEBUG WindowManager - Register Window:Login  
+2026-09-24 19:29:37 DEBUG LoginService - Save Token Json:
+{
+  "access_token": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwidHlwIjoiSldUIiwiY3R5IjoiSldUIn0.6n526Du3lfSwOgR77PGAZvDIHPJZSJkSNzBnuWaC6Rku5HmJYbOmTOac2f6eGRY-8TOvu6Ck-_XwHP98BZ-fowMihz0cOhE4.LO1GhUPI2sYSchdlTC7n4w.QaQhhXx8DqPL-MiwtpygA6IaHZYzN_9cHPaF-xXGaNkCcebPx6CCM4Qsss2ea0Ni6sLyj4GE2TxtBh6WJY2Yah4Bu6hrBF8hD1CHsQMy6DI3YcPwuIL9cKXouHpSGGoP3MwCta3o7BmOzQBtheNnoq-2a6ZqrMsjOVC5Sc1shqZhrvjPcxbvM75-exgHj_tZjBJ_5sLW1uf5jDhx7iF4dP6k2c_gFmG2FbfSYExo8BQwpFEDyjpUiQK3QmM-JlYL6yDIO8YiohEfJW8Su0RDFwW1fl9ExBAAb3zB1fGfP_nbQpgNjsakxuB0AB5uFUXV2n6LzHiG4THFxUKBCF0_pRPmcvqmJwW5RN4LvJoEk7j9xmd49jAPItVJCfuSihPU0Fdq3Gpat96zGmSsXRKs3t4xnWspkeoTkOchN9Ky2NI4qirn5eJeLDw9Le8T9oBHi787Ro1HeWs5579QzSwGdEmNADN-sX4r1-A7BDYiROh7UjIipD5D_RQpcAwjXDm7wUQGKf-DuB0AVVF3oe-hzuLvNINAXEj7krpBTYFybzv2qH71suj_cvLGoQpxz8FsBqIEcEhd8ZKJ_Q7ENNm2u_KAyAhYsMmzbWWzH-lp-fi_247eDPqOUNWMvovAAklNNThuaacby9toVGl2--Y0qEXWXqSlA3DJ6_YgX6iGnw5NXq3yTvb3Qk7Ll2ee1Ci-TVJ4y1xaz4chQFdbOf-kMP03ahGEvklQBvfuX4Bf7tUD-Fgp1DPpYC_ZzsabGXmZ_4cj9nMmCB6DkudW60FRVBg8fAfiK8tz_8Pypcm3aadUBivd8-dk-5qoup4ake-VGoh0ih-pcpaVcAaqo9KODpTTsbCZJ2gsHSNb27JkvcYNld7r6mffVOzU0rLkMvzuQF1nFbHzJIEWLwDW7BEAHlhO07zjUD-pjidX-0BIjQUuAAn4QAlT5WUE4W_GSOnfvxHYL2x7Di70nCQcPRMslqsErlJVWf6lCgPPDyuzxTQCUpCYU4DlQQIDqb3SqqdPCgZkkoT5TRGtAdTtdFReAimqEJZFjBxZ3ITXX-C-tJcXkmQJNqazD3Pa1YIcvy-H784-6by3pz_5nnz7Jq46P3jZXwUxbhMmNfzPF2N6v0WwexccU95cslZ8O6ZZPFNhWGOgIPjqToMVR1irL65BK4fxZcizVnMoQCwYxbwlsEFkZBJ6XuT4NKkYMqRl5t0InpLIL_JoHMHJsJqUSIVYylRMhpAlTzmFtueKKlL7pojiAkiulyI3An7CAgePNOk3BW2l0z5sjlQkrA9QxvkpyHEZdudInhxFHniHjFDwM0LVGUMcUntf2eJRykIufV8ucoG_9Ym8HXWyJbqqPl878xxYV4oU6tR1D0f21wcvNjNhaJY2ORGU1TMujrEIryJBl6h9IU-aAtHyLJGNicNgy9L-QILHtYSuucdXxtYSUre-AuJjZFa-TXAV7FhR3EA0ZCxZ5vhjlOi28aykBPQRV_a6ndt5l4pEqEL1qTvjyU9lIYlFlj-Ai9BW63qS3W_cWSw4i39wAf7LNDXdEpxXJFwrrCLauo-qQcHnGUEjyTI.4bT8jhTB8Ut0Vp1sSCYSgsr0_ZsnoIwV8BoRo4MhZ8M",
+  "expires_in": 604800,
+  "token_type": "Bearer",
+  "refresh_token": "BF10A231BA0BE366524E2AC7265F8799DB4B800E2254975835EC36473458863D",
+  "scope": "offline_access openid scope.obs-plus.shop scope.obs-plus.user"
+}
+To Local File:token.bin  
+2026-09-24 19:29:39 DEBUG ShopService - GetPluginList From UserLogin Start  
+2026-09-24 19:29:39 DEBUG Main - UserLoginSuccess -> GetPluginList  
+2026-09-24 19:29:39 DEBUG LoginService - Update OpenId:8011a6df9cb04013ab03ee42bb313c51 Success  
+2026-09-24 19:29:39 DEBUG WindowManager - Window:Login Closed  
+2026-09-24 19:29:39 DEBUG WindowManager - Remove Window:Login Result:True  
+2026-09-24 19:29:39 DEBUG Main - 加载插件列表开始  
+2026-09-24 19:29:39 DEBUG ShopService - GetPluginList From UserLogin End, Use Total 0,3891599s  
+2026-09-24 19:29:39 DEBUG Main - 申请试用OBS Camera Beauty  
+2026-09-24 19:29:39 DEBUG Main - 加载插件列表 获取插件列表数据开始  
+2026-09-24 19:29:39 DEBUG Main - 加载插件列表 获取插件列表数据结束，ServerPlugins Count:69  
+2026-09-24 19:29:39 DEBUG SoftwareGreenInstallService - audolinktools start file path:C:\Users\fourk\AppData\Roaming\obsplus\software\audolinktools\PCAudioLinkTools.exe  
+2026-09-24 19:29:39 DEBUG SoftwareGreenInstallService - file C:\Users\fourk\AppData\Roaming\obsplus\software\audolinktools\PCAudioLinkTools.exe don't exists!  
+2026-09-24 19:29:39 DEBUG SoftwareInstallService - registry avermediacolorkeypro uninstall path:  
+2026-09-24 19:29:39 DEBUG SoftwareInstallService - registry avermediabgremoval uninstall path:  
+2026-09-24 19:29:39 DEBUG SoftwareInstallService - registry avermediacoloreditorpro uninstall path:  
+2026-09-24 19:29:39 DEBUG SoftwareGreenInstallService - zoomit start file path:C:\Users\fourk\AppData\Roaming\obsplus\software\zoomit\ZoomIt64.exe  
+2026-09-24 19:29:39 DEBUG SoftwareGreenInstallService - file C:\Users\fourk\AppData\Roaming\obsplus\software\zoomit\ZoomIt64.exe don't exists!  
+2026-09-24 19:29:39 DEBUG Main - 加载插件列表 实例化插件列表数据结束，AllPlugins Count:69  
+2026-09-24 19:29:39 DEBUG Main - 加载插件列表结束，ShowPlugins Count:67，耗时0,5279417s  
+2026-09-24 19:29:40 DEBUG LoginMessageHandler - publish login message to all plugins  
+2026-09-24 19:36:59 DEBUG ReportService - obsplus config is changed, report  
+2026-09-24 19:36:59 DEBUG ReportService - 发送日志：{"message":{"UserId":"8011a6df9cb04013ab03ee42bb313c51","PhoneNumber":"+62 85183078655","DeviceId":"FE01871B-CE17-4267-99F0-E9EBCCF3C1A7","Channel":"ZHOUJING","Sources":{"fade_transition":"Fade","wasapi_output_capture":"Desktop Audio","wasapi_input_capture":"Mic/Aux","spout_capture":"vtuber","browser_source":"Trakteer","window_capture":"game","image_source":"wp7966787-anime-city-scenery-desktop-wallpapers.jpg","ffmpeg_source":"Comp 1.mp4","dshow_input":"input_source_54128cbf-7c32-4144-90bd-c8bc9721359a","camera_beauty_source_v2":"OBS Beauty Camera"},"Plugins":{},"System":"(2009)"},"messageType":"obsplus","type":"shop"}  
+2026-09-24 19:37:04 DEBUG ReportService - content of obs-studio scene config json file is null or empty, don't need report  
+2026-09-24 19:47:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 19:57:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 20:07:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 20:17:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 20:27:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 20:37:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 20:47:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 20:57:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 21:07:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 21:17:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 21:27:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 21:37:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 21:47:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 21:57:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 22:07:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 22:17:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 22:27:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 22:37:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 22:47:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 22:57:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 23:07:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 23:17:00 DEBUG ReportService - obsplus config not be changed, don't report  
+2026-09-24 23:23:39 DEBUG OBSPlusHelper - Receive obs_exit Signal  

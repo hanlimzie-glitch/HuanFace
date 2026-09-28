@@ -1,0 +1,105 @@
+2026-09-26 00:01:43 DEBUG app - core.config.json  
+2026-09-26 00:01:43 DEBUG ProxyMonitor - Proxy refresh started. Reason=startup  
+2026-09-26 00:01:44 DEBUG DefaultUserProxySource - Get Local Config Proxy Success  
+2026-09-26 00:01:44 DEBUG DefaultUserProxySource - Get Server Config Proxy Success  
+2026-09-26 00:01:44 DEBUG ProxyMonitor - Proxy refresh started. Reason=proxy ready  
+2026-09-26 00:01:45 DEBUG ProxyMonitor - Direct： AverageTime=650ms (1 iterations)  
+2026-09-26 00:01:45 DEBUG ProxyMonitor - faster proxy: Direct   
+2026-09-26 00:01:45 INFO app - eval_v  
+2026-09-26 00:01:45 DEBUG AppHelper - Current Model:Release  
+2026-09-26 00:01:45 DEBUG AppHelper - Current Process Is NOT Admin  
+2026-09-26 00:01:45 DEBUG AppHelper - Current App Version:1.0.194.0  
+2026-09-26 00:01:45 DEBUG AppConfig - Start init app config  
+2026-09-26 00:01:45 DEBUG LocaleProvider - Init Start, Wait Ready  
+2026-09-26 00:01:45 DEBUG LocaleProvider - OBS Use Language:en-US，LocaleProvider Use Language:en-US  
+2026-09-26 00:01:45 DEBUG LocaleProvider - Init Inner Locale:zh-CN Count:240  
+2026-09-26 00:01:45 DEBUG LocaleProvider - Init End, Ready Set  
+2026-09-26 00:01:45 DEBUG OBSPlusHelper - obs is ready:True  
+2026-09-26 00:01:45 DEBUG ShopService - GetPluginList From Init Start  
+2026-09-26 00:01:45 DEBUG LoginService - Refresh Token Use Local File:token.bin Refresh_Token:0C6CD104A0BFB4CC7DB5D7879326E33F4E7E52F428C3BEFC485597EE9AA44E7B  
+2026-09-26 00:01:45 DEBUG PluginMessageControl - IsReady:True  
+2026-09-26 00:01:45 DEBUG PluginConfigService - Start Init Plugin Config  
+2026-09-26 00:01:45 DEBUG ProxyMonitor - Direct： AverageTime=1421ms (1 iterations)  
+2026-09-26 00:01:45 DEBUG ProxyMonitor - faster proxy: Direct   
+2026-09-26 00:01:47 DEBUG OBSPlusHelper - request login  
+2026-09-26 00:01:52 DEBUG LoginService - Refresh Token Success  
+2026-09-26 00:01:52 DEBUG LoginService - Save Token Json:
+{
+  "id_token": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwidHlwIjoiSldUIiwiY3R5IjoiSldUIn0.BYKr_5WRTW1crhqo7q-zL9MR51avip8RoZkic_j9LSkYHft4B7VHxYvS_DwcwBqfVt3sUNgro2jy8lNCmoaSRgs8SdK3SRpx.gmBbeO0dCaw_Zv9K2It28g.WmjYzCgmhVTa2cNpjTVHJu6S_9dNQQ2PjRBaED2XbzJDtuGlTxjBI2bts9i4ipkF8owa5dUnZJIgd0flUdycmM8lbLmY84dt2plFc8Mu7UZOOTcPD7hl8bypowflJNmCUA3xPABrQynwKBpmlu1B20zrc_epHzLBkfOjdEZETNy7Aqo3cJkldc13mVNTHA_cNdQ0_ob8ARcOYrc4P9hIvPEOmo7utrrUYdQQgflXPkokz5aq9NIIphshSFFjnX384iZRMrUlZaHUb1D5tKWKII5Kr8zE1aXl59Z2ZLd9RQkZLxwZuWtKgnGRoAMNgaMAmWznJT6E-YOq4oIiNqohyDB-8pscrsoHN-FqGGOAK_X1nLKIhOkxurkFh61Ysjw90D5qRL42cSSLhq4ESX-si9PYwZ76gTh3ZxlX95WRuu-ysEJkiIBPXNeO5HkHTK-OPOW87WAmI4dAeeYD339B9xB2-XLp5KRljcnz9HJeXhIWbSg_cBL-UjIKdRZPXhRRv0Y6pXgSQPe9KDZej7RG3epoGzvqWuwmO8rwItrzuYqgaOGlqFc7qNhizMKuCcUgWVZqLeWnP24BPJwL51WlwRMZqkhHvQBoDUlqcAWjZb3NBQDDYlldEdjjShTFPScB43L7tTIvMmt1a3NJZb3vhiK49utep7fFzWjvI1_xIyy28wMsC-dHmgdXVYvpyHLCfhZz1iwb9DkFG7oSb-rLoZVHveiHIomGpFBWjNv7Y820NhiejotQe3M41bu6P_-mqJBMrTHNzl8jS0o_HS3yjuKp2YblqqQ8Y4TRM3jXqKX11oGUO2HVay4kbrrFKl58Z16dxjlWd64bjbhtydJnmSmRA6aKdBEyb-zE-VF5ulCy77k6sprslbg2_XQt2_KYYRYZnautv0mQx_l0ynRWCI87yJX_-E4QFCr02u4Pfz48xub6QRXv_2O6VU-vAUoOVyEE_58-cVn745IanZZpSg.C0gdTda9qPI2eEXM3G6JXBoJ0UPX8nz71gH8Q2mFx-I",
+  "access_token": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwidHlwIjoiSldUIiwiY3R5IjoiSldUIn0.7VQgrqZRFlhGrfD205wqWlgfWgFjrOdXYUr44AiOOImEdk2LujjO8G8Fyb76c5ngxrgvoiMsohkSIbLtoYO19-Vh_E-zW6fp.XZJxsJES49Jm2aC__Rzryw.7q4FbJrhSrq6-gGFC1dybLiDqhvaKodxs40Q_yL9R7R3OlfFT2gTgotawg-fhkVJqICRfIsTJZBnYp1LSIxHaFJcQi_DWWSi3ULyF5V9BjZKH4a24XgByRh8gI4mw-m9iFysviMsir81eUAHW82kK_UlGIu4ZRr7gmBRYdRNgBCNqRlyAhWD4DZOtxjjaySp7vFCZEcKt6C_XZ9Q0Qck4KHyv3vK4KfmrBJC0nO0-1gRAbVwLpwqDWRo0PYhXmdX9jgpMW2ihb0LCLvSi0bFSqkfdaCRGFJVBpnJBuu9EfYeuZyyZT2OBUBVsBvOZAXkPWvZTF_ssHtUk3KsYtza-j_tVZmhkt77C2OMXtryb2_ORtEPRSAjDsI97FWreUnhe3xI7yb9pSvN1yeh-4mPv2ftMjru2fpeGp9faraeMnBWvG62IdwWN6X9psklAc0S7rnoP6-Hj0ZS00dJqRZy5meneq43CLzK8NvvlNfoX8EXwkOb_MEtG-u3F3red5kpLVGNfsVR8qvYPf9AEkpNwB_8CSWtB4V7eQUuRy-OqsI2qA-viFx2Pl4TbMPLBtKd6Q2X1Q0wIw7NDABV75eg4tULb2nB1GC8IZYbn5xdSi4RvKhVJV4_gFhIy3BN1P_jd_f80eofPnnEMbpPAopk4_uFUN-AwJS4qSp0mVpt-vIPJfs9nIstrwjiypR2Geww-8Ia1-sFOT8yd-dYgjpPi5pijS-Y0BP9n7Z1DyzO2rIWG9jTgdjLNxucli9WPsDif_Xz7FwP3CPs1sWVfSQn-Muhd8X0mhEapt84BXycJmgL3ZHZUCMROVvTgA_bD16j_9YdNd5zQXcUeluoHbXl-oeBmPCjc2SHGP83UvcDe9MO48xCXLMsbhpBQ6Pe3I2z5SG-DS4jKFcAZEjXeSPWIXznMETMN4UT556iECV7ialIET8-O9dgamduoF8ZOJStYUSiNP2XlO-pqXK4RA9bi5GZ8xL3vKjXEjVZyRM9NWZeAIGMS99MNN7Ef3s3KG_iIVvpZRuXyR61ugkTjVESDpER6PqeKP7Pn6rU0siSwbB1eMs9Pmzyk26EVq-6Vq6eB4QZ2nh4_Hn-sXC46lxsS3vUn4CIrqSUrdSeqVeRNU1b0aRPHxTK33-Dpk9qsJXzWWDBRfG5jY2f9aNRMJ9OPwzyN_BjebX9OkXGkRSAi3s764GBPCZKzr9WDp-hxPFShhTwLkq8DQyxGE3lzzFct1U3mVfO0di1E6AYykM8DVzscMmRRkWcjwkREcpBurVo_FwScHFgck_dvanoCtYdkZQMvxREuwAnjUDn166Bv-YX5azpVX1zHkmt2RpuCINQ_RO54OoTCWunHb9FdSts6omf2n3nm6hNA5XTy89wsuHKLyOVJZlbuMTy9GfCC5etoRJEkF2QDz4IxzfzP9G962u7nuZl9ZuyPP6Xut3aanCZYoyi3KbdtMdsGuogz-eNNDKnOsMgOCCjPrYeoAYh-ZkgXfTMwZxdCdZo16LIkfkJLslZRcgdEeOuBFbqHwhxLEkCfaiMz0SZ0l-Jw1tlsUabg3ZCuS7a03c3Blfj-vM.ZtWsoFwrIByMjlr3ZivpTZANop_l217qPBWbxaKQVOk",
+  "expires_in": 604800,
+  "token_type": "Bearer",
+  "refresh_token": "F3401061126B4CC2B09C49EF49450C446C2FE9C2A5AB7E00D1474A33CE6BB834",
+  "scope": "openid scope.obs-plus.shop scope.obs-plus.user offline_access"
+}
+To Local File:token.bin  
+2026-09-26 00:01:53 INFO HttpSpeedTester - Domain:obsworks Url:https://oauth.obsworks.com/api/session Test TotalCount:3 SuccessCount:3 FailureCount:0 AverageResponseTime:1443 ms  
+2026-09-26 00:01:53 INFO HttpSpeedTester - Domain:ourobs Url:https://oauth.ourobs.com/api/session Test TotalCount:3 SuccessCount:3 FailureCount:0 AverageResponseTime:1689 ms  
+2026-09-26 00:01:53 INFO HttpSpeedTester - Primary domain:obsworks selected: SuccessCount 3 > 0  
+2026-09-26 00:01:53 DEBUG AppHelper - Better Domain:obsworks  
+2026-09-26 00:01:53 DEBUG PluginConfigService - End Init Plugin Config  
+2026-09-26 00:01:53 INFO app - eval_k4  
+2026-09-26 00:01:53 INFO app - eval_kb  
+2026-09-26 00:01:53 INFO app - eval_ka  
+2026-09-26 00:01:53 INFO app - eval_k9  
+2026-09-26 00:01:53 INFO app - eval_r0  
+2026-09-26 00:01:53 INFO app - eval_rz  
+2026-09-26 00:01:53 INFO app - eval_rc  
+2026-09-26 00:01:53 INFO app - eval_rj  
+2026-09-26 00:01:53 INFO app - eval_rx  
+2026-09-26 00:01:53 INFO app - eval_rv  
+2026-09-26 00:01:53 INFO app - eval_rf  
+2026-09-26 00:01:53 INFO app - eval_yt  
+2026-09-26 00:01:53 INFO app - eval_yc  
+2026-09-26 00:01:53 INFO app - eval_va  
+2026-09-26 00:01:53 DEBUG app - 应用程序初始化耗时：11,026839秒  
+2026-09-26 00:01:53 DEBUG RemoteContentProvider - C:\Users\fourk\AppData\Roaming\obsplus\locale\ui-en-US.json Not Be Modified, Return It's Content  
+2026-09-26 00:01:53 DEBUG LocaleProvider - Init Server Locale:ui-en-US Count:240  
+2026-09-26 00:01:53 DEBUG ShopService - LocalProvider Update Completed, Update Plugin List  
+2026-09-26 00:01:53 DEBUG app - http://localhost:60987  
+2026-09-26 00:01:54 DEBUG ShopService - this.briefCDNResults is null, RequestPluginCDNList  
+2026-09-26 00:01:54 DEBUG ShopService - Request Plugins CDN Description:allinfo-en-US  
+2026-09-26 00:01:54 DEBUG RemoteContentProvider - C:\Users\fourk\AppData\Roaming\obsplus\locale\allinfo-en-US.json Not Be Modified, Return It's Content  
+2026-09-26 00:01:54 DEBUG ShopService - GetPluginList From Init End, Use Total 8,7541794s  
+2026-09-26 00:01:54 DEBUG OBSPlusHelper - 账户已登录  
+2026-09-26 00:01:54 DEBUG OBSPLUSAPP - LoginService.IsReady:True, Close Load Window  
+2026-09-26 00:01:54 DEBUG ShopService - GetPluginList From UserLogin Start  
+2026-09-26 00:01:54 DEBUG Main - Init -> GetPluginList  
+2026-09-26 00:01:54 DEBUG Main - OBS所在屏幕的工作区域为：1920x1032，安全的窗口高度为：980,4，插件中心窗口默认高度为：758，在此屏幕上高度设为：758  
+2026-09-26 00:01:54 DEBUG Main - UserLoginSuccess -> GetPluginList  
+2026-09-26 00:01:54 DEBUG SoftwareGreenInstallService - Start Init Green Software Config  
+2026-09-26 00:01:54 DEBUG Main - 加载插件列表开始  
+2026-09-26 00:01:54 DEBUG ShopService - GetPluginList From UserLogin End, Use Total 0,2541698s  
+2026-09-26 00:01:54 DEBUG Main - 加载插件列表 获取插件列表数据开始  
+2026-09-26 00:01:54 DEBUG Main - 加载插件列表 获取插件列表数据结束，ServerPlugins Count:69  
+2026-09-26 00:01:55 DEBUG SoftwareInstallService - registry avermediacolorkeypro uninstall path:  
+2026-09-26 00:01:55 DEBUG SoftwareInstallService - registry avermediabgremoval uninstall path:  
+2026-09-26 00:01:55 DEBUG SoftwareInstallService - registry avermediacoloreditorpro uninstall path:  
+2026-09-26 00:01:55 DEBUG Main - 加载插件列表 实例化插件列表数据结束，AllPlugins Count:69  
+2026-09-26 00:01:55 DEBUG Main - 加载插件列表结束，ShowPlugins Count:67，耗时0,6096722s  
+2026-09-26 00:01:55 DEBUG LoginService - Update OpenId Equal Value Don't Need Update  
+2026-09-26 00:01:55 DEBUG Main - 获取插件分类数据结束，ServerCategories Count:9  
+2026-09-26 00:01:55 INFO Main - GetPluginList Canceled  
+2026-09-26 00:01:55 DEBUG SoftwareGreenInstallService - End Init Green Software Config  
+2026-09-26 00:01:55 DEBUG LoginMessageHandler - publish login message to all plugins  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - currentDir:C:\Program Files\obs-studio\bin\64bit, rootDir:C:\Program Files\obs-studio  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - Change --palette_link value:var(--blue2) to:rgb(77,166,255)  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - Change --palette_linkVisited value:var(--blue2) to:rgb(77,166,255)  
+2026-09-26 00:01:59 ERROR OBSPLUSAPP - ModifyOBSTheme C:\Program Files\obs-studio\data\obs-studio\themes\Yami.obt Exception:Access to the path 'C:\Program Files\obs-studio\data\obs-studio\themes\Yami.obt' is denied.  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - C:\ProgramData\obs-studio\plugins\obsplus\bin\32bit\obsplus.dll sign time:29/07/2026 13:29:08  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - C:\ProgramData\obs-studio\plugins\obsplus\bin\64bit\obsplus.dll sign time:29/07/2026 13:29:12  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - NV baseProfile.Settings.Level Is NULL(Default State)  
+2026-09-26 00:01:59 DEBUG OBSPLUSAPP - nv setting is right, don't need tip  
+2026-09-26 00:03:04 DEBUG WindowManager - Register Window:插件续费  
+2026-09-26 00:11:48 DEBUG AppHelper - RumCmd arguments:wmic os get Caption, ruanAsAdmin:False  
+2026-09-26 00:11:48 DEBUG AppHelper - RunCmd current process is NOT admin, but runAsAdmin=false, don't set Verb = Runas  
+2026-09-26 00:11:49 DEBUG AppHelper - RumCmd arguments:wmic os get Version, ruanAsAdmin:False  
+2026-09-26 00:11:49 DEBUG AppHelper - RunCmd current process is NOT admin, but runAsAdmin=false, don't set Verb = Runas  
+2026-09-26 00:11:49 DEBUG AppHelper - RumCmd arguments:wmic os get OSArchitecture, ruanAsAdmin:False  
+2026-09-26 00:11:49 DEBUG AppHelper - RunCmd current process is NOT admin, but runAsAdmin=false, don't set Verb = Runas  
+2026-09-26 00:11:49 DEBUG ReportService - obsplus config is changed, report  
+2026-09-26 00:11:49 DEBUG ReportService - 发送日志：{"message":{"UserId":"8011a6df9cb04013ab03ee42bb313c51","PhoneNumber":"+62 85183078655","DeviceId":"FE01871B-CE17-4267-99F0-E9EBCCF3C1A7","Channel":"ZHOUJING","Sources":{"fade_transition":"Fade","wasapi_output_capture":"Desktop Audio","wasapi_input_capture":"Mic/Aux","spout_capture":"vtuber","browser_source":"Trakteer","window_capture":"game","image_source":"wp7966787-anime-city-scenery-desktop-wallpapers.jpg","ffmpeg_source":"Comp 1.mp4","dshow_input":"input_source_e32c7286-7365-47f7-8c72-97ba28e98bee","camera_beauty_source_v2":"OBS Beauty Camera"},"Plugins":{},"System":"(2009)"},"messageType":"obsplus","type":"shop"}  
+2026-09-26 00:11:49 DEBUG ReportService - content of obs-studio scene config json file is null or empty, don't need report  
+2026-09-26 00:20:57 DEBUG OBSPlusHelper - Receive obs_exit Signal  
+2026-09-26 00:20:57 DEBUG WindowManager - Window:插件续费 Closed  
+2026-09-26 00:20:57 DEBUG WindowManager - Remove Window:插件续费 Result:True  

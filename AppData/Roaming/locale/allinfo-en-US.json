@@ -1,0 +1,1055 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "obs-cam-beauty",
+      "name": "OBS Camera Beauty",
+      "originName": "",
+      "briefDescription": "Professional beauty plugin for OBS with HD high-frame-rate effects,\r\nmakeup, stickers, body shaping, background blur, multi-camera support, and more.",
+      "description": "No Beauty Filter, No Streaming.\r\n\r\nOBS Beauty Camera Plugin, specially developed for OBS. No external third-party software required,\r\n\r\n delivering better performance and resource efficiency.\r\n\r\nProfessional HD beauty effects with high frame rates for ultra-smooth performance, \r\n\r\nfully supporting both landscape and portrait live streaming.\r\n\r\nSupports a wide range of facial beauty features, body shaping, and background blur.\r\n\r\nRich makeup features are included, with dozens of lipstick shades available — there’s always one that suits you.\r\n\r\nExclusive bare-face protection technology helps prevent beauty effects from being lost while the streamer is moving.\r\n\r\nSupports long-distance beauty enhancement, multi-camera setups, and multi-person scenes.\r\n\r\nComes with a large collection of props, stickers, and visual effects that are continuously updated. \r\n\r\nWe also welcome your ideas and feedback.",
+      "keyWords": "美体，背景虚化，瘦脸，瘦腿，背景模糊，人像模糊，拉长腿，yy，无他，美化，美肌，特效，道具，贴纸，眼睛，眼镜，口罩，绿幕，律动，美妆，团播，镜头，滤镜，OBS beauty camera，beauty filter，face beauty，skin smoothing，makeup filter，virtual makeup，slim face，body shaping，body slimming，long legs，background blur，portrait blur，beauty effects，stickers，props，camera filter，webcam beauty，live beauty filter，multi camera beauty，group beauty",
+      "previewImages": [
+        "https://resource.obsworks.com/plugininfo/beautyLogo.png",
+        "https://resource.obsworks.com/pluginDescription/beauty-description-2.png",
+        "https://resource.obsworks.com/pluginDescription/beauty-description-3.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/HKSTd9e6RolKPAx0tT1cmNlSnFf",
+      "official": "https://www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "heart-rate",
+      "name": "心率显示",
+      "originName": "",
+      "briefDescription": "让观众感受你的心跳，紧张不已还是镇定自若。",
+      "description": "将心率数据可视化显示在直播间，让观众直观感受到直播的紧张刺激。 \r\n\r\n支持带有心率广播的各种手环、手表、心率带等蓝牙设备。 \r\n\r\n目前推荐使用小米10手环或华为手环、手表等。\r\n\r\n支持各种皮肤，比如可以根据心率值显示不同的颜色和图案。 \r\n\r\n适合不同直播场景，也欢迎联系我们，提出您的想法。",
+      "keyWords": "心率助手，心率插件，心率设置，心率带，心率广播，蓝牙心率，手环，手表，心率数据，心率可视化，直播心率，实时心率，心率颜色，心率图案，heart rate，心率票，心率,心跳",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/heartratedescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/IA3vwexuliGFZTk7TJIchpVMnzf",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obsplus-virtualcam",
+      "name": "高清场景输出",
+      "originName": "",
+      "briefDescription": "打开高清模式，高清细节呈现，还原真实色彩，支持透明。将丰富的OBS插件功能，扩展至其他聊天软件和开播伴侣中。",
+      "description": "OBS虚拟摄像头的高级版本，完全免费。用很少一部分的性能换取高清画质。\r\n\r\n通过高清场景的摄像头，将将丰富的OBS插件功能，扩展至其他软件中。\r\n\r\n比如，通过此插件可以在各种直播伴侣、开播工具以及部分聊天工具中使用OBS美颜摄像头。\r\n\r\n获得清晰度细节优化，原色彩输出的效果。\r\n\r\n支持透明，兼容性更佳。\r\n\r\n支持OBS27、28、29、30、31、32及更高版本OBS。",
+      "keyWords": "高清输出，高清场景插件，高清场景切换器，高清摄像，高清直播输出，高清画质，超清，清晰度优化，原色彩输出，透明输出，透明虚拟摄像头，虚拟摄像头高级版，OBS输出，虚拟输出，virtual output，直播伴侣输出，开播工具输出，聊天工具输出，OBS虚拟摄像，virtualcam，obs camera，启动虚拟摄像头，高清场景启动，高清场景输出插件虚拟摄像头,微信美颜,qq美颜,清晰,透明",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/hddescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/HB7zdwayzoLLh2xjPQ5cj4kTnbd",
+      "official": "https://www.obsworks.com",
+      "author": "obsplus",
+      "isShowOriginName": true
+    },
+    {
+      "id": "multicast-streaming",
+      "name": "多路直播插件",
+      "originName": "",
+      "briefDescription": "将画面推流到多个房间或者多个平台中，节省资源，支持不同画面，支持延迟，自动针对特定平台进行网络优化。",
+      "description": "多路直播也叫多路推流，是将画面，也就是视频流，传输到多个目的地的意思。\r\n\r\n多个目的地，可以是不同平台，也可以是同一平台的不同房间。\r\n\r\n这样能够节省大量的计算资源，只要网络带宽足够，就可以顺畅的直播。\r\n\r\n插件支持同画面多路直播，也支持不同画面多路直播。\r\n\r\n针对特定的平台，本插件还能根据平台特性进行网络优化。\r\n\r\n本插件支持设置不同目的地延迟直播，从而解决不同平台的延迟不一问题。\r\n\r\n直播的平台越多，您创造的与观众联系的机会就越多，从而扩大您的影响范围。\r\n\r\n但是请注意平台的要求，是否允许和其他平台同时直播，有些平台从内容上而言是不建议的，有些是开放的。\r\n",
+      "keyWords": "多开推流，多推，推流到多个平台，多房间推流，直播推流，推流工具，推流助手，分流，线路，延迟直播，不同平台推流，RTMP，免费多路推流，推流小助手，抖音自动推流，多路直播，多路推流，直播两个，分流直播,多平台直播,双平台直播,两个直播,双直播\r\n多平台推流，双平台推流，同时直播，同时推流，直播多个，双播，多播，组播",
+      "previewImages": [
+        "https://resource.obsworks.com/plugininfo/multicast-streaming/mutilcast-streream-description.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/ODJDwC2f1iwLWMkelrqc4fr3nEg",
+      "official": "https://www.obsworks.com",
+      "author": "nch",
+      "isShowOriginName": true
+    },
+    {
+      "id": "gift-goal",
+      "name": "礼物收集器 礼物计数器",
+      "originName": "",
+      "briefDescription": "加强版的礼物心愿，鼓励粉丝赠送礼物，一起达成目标",
+      "description": "礼物收集器 / 礼物计数器，是传统礼物心愿功能的全面升级方案。\r\n\r\n主播可以自由设定创意目标，以及目标达成的效果，比如才艺展示、歌曲演绎、指定英雄实战等，等待观众的礼物参与支持。\r\n\r\n专属工具配备丰富皮肤资源库，覆盖炫酷科技、国风雅韵、潮流萌趣等主流风格，一键适配您的直播间氛围，让每次直播都视觉拉满。\r\n\r\n自动统计观众送礼情况，\r\n\r\n加上精心设计的礼物氛围与心愿进度可视化展示，激发粉丝参与感与支持动力，共同推动目标达成。\r\n\r\n设定达成目标，主播将兑现承诺，回馈粉丝。\r\n\r\n比如才艺展示、点唱歌曲、趣味挑战、指定英雄实战、挑战高难度副本等。\r\n\r\n让礼物点亮心愿，用互动共创精彩。",
+      "keyWords": "礼物计数，心愿单，目标进度，收集进度，心愿进度，礼物统计，礼物氛围，礼物图库，礼物图标，才艺目标，趣味挑战，达成目标，许愿，礼物菜单，礼物榜，礼物目标，送礼目标，送礼收集，礼物心愿，礼物愿望，送礼进度，礼物进度，礼物心愿单,心愿单,礼物展馆",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/giftgoal-description.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/UJwJwAojJiZlKHkdaTxcoTLknsf",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "danmu-music",
+      "name": "弹幕点歌插件",
+      "originName": "",
+      "briefDescription": "点歌插件，观众发送弹幕即可完成点歌。支持空闲歌单，支持常见音乐平台歌源。",
+      "description": "公测版本：后续皮肤功能、点播列表、酷狗将开放。\r\n\r\n点歌插件，观众发送弹幕即可完成点歌。\r\n\r\n支持通过送礼付费点歌、切歌、置顶歌曲，空闲歌单，支持添加本地歌曲。\r\n\r\n支持常见歌源，QQ音乐、网易云音乐、两大音乐平台VIP歌曲均可点播。\r\n\r\n点播歌曲自动播放，无需主播手动操作。为你的直播间添砖加瓦。",
+      "keyWords": "自动点歌，付费点歌，送礼点歌，切歌，置顶歌曲，歌单，点播歌曲，歌曲点播，歌曲播放，QQ音乐点歌，网易云点歌，酷狗点歌，VIP歌曲，听云点歌，弹幕点播，点个，dian，歌曲显示插件，礼物点歌,ktv,点播",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/danmumusicdescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXV4U2d4RGNBQU93",
+      "official": "https://www.obsworks.com",
+      "author": "obsplus",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-clock",
+      "name": "时钟插件",
+      "originName": "时间/倒计时/秒表",
+      "briefDescription": "提供了时钟、倒计时、秒表三种不同的模式，方便在直播间显示当前时间、计时、倒计时等。",
+      "description": "您可以在电商直播中使用该插件辅助秒杀活动，\r\n\r\n也可以在竞速游戏直播中，显示计时，\r\n\r\n更能在直播中，同步显示北京时间，\r\n\r\n显示的时间、日期格式丰富，支持自定义。",
+      "keyWords": "时间，计时，倒计，倒数，秒表，报时，实时时钟，日期，桌面时钟，电子时钟，动态时钟，电商秒杀，clock，timer，shizhong，shizong，shijian，daojishi，計時，北京时间",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/clock-info.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWVlIZWNxVUlDalhB",
+      "official": "https://github.com/exeldro/obs-3d-effect",
+      "author": "Exeldro",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-prayer",
+      "name": "感恩的心",
+      "originName": "",
+      "briefDescription": "让观众通过点赞、送礼，发弹幕，来帮你敲电子木鱼、攒好运、数硬币、积累爱情等。",
+      "description": "边直播边攒功德、积累财富，用一种新奇有趣的方式来提升大家的直播体验。\r\n\r\n内置丰富的皮肤，比如功德版（电子木鱼）、财富版、姻缘版、感谢版、幸运版等等。\r\n\r\n支持点赞、发弹幕、送礼物来触发玩法，\r\n\r\n支持自定义单位和文案，发挥你的想象。\r\n",
+      "keyWords": "感谢，木鱼，功德，数硬币，积累爱情，幸运版，财富，姻缘，好运，红心，小心心，电子，感恩的新，安恩的心",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/obs-prayer-2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DS25Kd2hmVXJKQnlM",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "danmu-special",
+      "name": "无障碍弹幕助手",
+      "originName": "Danmu Special",
+      "briefDescription": "强大的弹幕礼物，观看和朗读的工具。支持200多款发音人。\r\n拥有桌面弹幕、全屏弹幕、自动回复、自助发音人、定时朗读等等功能。",
+      "description": "您可以使用本软件，朗读出弹幕、礼物等信息，从而辅助直播。\r\n\r\n支持200多款发音人，总有一款适合您。\r\n\r\n从而使用各种风格的朗读语音活跃气氛。\r\n\r\n同时能方便的查看弹幕，简洁又美观。\r\n\r\n有可以在游戏中直接看弹幕的全屏弹幕，\r\n\r\n有各种字体方便快捷的桌面弹幕，\r\n\r\n支持抖音、快手、视频号、斗鱼、虎牙、B站、YY、小红书、CC、TikTok、Twitch等平台。\r\n\r\n支持快捷键、支持多开、支持历史记录。支持弹幕礼物过滤，支持屏蔽黑名单。\r\n\r\n支持自动语音回复、定时朗读、自助发音人等等功能，并且功能不断增加中。",
+      "keyWords": "弹幕助手无障碍，弹幕朗读，弹幕播报，弹幕语音，礼物朗读，礼物播报，语音播报，自动回复，弹幕回复，语音回复，发音人，桌面弹幕，全屏弹幕，游戏中看弹幕，弹幕礼物过滤，黑名单屏蔽，屏蔽弹幕，定时朗读，语音读弹幕，OBS弹幕助手，CalabashDanmuPlugin，小葫芦弹幕助手，提词器，朗读弹幕，朗读礼物，读礼物，读弹幕,tts,转语音,变语音",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/danmuspecial-info.png",
+        "https://resource.obsworks.com/pluginDescription/ganmedanmu.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/BjN1dFOkJosJQgxmMYNctgOenkf ",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-vote",
+      "name": "投票插件",
+      "originName": "",
+      "briefDescription": "集思广益群策群力，观众投票来帮忙。",
+      "description": "使用投票插件可以让观众通过弹幕进行投票，从而参与到直播过程中，增加直播间的参与感和互动。\r\n\r\n主播可自定义投票标题与投票选项。内置多款风格各异的显示模板，满足不同风格的直播间需求。",
+      "keyWords": "弹幕投票，观众投票，直播投票，礼物投票，互动投票，投票榜，计票，投票标题，投票选项，多选项投票，PK投票，票数，toupiao，记票，投、,PK,比赛,血条,pk血条,团播",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/vote-description.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/R8UkdwF7Uojed9xrfoac4IIYnCf",
+      "official": "https://www.obsworks.com",
+      "author": "jack",
+      "isShowOriginName": true
+    },
+    {
+      "id": "typewriter",
+      "name": "打字机",
+      "originName": "",
+      "briefDescription": "打字和观众沟通时，形成好看生动的字幕，可播放键盘音效，提升直播视觉效果。",
+      "description": "想要丰富直播画面或在不方便说话时，比如聊天直播、电台、哄睡等场景下，\r\n\r\n需要打字和观众沟通。这款工具可帮助主播将文字内容快速转化为动画字幕，\r\n\r\n贴合聊天软件风格，与观众打字互动时，更美观、更方便。\r\n\r\n附带多种键盘音效，打字更有氛围，内置机械键盘、气泡、嘀嗒、蒸汽朋克、樱桃键盘、击鼓、马蹄等动感音效。\r\n\r\n字体、颜色随心设置，内置多种动画跳动方案，放大互动效果。",
+      "keyWords": "打字机插件，打字动画，文字动画，聊天字幕，键盘音效，打字音效，气泡音效，文字转动画，字体跳动，打字机字幕，typew，动画字，打字机打字,文字显示,好看,对话框,键盘,电台",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/typewritedescription1.png",
+        "https://resource.obsworks.com/pluginDescription/typewritedescription2.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/QfbDwKAlzit1f4kDbYHcHgY0n7e",
+      "official": "www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-sound-effect",
+      "name": "音效插件",
+      "originName": "",
+      "briefDescription": "活跃直播气氛的专业工具，比如直播间笑声、掌声等音效。",
+      "description": "活跃直播气氛的专业工具，内置多种音效，比如笑声、掌声等。\r\n\r\n支持设置快捷键，快速触发音效，拉满直播氛围。\r\n\r\n支持随机播放，每一次点击,带来不一样的惊喜。\r\n\r\n支持录制音频，随时随地采集声音，快速生成并管理你的专属音效库。",
+      "keyWords": "声音特效，笑声，掌声，快捷键音效，随机音效，音效库，录制音频，播放音效，声音播放，气氛音效，搞笑音效，音效助手，Soundboard，音效动态，音效调整，随机噪音生成器，随机断音，声音加强，声音增强,音乐插件",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/soundeffectdescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DS0lheXluRmpPYldj",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-subtitles",
+      "name": "实时字幕",
+      "originName": "",
+      "briefDescription": "可以将声音转化成文字，显示在直播画面中。支持麦克风输入或者声音输出设备。\r\n能够识别普通话，也能识别常见方言，同时翻译成英、日、俄等多国语言，支持双语字幕。",
+      "description": "实时字幕插件，可以将主播说的话，或者是播放的声音，转换成文字，显示在直播画面中。\r\n\r\n适合在游戏、电商、秀场、教育等直播场景中使用。\r\n\r\n不仅能够识别普通话，也能识别常见的方言，还能同时翻译成英、日、俄等多国语言。\r\n\r\n同时支持双语字幕，支持字幕文本保存。\r\n\r\n为了防止说错话，还可以同时启用屏蔽词功能。\r\n\r\n不仅支持麦克风等输入设备，而且支持各种播放设备的声音转化。",
+      "keyWords": "实时字幕插件，自动字幕，智能字幕，语音转文字，声音转文字，音转字，文字转语音，语音识别，翻译，双语字幕，字幕保存，屏蔽词字幕，麦克风字幕，播放设备字幕，方言识别，普通话识别，即时字幕，speech to text，subtitle，obs 智能实时字幕，zimu，语音助手,实时翻译 同步 双语 英语 日语 俄语 法语 俄语 同声传译",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/subtitledescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DS2pET0hRc3hYd2pD",
+      "official": "https://www.obsworks.com/zm",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "like-wall",
+      "name": "点赞墙",
+      "originName": "",
+      "briefDescription": "激励观众点赞上画面。 点的越多，头像越酷炫。",
+      "description": "激励观众点赞上画面。 \r\n\r\n榜单席位总有限，墙面机会却更多。 \r\n\r\n点得越猛，头像越酷炫。\r\n\r\n这里没有固定的位次，只有不断刷新的互动墙。 \r\n \r\n墙面持续开放，机会始终在线。",
+      "keyWords": "点赞上墙，点赞上画面，互动墙，头像墙，刷赞墙，点赞头像，头像酷炫，点赞特效，头像刷新，点得越猛，点赞墙插件,点赞榜 点赞玩法  点赞计数 点赞数字  点赞胖行 上墙",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/likewalldescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/AW7Aw3A2nicV08k60eDcni0enmf",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "like-rank",
+      "name": "点赞互动榜",
+      "originName": "",
+      "briefDescription": "点赞互动玩法，让观众通过点赞打榜，完成点赞任务，提升直播间排名。",
+      "description": "点赞互动榜插件可以帮助主播实时统计观众的点赞数据\r\n\r\n并以榜单的形式呈现在直播画面中，\r\n\r\n吸引观众积极点赞，增加直播间的互动数据，从而提升直播间排名，\r\n\r\n拥有任务系统和成就系统，并且不断扩充玩法中。\r\n\r\n内置多款不同风格皮肤模版，可自定义排名个数以及显示方式，打造个性化展示效果。",
+      "keyWords": "点赞排行，点赞排名，点赞任务，点赞成就，点赞统计，点赞数据，点赞插件，点赞器，点赞榜单，点赞墙任务，任务系统，成就系统，点赞其,点赞榜 点赞玩法  点赞计数 点赞数字 点赞胖行",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/likerankdescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/EUtrdrYhIop9DUxKCRicsr0znXg",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "monitor-capture-plus",
+      "name": "增强版显示器采集",
+      "originName": "麒麟OBS团队",
+      "briefDescription": "显示器采集情况下，不显示某些窗口比如QQ、YY，从而保护您的隐私。",
+      "description": "增强版显示器采集插件\r\n\r\n可去除某些窗口不显示，\r\n\r\n比如可以去除QQ、微信、YY等软件的内容，\r\n\r\n从而保护您的隐私。",
+      "keyWords": "显示器采集增强，采集显示器，屏幕采集增强，隐私采集，采集隐私保护，去除窗口，屏蔽窗口，QQ不显示，微信不显示，YY不显示，窗口不显示，保护隐私，增强显示器，显示器捕获，屏幕捕获增强,增强版,加强版,显示器,屏幕,不显示,屏蔽,qq,微信,yy",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/desktopplus.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWUloaFBSdmNxWmFG",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-project-zomboid",
+      "name": "僵尸毁灭工程助手",
+      "originName": "",
+      "briefDescription": "僵尸毁灭工程 弹幕礼物玩法 触发僵尸和弹药。",
+      "description": "《僵尸毁灭工程》游戏的弹幕礼物玩法。\r\n\r\n观众可以通过刷礼物、发弹幕来刷僵尸围攻主播，\r\n\r\n也可以来刷武器协助主播。\r\n\r\n游戏中充满着诡异和压抑的气氛，除了在房内短暂停留，\r\n\r\n和在外与僵尸群拼斗以外，主角会经常奔跑在漆黑的雨夜，\r\n\r\n收集、打造物品和工具，拯救危难中的女友，生存下去，等待阳光的降临，\r\n\r\n而观众可以协助主播或者增大主播的难度。",
+      "keyWords": "僵尸围攻，刷僵尸，武器支援，项目僵尸，zomboid，游戏助手，僵尸助手，僵尸互动,僵尸毁灭工程,projectzomboid,弹幕游戏",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/zombodescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWUJnZGppT2tueVRy",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "danmu-rank",
+      "name": "弹幕榜单",
+      "originName": "",
+      "briefDescription": "弹幕互动玩法，让观众通过发送弹幕打榜，支持任意弹幕或者关键词 弹幕。",
+      "description": "弹幕互动榜插件可以帮助主播实时统计观众的弹幕数据，\r\n\r\n并以榜单的形式呈现在直播画面中，\r\n\r\n支持任意弹幕打榜，也支持关键词弹幕，甚至多个关键词。\r\n\r\n吸引观众积极发送弹幕，增加直播间的互动数据。\r\n\r\n内置多款不同风格皮肤模版，可自定义排名个数以及显示方式，打造个性化展示效果。",
+      "keyWords": "关键词弹幕，打榜，排行，排名，弹幕数据，实时榜单，观众榜，弹幕统计，英雄榜单,互动弹幕，弹幕计数，弹幕玩法 弹幕数字",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/danmurankdescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/KEYEwHTtFif0bpkXoaTcbyx3nuf",
+      "official": "www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "danmu-wordcloud",
+      "name": "弹幕词云插件",
+      "originName": "",
+      "briefDescription": "用弹幕组成图案，直播间节奏可视化，烘托气氛。",
+      "description": "直播间节奏可视化，\r\n\r\n频率越高字越大，\r\n\r\n多种显示方式任你选。",
+      "keyWords": "云词，关键词云，词频，直播间节奏，节奏可视化，字越大，文字云，热词，弹幕关键词,节奏,气氛,可视化",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/danmuclouddescription.png",
+        "https://resource.obsworks.com/pluginDescription/danmuclouddescription2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWUVObElJUndlVHZE",
+      "official": "https://www.obsworks.com/cloud",
+      "author": "wwh",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-vip-seats",
+      "name": "贵宾席",
+      "originName": "",
+      "briefDescription": "欢迎来到直播间，来来来请上座。",
+      "description": "当观众满足条件后即可登上贵宾席，定时更换席位。\r\n\r\n支持送礼、进入房间、关注等不同类型条件。",
+      "keyWords": "歌曲显示，歌名，歌词，音乐字幕，QQ音乐，网易云，酷狗，全民K歌，喜马拉雅，foobar，now playing，tuna，LyricDisplayer，桌面音乐，滚动歌单，歌单显示,VIP席，观众席，席位，上座，进房上席，关注上席，礼物上席，贵宾排行，贵宾榜，贵宾显示，定时换席，观众入席，贵宾席插件,榜单",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/vipdescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWVdoeE90S3JYZ1VT",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-bgm",
+      "name": "背景音乐显示插件",
+      "originName": "",
+      "briefDescription": "同步播放器的歌词、歌名到直播间中。支持桌面歌词。支持网易、QQ、酷狗、酷狗、全名K歌等十几款常见播放器。",
+      "description": "支持常见的播放器，比如网易云音乐、QQ音乐、酷狗音乐、酷我、全民K歌、喜马拉雅、Foobar2000等十几款播放器。\r\n \r\n支持桌面歌词模式、支持歌名和歌词显示、支持歌词中的翻译显示。\r\n\r\n观众不用再问，背景音乐是什么啦~\r\n\r\n更简洁的界面，更低的消耗，更自由的显示效果。\r\n\r\n此外，可以联动声音可视化插件，搭配出精彩的视觉效果。",
+      "keyWords": "歌词助手 播放器 看歌词 bgm player 歌曲显示 歌词识别",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/bgmdescription-1.jpg",
+        "https://resource.obsworks.com/pluginDescription/bgmdescription-2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DS1ZEb1RERmZPRm93",
+      "official": "https://www.obsworks.com",
+      "author": "jack",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-hardwarecommander",
+      "name": "智能硬件助手",
+      "originName": "",
+      "briefDescription": "连接控制硬件设备，轻松搭建硬件玩法。",
+      "description": "轻松搭建硬件直播间，增加节目效果。 \r\n\r\n支持自定义设备行为指令，兼容各种设备，从而搭建出各种物理玩法，\r\n\r\n比如玩具枪、泡泡机、风扇、灯、各种儿童玩具等。 \r\n\r\n根据礼物、弹幕、点赞等，设置多种触发玩法，\r\n\r\n为您的直播间增添趣味与互动。",
+      "keyWords": "硬件控制，控制硬件，硬件玩法，自定义设备，设备行为指令，玩具枪，泡泡机，风扇，灯光，智能设备，外设，控制器，遥控器，硬件触发,打枪,玩具,继电器,物理整蛊,串口,气球,设备",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/heartdwaredescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/WD5gwW39OiCnJektH1OcUkN4nSa?from=from_copylink",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "gamedanmu",
+      "name": "全屏弹幕插件",
+      "originName": "",
+      "briefDescription": "在全屏游戏中直接观看弹幕礼物，支持大多数游戏。配合无障碍弹幕助手使用。",
+      "description": "现在可以在全屏游戏中观看弹幕啦！\r\n\r\n我们尽可能提升性能，发挥全屏的优势。\r\n\r\n们支持常见的知名游戏，如LOL、CSGO、魔兽世界等等，并且大多数单机游戏也都能很好兼容",
+      "keyWords": "游戏弹幕，游戏中看弹幕，游戏内弹幕，LOL弹幕，CSGO弹幕，魔兽弹幕，游戏看弹幕，全屏看弹幕，弹幕覆盖，叠加弹幕",
+      "previewImages": [
+        "https://resource.obsworks.com/plugininfo/GameDanmu/gamedanmudescription.png",
+        "https://resource.obsworks.com/pluginDescription/ganmedanmu.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXhhWUlLTldmQnBX",
+      "official": "https://www.obsworks.com/helper",
+      "author": "druid",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-overtime",
+      "name": "加播插件",
+      "originName": "",
+      "briefDescription": "几点下班观众说了算，一边加播一边收礼，痛并快乐着",
+      "description": "观众通过送礼决定主播下播时间，主播可灵活控制加减时间规则，\r\n\r\n还有多种皮肤不定期更新，适配不同类型的直播间风格。\r\n\r\n支持榜单显示功能，哪个观众最“给力”一目了然，是刺激观众消费利器。",
+      "keyWords": "加班，加时，加减时间，加减播，加播倒计时，延长直播，礼物加播，下班倒计时，加播放，加拨，加播工具，下播，下拨，礼物时钟,礼物时间",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/overtime-description.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DS1BXZlBBbkpYdHVm",
+      "official": "https://www.obsworks.com",
+      "author": "jack",
+      "isShowOriginName": true
+    },
+    {
+      "id": "sc1",
+      "name": "麒麟星际争霸1互动助手",
+      "originName": "",
+      "briefDescription": "星际争霸1的直播互动工具，弹幕即指令，礼物即支援。",
+      "description": "星际争霸1 高清版，互动玩法，星际地图大师匠心出品，\r\n\r\n发送弹幕+礼物助攻，主播战力飙升。自定义玩法，多平台兼容，想象力就是规则。\r\n\r\n效率/速度/稳定性三重突破，经典地图焕然新生。更多地图不断诞生中。",
+      "keyWords": "星际争霸互动，星际高清版，sc，StarCraft，弹幕指令，礼物支援，游戏支援，观众助攻，刷兵，游戏直播互动，星际互动助手，星际争霸1 星际1  sc1 starcrasft1 重置版 ",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/sc1descripiton.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/SgiPdK83wo9Xelxle7sc6YQenpc",
+      "official": "https://www.obsworks.com",
+      "author": "tianword+obsworks",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-fullscreen-animation",
+      "name": "头像飘屏",
+      "originName": "",
+      "briefDescription": "头像飘屏装饰直播间。送礼上电视，送的越多，效果越显著。",
+      "description": "头像飘屏装饰直播间。送礼上电视，送的越多，效果越显著。\r\n\r\n观众通过送礼物的方式，在直播间飘屏显示自己的头像。",
+      "keyWords": "头像漂屏，头像弹窗，头像上屏，送礼头像，飘窗，头像显示，头像礼物，上电视，飘屏显示，头像飘屏插件，礼物秀，礼物飘，送礼飘屏，头像 特效 气球",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/paopaodescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWtGQVZUU1BwQlpk",
+      "official": "https://www.obsworks.com",
+      "author": "wwh",
+      "isShowOriginName": true
+    },
+    {
+      "id": "game-helper",
+      "name": "游戏直播整蛊助手",
+      "originName": "",
+      "briefDescription": "弹幕礼物控制游戏，或者播放有趣的声音。丰富的自定义素材支持。",
+      "description": "整蛊助手能为你的直播间带来无限乐趣。\r\n\r\n用户可以通过弹幕礼物触发键盘和鼠标事件，从而对游戏产生影响，\r\n\r\n也可以根据弹幕礼物，播放一段有趣的音频，让直播气氛更加热烈欢快。\r\n\r\n在直播过程中，整蛊助手将成为你的得力帮手。让观众们尽情地参与其中，\r\n\r\n用他们的互动为直播增添惊喜和欢笑。从而呈现出别具一格的娱乐场景。\r\n\r\n不仅如此，整蛊助手还注重用户体验。我们提供多种精心制作的可选事件和音频素材，\r\n\r\n以满足不同直播风格和内容的需求。观众们将因此享受到与主播的深入互动，同时也感受到更加紧密的直播氛围。\r\n\r\n请注意，本软件是真人主播直播的辅助工具，比如增加玩游戏或表演时与观众的互动，\r\n\r\n配合游戏或表演可以，但不能纯挂机使用。因不同的平台规范不同，建议咨询平台客服确认规范。\r\n",
+      "keyWords": "游戏整蛊，整盅，恶搞，礼物整蛊，弹幕整蛊，弹幕直播整蛊，键盘鼠标事件，键鼠控制，按键触发，礼物触发按键，键鼠映射，键盘映射，游戏互动，礼物控制游戏，弹幕控制游戏，趣味整蛊，整蛊工具，fightstick，礼物砸人，刷礼物控制,丢枪,礼物音效,礼物音乐自动切换,礼物音效自动切换,礼物音乐自动切换,礼物音乐切换,音乐插件，观众遥控主播,音乐插件,阿比,听云,弹幕游戏,整盅",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/game-helper-1.png",
+        "https://resource.obsworks.com/pluginDescription/game-helper-2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWFTcVdTc0tiR0ln",
+      "official": "https://www.obsworks.com/play",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "pawsandwhiskers",
+      "name": "麒麟猫鼠乱斗互动助手",
+      "originName": "",
+      "briefDescription": "直播间的猫鼠自走棋，实时参与助力主播。",
+      "description": "《猫鼠乱斗》是一款专属直播互动工具游戏，\r\n\r\n支持观众通过弹幕与礼物即时影响游戏进程，\r\n\r\n实现主播与观众的双向互动，由合作团队联合开发。",
+      "keyWords": "猫鼠助手，猫鼠游戏，弹幕游戏，礼物影响游戏，直播互动游戏，自走棋，猫鼠互动，猫抓，猫爪，猫猫，猫鼠乱斗助手，猫鼠大战 自走棋 游戏",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/catdescription.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/Iw47d5EdAogfYgxXfVMclAuwn5c",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-danmu-show",
+      "name": "弹幕显示插件",
+      "originName": "",
+      "briefDescription": "弹幕模板，将美化后的显示在直播间画面中，让你的直播间更加炫酷。",
+      "description": "让观众的弹幕显示在直播间画面中。\r\n\r\n支持头像、等级、昵称等内容显示，并且提供丰富的颜色选项。\r\n\r\n我们提供了精美的模板，展示您的想象力，激发观众的创意，一起打造精彩的直播。 \r\n\r\n此外，过滤词和黑名单功能，可以有效阻止“黑粉们”带节奏。",
+      "keyWords": "显示弹幕，直播弹幕，弹幕上屏，弹幕显示源，弹幕模板，弹幕颜色，弹幕助手，弹幕姬，弹幕插件，弹幕直播，OBS弹幕，DANMU，彈幕，弹幕、，全屏弹幕，桌面弹幕，头像昵称，等级显示，过滤词，黑名单，屏蔽词，屏蔽弹幕，违禁词，敏感词，看弹幕，读弹幕",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/danmushowdescription-1.png",
+        "https://resource.obsworks.com/pluginDescription/danmushow.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DS0FZSkduZk5FdHNr",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-backgroundremoval",
+      "name": "一键抠像滤镜",
+      "originName": "BG Removal",
+      "briefDescription": "智能一键快速抠除背景，没有绿幕也能快速去除背景。",
+      "description": "本插件不支持Win7 支持Win10,Win11及以上操作系统。\r\n\r\n智能一键去除背景，没有绿幕也能去除。\r\n\r\n目前仍然处于测试版，效果一般。可以实际体验下。注意灯光，背景也不要过于复杂。\r\n\r\n注意需要视频采集设备的效果滤镜中添加此滤镜。",
+      "keyWords": "一键抠图，一键扣像，一键扣图，一键扣绿，AI抠像，AI抠图，智能抠像，智能抠图，无绿幕抠图，无绿幕抠像，无绿幕直播，背景移除，背景抠除，背景去除，去背，虚拟绿幕，虚拟背景，人像抠图，人像抠像，前景抠图，前景抠像，matting，background removal，remove bg，ai remove，ai-remove，视频去绿幕，抠像插件，抠图滤镜，抠图 绿幕",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/backgroundremoval.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/ORa8df3zwoZBLYxunpycs0K9n8g",
+      "official": "https://github.com/royshil/obs-backgroundremoval/releases",
+      "author": "royshilkrot ",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-bulletin",
+      "name": "公告牌插件",
+      "originName": "",
+      "briefDescription": "小小公告牌，各类信息齐展示。",
+      "description": "小巧的公告牌插件，可以展示各类信息，\r\n\r\n内置多种图标和礼物图片，操作简单即点即用。",
+      "keyWords": "公告板，直播公告，信息展示，通知牌，标题牌，礼物图片，图标公告，图标展示，公告栏，公告牌显示，小公告，信息牌，告示，公屏公告，公告 文字 广告 ",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/bulletindescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWVRvR1pNTWZXUHlm",
+      "official": "https://www.obsworks.com",
+      "author": "jack",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-first-time-rank",
+      "name": "首送榜",
+      "originName": "",
+      "briefDescription": "看看谁才是眼疾手快的头号真爱铁粉。",
+      "description": "首送榜将自动显示首个满足玩法条件的观众昵称，\r\n\r\n看看谁才是主播的头号真爱铁粉。",
+      "keyWords": "首个送礼，头号铁粉，真爱粉，首送显示，首送昵称，第一名送礼，第一个送礼，首个满足条件，铁粉榜，首礼，首个观众，首送插件，榜单",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/firsvipdescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWUpJbkl5UWN6cFZo",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-heroes-rank",
+      "name": "英雄榜",
+      "originName": "",
+      "briefDescription": "展示实力，争取殊荣！跻身榜单，虚位以待。",
+      "description": "展示实力，争取殊荣！跻身榜单，虚位以待。\r\n\r\n只有满足条件并且实力强劲的英雄好汉的名字才能出现在英雄榜上。\r\n\r\n支持同时添加不同礼物，送出指定礼物个数最多的观众名称将自动显示在插件上。",
+      "keyWords": "英雄排行榜，实力榜，强者榜，礼物榜，礼物排行，礼物排名，榜一，头号玩家，观众上榜，礼物最多，实力强者，礼物英雄榜，榜单英雄，榜单",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/herosdescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWFPek5vY1FDQldv",
+      "official": "https://www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "danmu-video",
+      "name": "互动视频插件",
+      "originName": "",
+      "briefDescription": "主播观众互动全面升级，点赞礼物弹幕均可触发播放视频。",
+      "description": "通过点赞、发送指定弹幕和礼物等方式触发视频播放，\r\n\r\n支持自定义多种规则，从而添加多种不同的视频玩法，想怎么玩就怎么玩。\r\n\r\n插件支持常见视频格式和图片格式，推荐使用Mp4视频。\r\n\r\n可以配合OBS色度滤镜，抠图让视频背景透明。",
+      "keyWords": "视频互动，互动视屏，插入互动，触发视频，视频玩法，视频触发，播放视频，图片触发，礼物动画，感谢动画，透明视频，抠图视频，视频格式，图片格式，互动插件，互动工具，视频,素材,点播",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/danmuvideodescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWZudUN2c0pYUWxM",
+      "official": "https://www.obsworks.com",
+      "author": "obsplus",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-music",
+      "name": "正版可直播音乐插件",
+      "originName": "",
+      "briefDescription": "解决直播情况下播放、翻唱音乐的版权风险，避免个人播放器VIP没有直播授权的问题。安心直播。",
+      "description": "小葫芦联合腾讯音乐音速达引擎，\r\n\r\n针对普通播放器购买的VIP音乐，没有直播授权，会引起的背景音乐和翻唱的版权风险，\r\n\r\n所推出的一款专业插件。帮助主播快速在直播间使用正版音乐，解决使用困境。\r\n\r\n您只需要登记房间号和制作歌单，即可享受正版可直播音乐的授权，\r\n\r\n放心的在游戏直播中播放音乐，或者在秀场直播中尽情的翻唱。\r\n\r\n此外，可以联动声音可视化插件，搭配出精彩的直播效果。",
+      "keyWords": "正版音乐，音乐版权，版权音乐，翻唱授权，直播播放音乐，直播翻唱，房间号登记，制作歌单，歌单授权，放心放歌，游戏直播音乐，秀场音乐，音乐授权",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/TMEPlugin.png"
+      ],
+      "guideUrl": "https://kenshin.feishu.cn/docs/doccnKR2lGRrTx8bDtzvLm4OcUv",
+      "official": "https://www.obsworks.com",
+      "author": " obsplus",
+      "isShowOriginName": true
+    },
+    {
+      "id": "source-record",
+      "name": "来源录制滤镜",
+      "originName": "纯净录制 Source Record",
+      "briefDescription": "让直播和录制的视频不一样。可以独立录制部分来源，甚至其他场景的画面，让后期剪辑更轻松。",
+      "description": "插件可独立录制某些来源，甚至其他场景的画面。\r\n\r\n从而做到直播是一个画面，录像是另外一个画面。\r\n\r\n支持设置不同的触发动作启动录制，还可以单独设置录制音轨，\r\n\r\n对于想要录制部分直播内容，进行后期编辑的主播来说非常方便。\r\n\r\n可以方便的进行纯净的画面录制。",
+      "keyWords": "来源录制插件，纯净录屏，纯净画面，单独录制，独立录制，分轨录制，录制音轨，录制来源，来源录像，后期编辑，直播画面与录像不同，source record，source-record，record source，source recap，来源录制filter，干净录制 纯净录制 单独录制",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/sourcerecord.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWJ5WGpzZkpMcVRi",
+      "official": "https://github.com/exeldro/obs-source-record",
+      "author": "Exeldro",
+      "isShowOriginName": true
+    },
+    {
+      "id": "vlc",
+      "name": "VLC视频源",
+      "originName": "VLC media player",
+      "briefDescription": "专业的VLC视频源（播放器），比obs自带的媒体源更加强大。无论是兼容性还是功能性上。\r\n安装后请【重启】OBS，即可在来源中看到。",
+      "description": "专业的VLC视频源（播放器），比obs自带的媒体源更加强大。无论是兼容性还是功能性上。\r\n安装后请【重启】OBS，即可在来源中看到。",
+      "keyWords": "VCL，VLC.，VLC+，播放器，媒体源，视频播放，播放视频，vlc media，VLC视频源插件",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/vlc-description.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXZ6VXNyQ0RVWmlu",
+      "official": "https://www.videolan.org/vlc/",
+      "author": "VideoLan",
+      "isShowOriginName": true
+    },
+    {
+      "id": "win-capture-audio",
+      "name": "声音分路插件",
+      "originName": "win-capture-audio",
+      "briefDescription": "方便的获得某个软件/游戏的声音，避免其他软件的声音干扰。比如屏蔽YY，让你能听到，观众听不到。",
+      "description": "本插件仅支持Windows 10系统 （2004以上，建议用最新）\r\n\r\n捕获某个软件/游戏的声音，避免其他软件的声音干扰。不必设置声卡分路。\r\n\r\n目前处于测试版。经过测试，大多数软件均能兼容，少数软件会失效，此时需要用声卡或者虚拟声卡的分路来实现。\r\n\r\n已测试支持软件：YY、QQ音乐、网易云音乐、Chrome浏览器等软件",
+      "keyWords": "音频分路，分录，软件声音采集，应用音频采集，应用程序音频采集，捕获软件声音，单独采集声音，游戏声音采集，浏览器声音采集，QQ音乐声音，网易云声音，Chrome声音，声音隔离，避免其他声音，不用声卡，虚拟声卡，win-capture-audio，win capture audio，网络音频采集，声音分道，声音输出，音频输入插件",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/win-capture-audio.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWU9NckllSENkelVl",
+      "official": "https://github.com/bozbez/win-capture-audio",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "avermediacolorkeypro",
+      "name": "圆刚大师绿幕抠像插件",
+      "originName": "",
+      "briefDescription": "创新捕捉式绿幕抠像，保留边缘细节，搭配保护区功能避免“多余抠除”。",
+      "description": "突破性AI引擎算法，发丝级抠像精度。\r\n\r\n智能防误判保护系统：自定义保护区，AI锁套，避免误抠漏抠问题。\r\n\r\n场景抠图模式可多次叠加套用。\r\n\r\n搭配AI调色、虚拟景深、物体阴影等功能实现大师级电影质感。",
+      "keyWords": "圆钢 抠图 扣绿 绿幕 avermedia 园刚 园钢 ai抠图 ai透明 绿边 ",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/avermediacolorkeyprodescription1.jpg",
+        "https://resource.obsworks.com/pluginDescription/avermediacolorkeyprodescription2.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/ZAnQwLAM5iMGX7kinK9cW208nZg?from=from_copylink",
+      "official": "https://www.avermedia.cn/product-detail/Streaming%20Center%20Plugin",
+      "author": "圆刚",
+      "isShowOriginName": true
+    },
+    {
+      "id": "live2d_plugin",
+      "name": "Live2D 虚拟形象加载插件",
+      "originName": "Live2D",
+      "briefDescription": "你在游戏、直播间、网页、动态壁纸中看到的二次元虚拟人物、UP主、虚拟主播，很多都是Live2D模型。\r\n这个插件能帮助你加载Live2D模型到直播间中，开启二次元风格的直播。",
+      "description": "你在游戏、直播间、网页、动态壁纸中看到的二次元虚拟人物、UP主、虚拟主播，很多都是Live2D模型。\r\n\r\n这个插件能帮助你加载Live2D模型到直播间中，开启二次元风格的直播。",
+      "keyWords": "虚拟人，二次元，动漫头像，虚拟头像，模型加载，Live2D模型，虚拟主播，vtube，虚拟直播，虚拟设想，模型路径，卡通头",
+      "previewImages": [
+        "https://resource.obsworks.com/plugininfo/Live2D-Model-Plugin/2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWU1ya0FidGNkUVBX",
+      "official": "https://github.com/a1928370421/Obs-Live2D-Plugin",
+      "author": "Weng Y",
+      "isShowOriginName": true
+    },
+    {
+      "id": "abs-lansong-greenmatting",
+      "name": "ABS蓝松抠图滤镜",
+      "originName": "",
+      "briefDescription": "影视级抠图算法，发丝级抠图效果，多维度降噪，优异的溢色控制，支持实时背景虚化，一键标定。",
+      "description": "ABS蓝松抠图（绿幕直播插件）是使用绿幕、蓝幕、AI等进行抠像换背景的直播软件，\r\n\r\n采用自研抠图算法，该算法已达到影视级别效果，\r\n\r\n能非常真实抠出半透明物体，不会出现溢色等问题；\r\n\r\n精确的边缘检测与边缘过渡能力，非常细腻抠出一根根头发丝；\r\n\r\n支持实时背景虚化功能（AI检测人脸），无须深度摄像头硬件支持即可实现绿幕抠图下的背景素材虚化；\r\n\r\n智能去溢色算法以及轻量级达芬奇调色功能加入，进一步保证画面颜色的真实性。",
+      "keyWords": "ai抠图 绿幕抠图 无绿幕抠图 绿边 毛刺 边缘 黑边 影视制作、影视制作工具",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/abs-description.png"
+      ],
+      "guideUrl": "https://www.lansongai.com/OBSdocument.html",
+      "official": "https://www.lansongai.com/OBSmatting.html",
+      "author": "蓝松科技",
+      "isShowOriginName": true
+    },
+    {
+      "id": "shader_filter",
+      "name": "着色器特效滤镜",
+      "originName": "Shaderfilter",
+      "briefDescription": "自带了一百多款滤镜效果，各种视觉特效、边缘阴影、动画变形、卡通、复古、星空、渐变、描边、波动等等。支持自定义。",
+      "description": "插件自带 100 多种视觉滤镜效果，并支持导入自定义文件。\r\n\r\n因功能较多，建议打开插件中心本插件的教程，有详细的效果截图。\r\n\r\n滤镜涵盖多个类别，包括：视觉特效、边缘/阴影处理、动画与变形效果、场景转场视觉风格 等等。\r\n\r\n常用滤镜效果介绍（部分展示）\r\n\r\n背景去除：内置简单背景剔除方案，支持色彩空间校正。\r\n\r\n闪烁显隐：控制素材周期性出现/消失，适合节奏型演出或音效联动。\r\n\r\n方框模糊：快速模糊区域内容，提升画面聚焦感。\r\n\r\n燃烧特效：营造素材被火焰吞噬的动画感。\r\n\r\n卡通风格渲染：基于色相与细节处理实现二次元手绘感。\r\n\r\n细渲染：细胞渲染风格，打造动漫质感画面。\r\n\r\n色度/UV扭曲：创造色彩位移、波动感。\r\n\r\n信号干扰效果：模仿老旧电视/磁带的图像故障。\r\n\r\n半调（点状）滤镜：模拟印刷风格，打造复古漫画质感。\r\n\r\n星空背景生成器：适用于直播画面底层透明背景。\r\n\r\n翻页动画：结合热键实现翻页式场景切换。\r\n\r\n边缘检测/描边：突出轮廓，适用于视觉强化或VFX。\r\n\r\n渐变映射：通过渐变填色转换画面色调。\r\n\r\n脉冲/波动变形：打造画面“跳动” “呼吸”动效。\r\n\r\n应用场景推荐：\r\n\r\n打造复古游戏风：结合 CRT 曲率、色差、扫描线滤镜，复现老电视街机风格。\r\n\r\n主播装饰：强化立绘/人物演出感，加动态滤镜提升沉浸感。",
+      "keyWords": "obs-shaderfilter,着色器滤镜，shader，视觉滤镜，滤镜特效，复古，卡通，星空，渐变，描边，发光，波动，闪烁，信号干扰，边缘检测，燃烧特效，细胞渲染，半调，翻页动画，动态背景，烟雾特效，雪花，下雪，雨，动画变形，畸变，扭曲，暗角，effect，特效插件，视觉特效，特效 羽化 ",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/shaderfilterdescription.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/PJq2dXLAYoBXg8xEbw7cHOCunSf",
+      "official": "https://github.com/exeldro/obs-shaderfilter/",
+      "author": "Exeldro",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-3d-effect",
+      "name": "3D旋转特效滤镜",
+      "originName": "3D Effect",
+      "briefDescription": "该滤镜可以将任意来源按照某种角度3D旋转。",
+      "description": "该滤镜可以将任意来源按照某种角度3D旋转\r\n\r\n从而搭配出不错的直播画面效果\r\n\r\n比如将某些来源装修为背景，可以查看教程来参考范例",
+      "keyWords": "3D特效，3D插件，3D Effect，3d-effect，3D变形，3D效果，旋转滤镜，立体旋转，3D歌词，3D悬浮，透视",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/3deffectdescription2.png",
+        "https://resource.obsworks.com/pluginDescription/3deffectdescription.jpg"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DZWpzRHBXbERPd0FD",
+      "official": "https://github.com/exeldro/obs-3d-effect",
+      "author": "exeldro",
+      "isShowOriginName": true
+    },
+    {
+      "id": "waveform",
+      "name": "波形显示插件",
+      "originName": "waveform",
+      "briefDescription": "让声音在直播画面中更加“跳动”。是声音可视化插件的高级版。\r\n支持多种动画效果及渐变色显示。",
+      "description": "该插件可以把直播中的声音通过不同的视觉效果显示在画面中，\r\n\r\n效果可根据声音的变化而实时产生变化，\r\n\r\n可以提升直播间的效果，对于音乐类主播来说是必不可少的。",
+      "keyWords": "波纹，波动，波型显示，波形显示器，音频波形，声音波形，音乐波形，高级声音可视化，声音实时变化，wave，声波，音频可视化高级版，波、，音乐插件,音波",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/WaveForm.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXpEa3pUbVVrVEhY",
+      "official": "https://github.com/phandasm/waveform",
+      "author": "Devin Davila",
+      "isShowOriginName": true
+    },
+    {
+      "id": "avermediacoloreditorpro",
+      "name": "圆刚大师AI调色插件",
+      "originName": "",
+      "briefDescription": "一键校正画面色彩，根据环境光搭配24色色卡实时调色，支持多种曲线调色~",
+      "description": "无需深厚的专业知识，也能轻松驾驭色彩艺术。\r\n\r\nAI色板校色，一键帮你生成真实环境颜色。\r\n\r\n同时提供专业调色工具，从基础的亮度、对比度、色彩平衡调节，到高级的曲线、色轮、HSL等。\r\n\r\n精准调整画面的每一个色彩细节，实时预览所见即所得，满足各种复杂的调色需求。",
+      "keyWords": "圆钢 色差 调色 avermedia 园刚 园钢 失真 圆钢ai",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/avermediacoloreditorprodescription1.jpg",
+        "https://resource.obsworks.com/pluginDescription/avermediacoloreditorprodescription.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/MOx3wbxwiiduHsk8OjncMwxcnNh",
+      "official": "https://www.avermedia.cn/product-detail/Streaming%20Center%20Plugin",
+      "author": "圆刚",
+      "isShowOriginName": true
+    },
+    {
+      "id": "avermediabgremoval",
+      "name": "圆刚大师AI抠像插件",
+      "originName": "",
+      "briefDescription": "AI智能抠像，无需绿幕、告别实景搭建，居家做“直播多面手”。",
+      "description": "创新AI智能算法，任何背景都能创作虚拟直播。\r\n\r\n瞬间识别主体与背景，再复杂的图像、视频也能轻松搞定。\r\n\r\n无需专业技能，一键开启高效创作。",
+      "keyWords": "圆钢 抠图 扣绿 绿幕 avermedia 园刚 园钢 ai抠图 ai透明 绿边  圆钢ai",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/AVerMediaBGRemovalBetaProdescription.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/MjgVdUP3eoT1c7xGqPmcGemOnrd",
+      "official": "https://www.avermedia.cn/product-detail/Streaming%20Center%20Plugin",
+      "author": "圆刚",
+      "isShowOriginName": true
+    },
+    {
+      "id": "ppinks",
+      "name": "屏幕画图工具（高级版）",
+      "originName": "ppInks",
+      "briefDescription": "功能丰富的屏幕标注/画画工具，在屏幕上画图，不会引起画面暂停。是极速版的免费高级版本。\r\n支持窗口采集，无需显示器采集。",
+      "description": "屏幕标注画画工具，是极速版的高级版本， 依旧免费。\r\n\r\n不会让屏幕在画图的时候暂停，很适合直播场景。\r\n\r\n功能丰富，包括手绘、线条、矩形、原型、图片、文字等等。\r\n\r\n如果仅需要涂鸦功能，可在插件中心搜索屏幕画图，选择极速版。\r\n\r\n支持OBS的窗口采集获得画面内容。",
+      "keyWords": "屏幕画图工具高级版，屏幕画图高级版，高级画图，高级屏幕画图，手绘，线条，矩形，圆形，图片，文字，图画插件，白板，窗口采集画图，画图,绘图,画笔,画画,标注，注释，板书\r\n屏幕画图,屏幕绘图,屏幕画笔,屏幕画画,屏幕标注，屏幕注释，屏幕板书\r\n桌面画图,桌面绘图,桌面画笔,桌面画画,桌面标注，桌面注释，桌面板书\r\n画笔，标记，画布，画圈，勾圈，图画，作标记，指示，圆圈，画板，画线，涂鸦\r\n写字，手写字,绘制",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/ppinksdescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/CY7LdjTAVolJVUxlBB1cFCyOnAc",
+      "official": "https://github.com/pubpub-zz/ppInk",
+      "author": "pubpub-zz",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-composite-blur",
+      "name": "模糊马赛克滤镜",
+      "originName": "",
+      "briefDescription": "对画面进行模糊或者马赛克化（像素化）。",
+      "description": "对来源或者场景，进行模糊或者马赛克化（像素化）。\r\n\r\n支持多种模糊方式，支持局部处理，支持方型、圆形模糊。\r\n\r\n参数细节较多，入门法请参考教程。\r\n\r\n请注意：在部分机器上会占用较多的GPU，这种情况请停用，大部分机器正常。",
+      "keyWords": "局部模糊，方形模糊，圆形模糊，高斯模糊，背景模糊，虚化，画面模糊，模糊滤镜，打码，遮脸，追踪马赛克，马赛克画面，mosaic，blur，一键模糊背景，画布模糊，模糊 马赛克 遮盖 遮挡 像素化 迷糊 ，不清晰，魔湖，摸湖，模湖，",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/composite-blur-description.jpg"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXFCdkN5ek1pT0ZI",
+      "official": "https://github.com/FiniteSingularity/obs-composite-blur",
+      "author": "FiniteSingularity ",
+      "isShowOriginName": true
+    },
+    {
+      "id": "advanced_masks_filter",
+      "name": "高级遮罩特效滤镜",
+      "originName": "Advanced Masks",
+      "briefDescription": "支持多层遮罩，支持各种形状的加工、旋转、缩放、边缘羽化、亮度、透明度、对比度、饱和度调整等",
+      "description": "一款功能强大的滤镜插件，适用于实现多图层、灵活控制的遮罩效果。\r\n\r\n支持进行图形、图像、源、色彩渐变、通道擦除等抠图，\r\n\r\n支持亮度、透明度、对比度、饱和度的区域调整。\r\n\r\n支持羽化效果、渐变、颜色扣除等。\r\n\r\n可分别调整每层遮罩的位置、缩放、旋转、镜像。",
+      "keyWords": "高级遮罩滤镜，蒙版，mask，图像遮罩，图形遮罩，源遮罩，渐变遮罩，通道擦除，区域调整，羽化，透明度调整，亮度调整，饱和度调整，对比度调整，颜色扣除，图层遮罩，形状",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/AdvancedMaskslogoDescrtpiton.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/Ru2JdXftZojRZgxH8DXcpI4Onid?from=space_search&ccm_open_type=space_search",
+      "official": "https://github.com/FiniteSingularity/obs-advanced-masks",
+      "author": "FiniteSingularity",
+      "isShowOriginName": true
+    },
+    {
+      "id": "gink",
+      "name": "屏幕画图工具（极速版）",
+      "originName": "gInk",
+      "briefDescription": "简洁快速的屏幕标注/画画工具，在屏幕上画图，不会引起画面暂停。\r\n需要显示器采集。",
+      "description": "免费的屏幕标注画画工具，也叫桌面板书工具。\r\n\r\n它致力于功能的简化，使得操作变得非常简单。\r\n\r\n不会让屏幕在画图的时候暂停，很适合直播场景。\r\n\r\n注意运行后在【系统托盘】区域，部分机器会被折叠起来。\r\n\r\n如需更多的功能，可在插件中心搜索屏幕画图，选择高级版（依旧免费）。\r\n\r\nOBS获得画面需要显示器采集，不支持窗口采集（ppIns支持窗口采集）。",
+      "keyWords": "屏幕画图工具极速版，屏幕画图极速版，白板，线条，箭头，批注，教学辅助，屏幕演示，ppt，画图,绘图,画笔,画画,标注，注释，板书\r\n屏幕画图,屏幕绘图,屏幕画笔,屏幕画画,屏幕标注，屏幕注释，屏幕板书\r\n桌面画图,桌面绘图,桌面画笔,桌面画画,桌面标注，桌面注释，桌面板书\r\n画笔，标记，画布，画圈，勾圈，图画，作标记，指示，圆圈，画板，画线，涂鸦\r\n写字，手写字,绘制",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/gink.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/LibUdJFuHoAuepxDLYtcwgXenKV",
+      "official": "https://github.com/geovens/gInk",
+      "author": "Weizhi Nai",
+      "isShowOriginName": true
+    },
+    {
+      "id": "freeze",
+      "name": "画面暂停滤镜",
+      "originName": "Freeze Filter ",
+      "briefDescription": "暂停画面，支持快捷键开启关闭。恢复时，被暂停的这段时间的画面不会直播出去。",
+      "description": "画面暂停滤镜，可以通过快捷键方便的暂停/恢复直播画面。\r\n\r\n比如游戏突然有不合适的画面，或者有隐私不方便直播的画面时，快速关闭直播画面，而无需中断直播。\r\n\r\n恢复时，被暂停的这段时间的画面不会直播出去。\r\n\r\n支持暂停某个区域（来源），也支持暂停整个画面（场景）。\r\n\r\n",
+      "keyWords": "暂停画面，暂停来源，暂停场景，定格，冻结画面，隐私保护，直播暂停，暂停直播画面，恢复画面，快捷暂停，pause，freeze，画面冻结，关闭直播画面，不合适画面，隐私画面，画面暂停插件，实时定格 停止 不动",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/freezedescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWVp5VG9nT3JoSU5B",
+      "official": "https://github.com/exeldro/obs-freeze-filter",
+      "author": "Exeldro ",
+      "isShowOriginName": true
+    },
+    {
+      "id": "ndi",
+      "name": "NDI插件",
+      "originName": "",
+      "briefDescription": "多设备协同，使用网络传输画面。比如无需采集卡，轻松实现双机直播。",
+      "description": "NDI（Network Device Interface）是一种由NewTek开发的网络设备接口技术，主要用于视频制作和直播领域。\r\n\r\n通过网络来高效传输高质量的视频、音频和数据流，支持实时视频流的低延迟传输，适用于双机直播、多摄像机直播、远程传输画面等场景\r\n\r\n无需使用视频采集卡，只要有网络，轻点鼠标即可实现无线双机直播。\r\n\r\n具有低延迟、高清晰度、易于集成、支持跨系统连接（如MAC、手机）等特点。\r\n\r\n此外，请注意，新版OBS-NDI改名为DistroAV。\r\n\r\n如果需要更多的控制和功能，请自行下载NDITools，从中有更加丰富的功能。\r\n\r\nNDI技术不仅是一种工具，更是创意的延伸。它让直播制作更简单、更灵活。\r\n\r\n团队成员可以分散在不同地点，实时共享视频流，协同创作，让距离不再是问题。\r\n",
+      "keyWords": "obs-ndi，OBS NDI，NDI输出，NDI采集，NDI Runtime，NDI Tools，专用NDI，专用ndo，UBS NDI，NDL，NID，DNI，DistroAV，网络传输，远程传输，低延迟传输，双机直播，无线双机，多摄像机，无需采集卡，手机传输，MAC连接，传输 双机 多播 广播 网络 局域网 另一台 传输，上行，内网，拉流，分流，nbi,nai",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/ndidescripiton.jpg",
+        "https://resource.obsworks.com/pluginDescription/ndidescription2.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/Vu0Gd4mzpoRZ3IxHgv9cSb3Nntf",
+      "official": "https://ndi.video/",
+      "author": "NewTek",
+      "isShowOriginName": true
+    },
+    {
+      "id": "chroma-key-filter-plus",
+      "name": "色度键扣绿加强版",
+      "originName": "",
+      "briefDescription": "直播中难免出现绿色物品，传统绿幕抠图会被误扣。通过设置安全区（保护区/免扣区），避开指定区域，确保画面正常展示。",
+      "description": "直播中难免会出现绿色物品（如服装、道具、商品等），在使用传统绿幕抠图时，\r\n\r\n这些内容往往会被误识别为背景，从而被一并扣除，导致画面缺失或展示异常，严重影响直播效果。\r\n\r\n为了解决这一问题，色度滤镜加强版增加了“安全区”（也称保护区/免扣区）功能。\r\n\r\n通过手动方式划定特定区域，在该区域内的内容将不参与抠图处理，从而避免被误扣。\r\n\r\n借助这一机制，即使画面中存在绿色元素，也可以在保证背景正常抠除的同时，\r\n\r\n完整保留人物或商品细节，实现更稳定、更可控的抠图效果，显著提升直播画面的专业度与观感。",
+      "keyWords": "免扣区，免抠区，误扣，绿色物品，绿色道具，绿色服装，绿色商品，色度键，色度滤镜，绿幕抠图，绿幕抠像，扣绿，抠绿，chroma，chrome key，green screen，绿幕保护，免抠保护，免扣保护，扣透明 抠透明 安全区 不遮住 保护区",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/chromaplusdescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/LDPQw5UdIioFvEkk9NDc1KZMn3g",
+      "official": "https://www.obsworks.com",
+      "author": "druid",
+      "isShowOriginName": true
+    },
+    {
+      "id": "win-capture-plus",
+      "name": "增强版窗口采集",
+      "originName": "麒麟OBS团队",
+      "briefDescription": "加强版的窗口采集，兼容更多种类窗口。",
+      "description": "加强版的窗口采集，具有更强的兼容性。\r\n\r\n能够采集更多的窗口，适应更多的情况。\r\n\r\n当原始的窗口采集无法找到窗口时，可以用此插件尝试。",
+      "keyWords": "窗口采集增强，窗口捕获，窗口采集插件，应用程序采集，应用程序窗口，采集窗口，捕获窗口，采集不到窗口，找不到窗口，兼容窗口采集，加强版窗口采集，应用程序音频采集，应用程序水平采集，窗口,采集",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/windowplusdescription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXdydGFQZXVsalda",
+      "official": "www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },
+    {
+      "id": "mvpshow",
+      "name": "团播成就",
+      "originName": "",
+      "briefDescription": "团播时，观众配合主播，获得各种成就。",
+      "description": "团播时，观众配合主播，获得各种成就。 \r\n\r\n显示今日MVP，昨日MVP，上场最多、跳舞卷王、曲库之王等。\r\n\r\n支持跳舞时长、唱歌时长和种类、弹幕礼物统计等。",
+      "keyWords": "团舞，团播统计，MVP，跳舞卷王，曲库之王，上场最多，跳舞时长，唱歌时长，才艺时长，团播榜，团播成就插件，女团，团播玩法，上屏",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/mvpshowdescrpiton.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/Yb17dIGyooWFUjxsRIkcMGpcnLb",
+      "official": "www.obsworks.com",
+      "author": "wwh",
+      "isShowOriginName": true
+    },
+    {
+      "id": "one-vs-all",
+      "name": "团播斗地主",
+      "originName": "",
+      "briefDescription": "一人守擂，多人挑战，决出舞台王者。C位 PK 多人。",
+      "description": "C位主播和其他人竞赛，C位PK多人，也就是一对多比赛。 \r\n\r\n运营人员在控制台中设置C位和普通位的 主播、对应礼物和PK时间。 \r\n\r\n画面上，会实时显示PK双方的票数情况。 \r\n\r\nPK结束之后获胜一方获得专属才艺展示时间。",
+      "keyWords": "守擂，多人挑战，C位PK，PK时间，票数，团播PK，团播比赛，才艺展示时间，一对多比赛，团播斗地主插件，斗地主互动，一对多 C位 挑战 多人PK",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/ovmoredescrpiton.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/ZrxqdFOn8oZgNBxaAuJcBEginVf",
+      "official": "www.obsworks.com",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "zoomit",
+      "name": "屏幕标注工具",
+      "originName": "ZoomIt",
+      "briefDescription": "微软官方的屏幕标注和绘图工具，教育直播和录制教程的好帮手。使用时会让画面暂停。\r\n不支持窗口采集需要显示器采集。",
+      "description": "简单方便的屏幕标注和绘图工具，教育直播和录制教程的好帮手。\r\n\r\n完全免费、易于使用、体积小巧。是微软推荐的小工具之一。\r\n\r\n绘制时屏幕会暂停，如果需要屏幕继续变化，可使用插件中心内其他的屏幕画图工具。\r\n\r\n它源自Sysinternals公司，后来此公司被微软收购，\r\n\r\n因此，有些网友也称ZoomIt为微软放大镜。\r\n\r\n通过快捷键可以很方便地调用ZoomIt三项功能：屏幕放大、屏幕标注、定时提醒。\r\n\r\n【注意】第二次启动会缩小到屏幕右下角托盘区。\r\n\r\n退出全屏操作快捷键是ESC。\r\n\r\nOBS获得画面需要显示器采集，不支持窗口采集（ppInks支持窗口采集）\r\n\r\n详细使用方法请查看本页面顶部的 【插件教程】",
+      "keyWords": "微软标注，屏幕放大，放大镜，定时提醒，教育直播，录制教程，教学辅助工具，屏幕演示，画线，箭头，批注，annotation，draw，划线，桌面标注，标记,画内容,指示,ppt,屏幕画,画笔,画画,写字,手写字",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/zoomitdescsription.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXZqT2ZIT0hOYVhY",
+      "official": "https://learn.microsoft.com/en-us/sysinternals/downloads/zoomit",
+      "author": "Sysinternals",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-info",
+      "name": "信息同步插件",
+      "originName": "",
+      "briefDescription": "将OBS信息同步弹幕助手使用",
+      "description": "将OBS信息同步弹幕助手使用",
+      "keyWords": "OBS信息同步，OBS同步，弹幕助手同步，同步到弹幕助手，数据同步，信息同步到弹幕，状态同步，同步OBS",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/obs-info-description.jpg"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWpSYkhneHBwWVJs",
+      "official": "https://www.obsworks.com/helper",
+      "author": "pluto",
+      "isShowOriginName": true
+    },
+    {
+      "id": "advanced-scene-switcher",
+      "name": "高级场景切换器",
+      "originName": "Scene Switcher",
+      "briefDescription": "解放双手，自动切换场景。\r\n比如可以在游戏开始后显示一套直播画面，游戏结束后显示另外的直播画面。（OBS28暂不支持此插件）",
+      "description": "已经支持OBS27,28,29,30,31及以上。\r\n\r\n解放双手，自动切换场景。支持定义丰富的条件，再根据条件自动进行场景的切换。\r\n\r\n安装后注意在OBS的菜单栏的【工具】中使用。\r\n\r\n建议在【通用】标签中，取消【隐藏可通过宏操作的分组栏】。\r\n\r\n比如可在游戏开始后，显示一套直播画面，而在游戏结束后，显示另外一套画面。\r\n\r\n内置丰富的触发条件和触发动作，十分强大。\r\n\r\n",
+      "keyWords": "高级切换，切换场景，自动场景，场景自动，自动切换，切镜，导播，定时切换，触发切换，条件切换，宏，advanced scene，scene switcher，高清场景切换",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/asswitch.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWXlFQm1sYUFucUFl",
+      "official": "https://github.com/WarmUpTill/SceneSwitcher",
+      "author": "Warmuptill",
+      "isShowOriginName": true
+    },
+    {
+      "id": "spectralizer",
+      "name": "声音可视化插件",
+      "originName": "spectralizer",
+      "briefDescription": "这个插件能把你的声音、游戏的声音、某个软件的声音，或者任何一个输入/输出的声音显示出来\r\n对于音乐类主播必不可少，通过一些配置和组合可以设计出非常丰富的效果。",
+      "description": "这个插件能把你的声音、游戏的声音、某个软件的声音，或者任何一个输入/输出的声音显示出来\r\n\r\n而且还有丰富的参数，可以调节出动态的音频频谱图案，就像专业的播放器那样。\r\n\r\n对于音乐类主播必不可少，通过一些配置和组合可以设计出非常丰富的效果。\r\n\r\n其他类别的主播也能增加不少趣味（惊叫提示）",
+      "keyWords": "音频可视化，音乐可视化，频谱，声波，声纹，声音显示，声音图案，专业播放器，spectralizer，spectrum，音频动效，声音动效，声音跳动，音波显示，声音波形，音乐插件,音波,波形图",
+      "previewImages": [
+        "https://resource.obsworks.com/plugininfo/spectralizer/2.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/QURjd87VsobocoxY9fxcSW5Inpd",
+      "official": "https://github.com/univrsal/spectralizer",
+      "author": "universallp",
+      "isShowOriginName": true
+    },
+    {
+      "id": "source-switcher",
+      "name": "来源轮播插件",
+      "originName": "Source Switcher ",
+      "briefDescription": "根据设定的时间条件或者媒体状态，切换来源是否显示。可以达到同位置轮播或者更精彩的效果。",
+      "description": "同位置轮播，或者需要发挥想象力的达到更精彩效果的一个插件。\r\n\r\n将不同来源通过定义的时间进行轮流显示和隐藏。支持过场动画。支持文件导入列表。支持媒体状态切换。\r\n\r\n请注意，不同的OBS版本，对应不同版本的来源轮播插件，\r\n\r\n如果需要使用最新版本，请使用OBS31及以上。",
+      "keyWords": "视频轮播，图片轮播，来源切换，轮流显示，轮流隐藏，媒体轮播，轮播源，来源列表，文件导入列表，过场轮播，创意轮播，自动轮播，随机播放，幻灯片，来源轮播助手",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/sourceswitcher.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWUtqUnFwV3pmeFFK",
+      "official": "https://github.com/exeldro/obs-source-switcher",
+      "author": "Exeldro",
+      "isShowOriginName": true
+    },
+    {
+      "id": "scale-to-sound",
+      "name": "随声而动滤镜",
+      "originName": "Scale To Sound",
+      "briefDescription": "这个滤镜可以根据某个声音的大小，让来源变大变小。\r\n比如让画面跟着快节奏的背景音乐一起闪动。",
+      "description": "这个滤镜可以根据某个声音的大小，让来源变大变小。\r\n\r\n比如让画面跟着快节奏的背景音乐一起闪动。",
+      "keyWords": "随身，随心，随声律动，随声抖动，随声波动，随音而动，声随而动，声动，闻声，问声起舞，音随，音动，音律跳动，声音律动，声音跳动，声音抖动，音频抖动，画面跟着声音，画随，声音变大变小，声控缩放，sca，随声耳动，随声耳洞，随声耳朵，随声音，sui，声音变换",
+      "previewImages": [
+        "https://resource.obsworks.com/plugininfo/Scale-To-Sound/logo2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWWpKeUJoR2lWV3hj",
+      "official": "https://github.com/Qufyy/obs-scale-to-sound",
+      "author": "Qufy",
+      "isShowOriginName": true
+    },
+    {
+      "id": "move-transition",
+      "name": "转场移动特效插件",
+      "originName": "Move transition",
+      "briefDescription": "华丽的转场特效，做出专业的转场特效。支持的丰富的触发条件和效果显示。",
+      "description": "OBS27支持自动安装。OBS28、29及以上暂时不支持此版本，请手动安装，\r\n\r\n华丽的转场特效，做出专业的转场特效。支持的丰富的触发条件和效果显示。\r\n\r\n需要想象力，比如各种变形、旋转、移动，过渡动画，做出丝滑的转场效果。\r\n\r\n再比如想要说话的时候图片亮起来，或者图片可以跟随自己的歌声跳动。",
+      "keyWords": "移动转场，转场特效，转场动画，高级转场，转场切换，丝滑转场，平移，旋转转场，过渡动画，过渡特效，画面移动，图片跟随歌声，说话图片亮起，move，motion effect，motion-effect，画面左右摇摆，随机位移，运镜，推拉，推镜",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/Movetransition2.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWU9oR0d1U1NOY25n",
+      "official": "https://github.com/exeldro/obs-move-transition",
+      "author": "bozbez",
+      "isShowOriginName": true
+    },
+    {
+      "id": "vst-demo-plugins",
+      "name": "VST插件集成包",
+      "originName": "VST Plugins",
+      "briefDescription": "VST插件的集成包，已经兼容了OBS Studio，用于新人快速入门。",
+      "description": "VST 是虚拟演播室技术（Virtual Studio Technology）的缩写，是各类录音师和工程师的宝贵资源。\r\n\r\n在过去的几十年里，这些插件在提高音频项目的质量和创意极限方面发挥了重要作用。\r\n\r\n简单来说，市面上有成千上万的VST插件，能够帮助加强音频效果、模拟乐器、消除噪音和回声等等。\r\n\r\nVST分为VST3和VST2.X的版本，而OBS自带的VST加载插件是VST2.X,目前仍然不支持VST3（在研发，但是短期希望很小）。\r\n\r\nVST2.X的插件包括免费和付费的插件。\r\n\r\n本演示包收集了几个免费的VST2.X的插件，并适配了OBSStudio，打包成了一键安装包，从而便于新人进行安装使用。\r\n\r\n更多的VST插件需要自行搜索下载。",
+      "keyWords": "VST2，虚拟演播室，音频插件，音频滤镜，消除噪音，回声，混响，均衡器，压缩，reaplug，ReaFir，ReaComp，ReaStream，TDR，FabFilter，studio rack，ValhallaVintageVerb，little alter boy，OBS Audio Compressor，vst3，reaper，降噪,噪音,声音",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/vst2.png",
+        "https://resource.obsworks.com/pluginDescription/vst3.png",
+        "https://resource.obsworks.com/pluginDescription/vst1.png",
+        "https://resource.obsworks.com/pluginDescription/vst4.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/docx/GQ96dQlYJoX6nJxMGoJcHI6UnWd",
+      "official": "https://www.audiopluginsforfree.com/free-vst/",
+      "author": "audiopluginsforfree",
+      "isShowOriginName": true
+    },
+    {
+      "id": "obs-text-slideshow",
+      "name": "文字轮播插件",
+      "originName": "text-slideshow",
+      "briefDescription": "黄金位置轮播文字，解决直播间文字位有限的问题。支持各种过渡特效。已支持OBS27、29等",
+      "description": "黄金位置轮播文字，解决直播间文字位有限的问题。\r\n\r\n本插件支持从文本文件中读取内容，支持各种过渡特效，支持设置轮播速度等，参数丰富，可以调整出不错的效果。\r\n\r\n已经优化支持了OBS27、29等版本。",
+      "keyWords": "轮播文字，文字滚动，滚动文字，滚动字幕，字幕滚动，跑马灯，滚屏，文字幻灯片，文本轮播，文本读取，文本文件读取，直播文字，公告轮播，横幅文字，文字过渡，滚动、，文子连播，文字连播",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/text-slideshow.png"
+      ],
+      "guideUrl": "https://docs.qq.com/doc/DWVJhR3NKU1BnR0ZX",
+      "official": "https://github.com/jbwong05/obs-text-slideshow/releases",
+      "author": "yc",
+      "isShowOriginName": true
+    },
+    {
+      "id": "alpha-filter",
+      "name": "半透明滤镜",
+      "originName": "",
+      "briefDescription": "一键调节 OBS 内视频、图片、摄像头、游戏等元素的透明度，\r\n打造分层直播视觉效果，提升直播间质感与观众观看体验。",
+      "description": "半透明滤镜可对视频、图片、游戏、摄像头等多种来源进行精细化透明度调节。\r\n\r\n通过灵活控制画面叠加与视觉层级，帮助主播轻松实现多元素融合展示。\r\n\r\n无论是增强UI层次、优化信息展示，还是营造氛围感，提升直播间的专业质感。",
+      "keyWords": "透明效果，画面透明，窗口透明，来源透明，透明背景，透明化，毛玻璃，淡化，透明窗口，透明图层，图层透明，透明遮罩，背景透明，人物透明，透明叠加，低透明度，半透明 不透明 不遮住 穿透 穿过 透明度 视频半透明 视频羽化 视频透明",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/alphadescription.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/KqFwwAHnIipb3kkdneQcCwTrn1e",
+      "official": "https://www.obsworks.com",
+      "author": "druid",
+      "isShowOriginName": true
+    },
+    {
+      "id": "color-monitor",
+      "name": "示波器",
+      "originName": "",
+      "briefDescription": "用于实时监测画面的颜色分布、亮度和色彩平衡，方便调整摄像头或视频源的色彩效果。",
+      "description": "这个 OBS 滤镜提供了三种专业级色彩监视工具，用来实时分析画面的颜色、亮度与曝光情况，特别适合多摄像头直播、调色和画面统一。\r\n\r\n【Vectorscope（矢量示波器）】 \r\n\r\n主要用于观察画面的颜色偏向、饱和度以及色相是否准确，它会把颜色以圆形分布图的方式显示出来。\r\n\r\n通过它可以很直观地发现画面是否偏红、偏绿、偏蓝，人物肤色是否正常，以及多个摄像头之间的色彩是否一致。\r\n\r\n例如一个摄像头偏黄、RGB 灯光导致肤色异常、不同机位色温不统一等问题，都能很容易看出来。\r\n\r\n【Waveform（波形图）】 \r\n\r\n主要用于分析画面的亮度与曝光，它会把整张画面的亮度从左到右映射成波形，\r\n\r\n因此可以直观看到暗部、高光和整体亮度分布。它非常适合检查是否过曝、黑色是否发灰、对比度是否合理，\r\n\r\n以及多个摄像头亮度是否统一。例如主摄太亮、副摄太暗、背景灯过曝发白等问题，都能通过波形图快速定位。\r\n\r\n【Histogram（直方图）】\r\n \r\n统计整张画面中黑色、中间调和高光区域的数量分布，也就是常见的亮度统计图。\r\n\r\n它适合用来判断画面整体是否偏暗、是否过曝、动态范围是否正常，并辅助调整 Gamma、亮度和对比度。\r\n\r\n例如图像数据大量堆积在左侧说明画面过暗，集中在右侧说明过曝，而中间层次不足则往往意味着画面发灰、缺乏立体感。",
+      "keyWords": "颜色调整",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/colormonitordescription.jpg"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/LXc3wykoliFTGvkxRlHc0vBGnWg",
+      "official": "https://github.com/norihiro/obs-color-monitor",
+      "author": "norihiro",
+      "isShowOriginName": true
+    },
+    {
+      "id": "welcome-fx",
+      "name": "进场特效",
+      "originName": "",
+      "briefDescription": "进场特效",
+      "description": "进场特效",
+      "keyWords": "入场特效，欢迎特效，欢迎动画，欢迎进场，用户进场，观众进场，直播间欢迎，进房特效，入场动画，开场动画，礼物进场，头像进场，嘉宾进场，飘屏进场，欢迎入场，进入直播间特效，直播间动画，进场动画，欢迎光临，炫酷进场，进场特效",
+      "previewImages": [
+        "https://resource.obsworks.com/pluginDescription/giftgoal-description.png"
+      ],
+      "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/UJwJwAojJiZlKHkdaTxcoTLknsf",
+      "official": "https://www.obsworks.com",
+      "author": "麒麟OBS团队",
+      "isShowOriginName": true
+    },   {
+        "id": "growth-goal",
+        "name": "成长目标",
+        "originName": "",
+        "briefDescription": "开播目标，包括点赞数、礼物数、弹幕数、新关注数、分享次数、入场人数等，可以自由搭配组合设置",
+        "description": "让主播可以为自己制定一个专属开播目标。\r\n\r\n包括点赞数、礼物数、弹幕数、新增关注数、分享直播间次数、观众入场人数等不同维度都可以自由搭配组合设置。\r\n\r\n支持实时显示目标完成进度。支持横竖屏排列。\r\n\r\n主播可以设置奖励节目吸引观众积极参与，增加直播间活跃度和观众互动热情。",
+        "keyWords": "直播目标 直播任务 粉丝目标 关注目标 点赞目标 礼物目标 统计 目的进度 要求",
+        "previewImages": ["https://resource.obsworks.com/pluginDescription/growthdescription.png"],
+        "guideUrl": "https://vmmbvgdeeg.feishu.cn/wiki/VR16wMWaSiIRgNkhIMecp6vInjd",
+        "official": "https://www.obsworks.com",
+        "author": "jack",
+        "isShowOriginName": true
+    }
+    
+  ],
+  "errors": null
+}

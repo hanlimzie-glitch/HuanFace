@@ -1,0 +1,16 @@
+{
+  "proxies": [
+    {
+      "username": "85vk",
+      "password": "85vku",
+      "ip": "183.131.35.94",
+      "port": 20252
+    },
+    {
+      "username": "obsproxy",
+      "password": "nCzPVD4B",
+      "ip": "gateway.obshelp.com",
+      "port": 10080
+    }
+  ]
+}

@@ -2,21 +2,24 @@
 Build: Sep 30 2026 13:37:20
 Platform: Windows ΓÇö Real D3D11 runtime, production HLSL, no fallback, real GPU TIMESTAMP queries
 [D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/beauty_common.hlsl
-[D3D11] PS file compiled with entry point: main file: 
+[D3D11] PS file compiled with entry point: PSSmoothing file: ../sdk/src/rendering/shaders/beauty_smoothing.hlsl
+[D3D11] PS file compiled with entry point: PSTextureRefinement file: ../sdk/src/rendering/shaders/beauty_texture.hlsl
+[D3D11] PS file compiled with entry point: PSBlemishReduction file: ../sdk/src/rendering/shaders/beauty_blemish.hlsl
 [D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
 [D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
 [D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/makeup_common.hlsl
-[D3D11] PS file compiled with entry point: main file: 
 [D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
 [D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
 [D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
 [D3D11] PS file compiled with entry point: PSBlush file: ../sdk/src/rendering/shaders/makeup_blush.hlsl
 [D3D11] PS file compiled with entry point: PSEyeshadow file: ../sdk/src/rendering/shaders/makeup_eye.hlsl
 [D3D11] PS compiled with entry point: main
+[D3D11] PS file compiled with entry point: PSSmoothing file: ../sdk/src/rendering/shaders/beauty_smoothing.hlsl
+[D3D11] PS file compiled with entry point: PSTextureRefinement file: ../sdk/src/rendering/shaders/beauty_texture.hlsl
+[D3D11] PS file compiled with entry point: PSBlemishReduction file: ../sdk/src/rendering/shaders/beauty_blemish.hlsl
 [D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
 [D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
 [D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/makeup_common.hlsl
-[D3D11] PS file compiled with entry point: main file: 
 [D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
 [D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
 [D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
@@ -129,21 +132,21 @@ Platform: Windows ΓÇö Real D3D11 runtime, production HLSL, no fallback, real 
 WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured) MSBuild 17.14.60 SDK 10.0.26100.0
 D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED Windows D3D11CreateDevice
 AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
-ShaderCompileTests: FAIL - FAIL: Production HLSL compile 9/12 ΓÇö beauty_common.hlsl[VSMain] PASS; beauty_smoothing.hlsl[PSSmoothing] FAIL; beauty_texture.hlsl[PSTextureRefinement] FAIL; beauty_blemish.hlsl[PSBlemishReduction] FAIL; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  ΓÇö GATE 1 no fallback, must FIX root cause, include handler may have failed X1505
+ShaderCompileTests: PASS - PASS: Production HLSL compile 12/12 ΓÇö MEASURED Windows D3DCompile VS_5_0/PS_5_0 ID3DBlob valid ID3D11VertexShader/PixelShader valid, no fallback, include handler PASS ΓÇö beauty_common.hlsl[VSMain] PASS; beauty_smoothing.hlsl[PSSmoothing] PASS; beauty_texture.hlsl[PSTextureRefinement] PASS; beauty_blemish.hlsl[PSBlemishReduction] PASS; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  CPU compile 279.990600ms [CPU Beauty=0ms CPU ShaderCompile=279.991ms CPU Prep=0ms GPU Rendering=0ms GPU Valid=0 Disjoint=0]
 GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
-TextureTests: PASS - PASS: Texture creation CPU preparation 0.109600ms, CPU CreateTexture API 2.913300ms, GPU rendering (Clear using texture) 0.000000ms timestamp valid=0 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=2.9133ms CPU ShaderCompile=0ms CPU Prep=0.1096ms GPU Rendering=0ms GPU Valid=0 Disjoint=0]
-RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.352100ms, GPU rendering 0.014240ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.3521ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.01424ms GPU Valid=1 Disjoint=0]
-GPUBeautyRenderTests: FAIL - FAIL: Production HLSL compile failed ΓÇö beauty_smoothing.hlsl[PSSmoothing] FAIL compile no fallback; beauty_texture.hlsl[PSTextureRefinement] FAIL compile no fallback; beauty_blemish.hlsl[PSBlemishReduction] FAIL compile no fallback; beauty_tone.hlsl[PSToneAdjustment] PASS ID3D11PixelShader valid; beauty_adjustment.hlsl[PSBrightness] PASS ID3D11PixelShader valid;  ΓÇö GATE 1 no fallback, must FIX include handler X1505
-GPUMakeupRenderTests: PASS - PASS: GPU makeup execution production shaders makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes Normal/Multiply/Screen/Overlay GPU EXECUTED Draw with production HLSL ΓÇö no fallback, shader objects valid ΓÇö CPU compile 146.145800ms, GPU rendering 0.149984ms timestamp valid=1 ΓÇö MEASURED Windows [CPU Beauty=0ms CPU ShaderCompile=146.146ms CPU Prep=0ms GPU Rendering=0.149984ms GPU Valid=1 Disjoint=0]
+TextureTests: PASS - PASS: Texture creation CPU preparation 0.128200ms, CPU CreateTexture API 3.499800ms, GPU rendering (Clear using texture) 0.000640ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=3.4998ms CPU ShaderCompile=0ms CPU Prep=0.1282ms GPU Rendering=0.00064ms GPU Valid=1 Disjoint=0]
+RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.453200ms, GPU rendering 0.013504ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.4532ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.013504ms GPU Valid=1 Disjoint=0]
+GPUBeautyRenderTests: PASS - PASS: GPU beauty execution production shaders beauty_smoothing.hlsl[PSSmoothing] PASS ID3D11PixelShader valid; beauty_texture.hlsl[PSTextureRefinement] PASS ID3D11PixelShader valid; beauty_blemish.hlsl[PSBlemishReduction] PASS ID3D11PixelShader valid; beauty_tone.hlsl[PSToneAdjustment] PASS ID3D11PixelShader valid; beauty_adjustment.hlsl[PSBrightness] PASS ID3D11PixelShader valid;  GPU EXECUTED Draw with production HLSL PSSmoothing/PSTextureRefinement/PSBlemishReduction/PSToneAdjustment/PSBrightness ΓÇö no fallback, include handler PASS, shader objects ID3D11PixelShader valid, VSSetShader/PSSetShader/Draw ΓÇö CPU compile 113.080200ms, GPU rendering 0.815200ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=0ms CPU ShaderCompile=113.08ms CPU Prep=0ms GPU Rendering=0.8152ms GPU Valid=1 Disjoint=0]
+GPUMakeupRenderTests: PASS - PASS: GPU makeup execution production shaders makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes Normal/Multiply/Screen/Overlay GPU EXECUTED Draw with production HLSL ΓÇö no fallback, shader objects valid ΓÇö CPU compile 157.588800ms, GPU rendering 0.143840ms timestamp valid=1 ΓÇö MEASURED Windows [CPU Beauty=0ms CPU ShaderCompile=157.589ms CPU Prep=0ms GPU Rendering=0.14384ms GPU Valid=1 Disjoint=0]
 CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
 ResourcePoolTests: PASS - PASS: ResourcePool CPU reuse PASS, GPU reuse PASS (400x400 same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
-PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 63.527367ms smoothing 51.226425ms texture 5.889878ms blemish 6.583177ms total CPU beauty 127.226847ms, CPU shader compile 10.413000ms prep 2.972100ms, GPU rendering 0.058865ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=127.227ms CPU ShaderCompile=10.413ms CPU Prep=2.9721ms GPU Rendering=0.0588653ms GPU Valid=1 Disjoint=0]
-ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1596.591100ms CPU compile 33.329900ms prep 10.130800ms GPU rendering 0.279456ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 64.132200ms smooth 17.605400ms CPU compile 10.959900ms prep 2.930100ms GPU 0.251744ms; 1280x720 CPU mask 387.832700ms smooth 75.246200ms CPU compile 10.764700ms prep 2.758600ms GPU 0.012160ms; 1920x1080 CPU mask 908.110500ms smooth 143.664100ms CPU compile 11.605300ms prep 4.442100ms GPU 0.015552ms;  [CPU Beauty=1596.59ms CPU ShaderCompile=33.3299ms CPU Prep=10.1308ms GPU Rendering=0.279456ms GPU Valid=0 Disjoint=0]
-MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 409.021500ms CPU prep 4.351400ms GPU rendering 0.254816ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000100ms CPU prep 0.008100ms GPU rendering 0.000000ms; 1 faces CPU mask 69.859500ms CPU prep 3.096400ms GPU rendering 0.231008ms; 2 faces CPU mask 136.560700ms CPU prep 0.655700ms GPU rendering 0.010976ms; 3 faces CPU mask 202.601200ms CPU prep 0.591200ms GPU rendering 0.012832ms;  [CPU Beauty=409.022ms CPU ShaderCompile=0ms CPU Prep=4.3514ms GPU Rendering=0.254816ms GPU Valid=0 Disjoint=0]
-ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1727.174700ms CPU prep 3.525000ms GPU rendering 0.053440ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 62.160800ms CPU prep 2.272800ms GPU 0.009216ms; 1280x720 CPU 375.586900ms CPU prep 0.370600ms GPU 0.012288ms; 1920x1080 CPU 850.232600ms CPU prep 0.880200ms GPU 0.016128ms; 1280x720 CPU 376.618000ms CPU prep 0.000900ms GPU 0.007936ms; 400x400 CPU 62.576400ms CPU prep 0.000500ms GPU 0.007872ms;  [CPU Beauty=1727.17ms CPU ShaderCompile=0ms CPU Prep=3.525ms GPU Rendering=0.05344ms GPU Valid=0 Disjoint=0]
+PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 65.875278ms smoothing 52.620863ms texture 6.174839ms blemish 6.683668ms total CPU beauty 131.354648ms, CPU shader compile 11.310700ms prep 4.005200ms, GPU rendering 0.057659ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=131.355ms CPU ShaderCompile=11.3107ms CPU Prep=4.0052ms GPU Rendering=0.0576589ms GPU Valid=1 Disjoint=0]
+ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1537.421600ms CPU compile 32.415400ms prep 12.069900ms GPU rendering 0.128672ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 63.429500ms smooth 17.617400ms CPU compile 10.962400ms prep 4.336200ms GPU 0.101696ms; 1280x720 CPU mask 380.143400ms smooth 75.104700ms CPU compile 10.861300ms prep 3.665800ms GPU 0.011168ms; 1920x1080 CPU mask 857.689600ms smooth 143.437000ms CPU compile 10.591700ms prep 4.067900ms GPU 0.015808ms;  [CPU Beauty=1537.42ms CPU ShaderCompile=32.4154ms CPU Prep=12.0699ms GPU Rendering=0.128672ms GPU Valid=0 Disjoint=0]
+MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 470.830300ms CPU prep 4.169000ms GPU rendering 0.034304ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000000ms CPU prep 0.027700ms GPU rendering 0.000000ms; 1 faces CPU mask 90.940600ms CPU prep 2.745600ms GPU rendering 0.011392ms; 2 faces CPU mask 178.932100ms CPU prep 0.565400ms GPU rendering 0.010336ms; 3 faces CPU mask 200.957600ms CPU prep 0.830300ms GPU rendering 0.012576ms;  [CPU Beauty=470.83ms CPU ShaderCompile=0ms CPU Prep=4.169ms GPU Rendering=0.034304ms GPU Valid=0 Disjoint=0]
+ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1728.218100ms CPU prep 3.593100ms GPU rendering 0.053568ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 64.406700ms CPU prep 2.333600ms GPU 0.011232ms; 1280x720 CPU 377.086900ms CPU prep 0.848200ms GPU 0.012288ms; 1920x1080 CPU 846.357000ms CPU prep 0.409900ms GPU 0.015744ms; 1280x720 CPU 377.090900ms CPU prep 0.000800ms GPU 0.007808ms; 400x400 CPU 63.276600ms CPU prep 0.000600ms GPU 0.006496ms;  [CPU Beauty=1728.22ms CPU ShaderCompile=0ms CPU Prep=3.5931ms GPU Rendering=0.053568ms GPU Valid=0 Disjoint=0]
 ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
 
-=== Summary: PASS=14 FAIL=2 NOT_EXECUTED=0 Total=16 ===
+=== Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16 ===
 
 === Real Performance Benchmark ΓÇö 3 Resolutions ΓÇö MEASURED ===
 Method: Warm-up 10 frames, Measured 100 frames avg, CPU chrono, GPU ID3D11Query TIMESTAMP_DISJOINT/TIMESTAMP per GATE 5,7,8
@@ -252,7 +255,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 400x400 | 63.5486 | 51.7186 | 6.01829 | 6.48352 | 127.769 | 10.433 | 4.4374 | 0.0445082 | 1 | 0 |
+| 400x400 | 63.3996 | 51.8649 | 6.0668 | 6.58011 | 127.911 | 10.4059 | 2.9843 | 0.0711574 | 1 | 0 |
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -354,7 +357,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 1280x720 | 378.607 | 224.844 | 27.1142 | 29.3576 | 659.923 | 13.8052 | 9.932 | 0.05688 | 1 | 0 |
+| 1280x720 | 378.602 | 223.406 | 27.5097 | 29.5403 | 659.058 | 12.1047 | 10.0236 | 0.0858678 | 1 | 0 |
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -456,7 +459,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 1920x1080 | 861.749 | 435.939 | 53.9369 | 58.2993 | 1409.92 | 11.5549 | 9.6823 | 0.0545514 | 1 | 0 |
+| 1920x1080 | 863.975 | 435.482 | 54.7185 | 59.8047 | 1413.98 | 11.194 | 13.4055 | 0.0552534 | 1 | 0 |
 
 === Phase 8D Shader Verification ===
 Production shaders: beauty_common, beauty_smoothing, beauty_texture, beauty_blemish, beauty_tone, beauty_adjustment, makeup_common, makeup_blend, makeup_foundation, makeup_lip, makeup_blush, makeup_eye

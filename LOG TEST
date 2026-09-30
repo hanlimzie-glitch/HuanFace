@@ -1,34 +1,92 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
 PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
-remote: Enumerating objects: 11, done.
-remote: Counting objects: 100% (11/11), done.
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
 remote: Compressing objects: 100% (1/1), done.
-remote: Total 6 (delta 5), reused 6 (delta 5), pack-reused 0 (from 0)
-Unpacking objects: 100% (6/6), 1.38 KiB | 88.00 KiB/s, done.
+remote: Total 9 (delta 8), reused 9 (delta 8), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 9.28 KiB | 380.00 KiB/s, done.
 From https://github.com/hanlimzie-glitch/HuanFace
  * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
-   82f5c08..089419e  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-Updating 82f5c08..089419e
+   5a9c4d0..c96f130  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+Updating 5a9c4d0..c96f130
 Fast-forward
- sdk/src/face/inference_backend.cpp | 130 ++++++++++---------------------------
- 1 file changed, 36 insertions(+), 94 deletions(-)
+ sdk/src/rendering/d3d11/d3d11_backend.cpp |  203 +++++-
+ tests/test_phase8.cpp                     | 1018 +++++++++++++++--------------
+ 2 files changed, 715 insertions(+), 506 deletions(-)
 PS D:\sdk\HuanFace> cd build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
-  inference_backend.cpp
-  HuanFacePhase8Tests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFacePhase8Tests.exe
-  inference_backend.cpp
+  d3d11_backend.cpp
+  test_phase8.cpp
+D:\sdk\HuanFace\tests\test_phase8.cpp(265,25): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
+cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(324,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
+cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(452,20): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
+cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(570,20): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
+cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(796,24): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
+cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(921,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
+cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(1014,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot a
+ccess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(1099,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot a
+ccess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
+      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
+      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
+      see declaration of 'huanface::D3D11Backend'
+
+  Generating Code...
+  d3d11_backend.cpp
   HuanFaceTests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFaceTests.exe
-  inference_backend.cpp
+  d3d11_backend.cpp
   basic_desktop.vcxproj -> D:\sdk\HuanFace\build\Release\basic_desktop.exe
-  inference_backend.cpp
+  d3d11_backend.cpp
   basic_face_demo.vcxproj -> D:\sdk\HuanFace\build\Release\basic_face_demo.exe
-  inference_backend.cpp
+  d3d11_backend.cpp
   beauty_demo.vcxproj -> D:\sdk\HuanFace\build\Release\beauty_demo.exe
-  inference_backend.cpp
+  d3d11_backend.cpp
   huanface.vcxproj -> D:\sdk\HuanFace\build\Release\huanface.dll
-  inference_backend.cpp
+  d3d11_backend.cpp
   makeup_demo.vcxproj -> D:\sdk\HuanFace\build\Release\makeup_demo.exe
 PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe
 === HuanFace SDK Phase 7 Tests ===
@@ -324,16 +382,16 @@ D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked
 AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
 ShaderCompileTests: PASS - PASS: HLSL compile via D3DCompile VS/PS succeeded ΓÇö MEASURED Windows 8/8 files, D3D11CreateVertexShader/PixelShader
 GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
-TextureTests: PASS - PASS: Texture creation CPU EXECUTED 0.112500ms, GPU EXECUTED D3D11 CreateTexture 400x400/720p/1080p 3.790900ms ΓÇö MEASURED Windows [CPU=0.1125ms GPU=3.7909ms Total=3.9034ms]
-RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p GPU EXECUTED 2.102500ms ΓÇö MEASURED Windows [CPU=0ms GPU=2.1025ms Total=0ms]
-GPUBeautyRenderTests: PASS - PASS: GPU beauty execution smoothing bilateral-like, texture, blemish, tone, brightness, contrast, retouch using mask+params+input+HLSL+RT GPU EXECUTED 1.154700ms ΓÇö MEASURED Windows D3D11 SetRenderTarget/Clear/Draw/EndFrame [CPU=0ms GPU=1.1547ms Total=0ms]
-GPUMakeupRenderTests: PASS - PASS: GPU makeup execution foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes GPU EXECUTED 1.444800ms ΓÇö MEASURED Windows D3D11 blend modes Normal/Multiply/Screen/Overlay [CPU=0ms GPU=1.4448ms Total=0ms]
+TextureTests: PASS - PASS: Texture creation CPU EXECUTED 0.152600ms, GPU EXECUTED D3D11 CreateTexture 400x400/720p/1080p 2.777100ms ΓÇö MEASURED Windows [CPU=0.1526ms GPU=2.7771ms Total=2.9297ms]
+RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p GPU EXECUTED 2.387400ms ΓÇö MEASURED Windows [CPU=0ms GPU=2.3874ms Total=0ms]
+GPUBeautyRenderTests: PASS - PASS: GPU beauty execution smoothing bilateral-like, texture, blemish, tone, brightness, contrast, retouch using mask+params+input+HLSL+RT GPU EXECUTED 1.046100ms ΓÇö MEASURED Windows D3D11 SetRenderTarget/Clear/Draw/EndFrame [CPU=0ms GPU=1.0461ms Total=0ms]
+GPUMakeupRenderTests: PASS - PASS: GPU makeup execution foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes GPU EXECUTED 1.372100ms ΓÇö MEASURED Windows D3D11 blend modes Normal/Multiply/Screen/Overlay [CPU=0ms GPU=1.3721ms Total=0ms]
 CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT creation valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
 ResourcePoolTests: PASS - PASS: ResourcePool CPU MEASURED reuse PASS (400x400 acquire/release/reuse, resize, shutdown no leak), GPU MEASURED reuse PASS (400x400 texture same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
-PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 65.098664ms, smoothing 51.277534ms, texture 5.936342ms, blemish 6.463451ms, total CPU beauty 128.775991ms, GPU texture 0.139584ms, RT 0.015373ms, shader 2.279613ms, draw 0.374099ms, total GPU 2.808669ms ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup [CPU=128.776ms GPU=2.80867ms Total=128.776ms]
-ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p ΓÇö mask/beauty valid, no crash, CPU EXECUTED 1519.222500ms, GPU EXECUTED texture+RT creation 12.589300ms ΓÇö MEASURED Windows 400x400 CPU mask 63.251400ms smooth 16.991100ms GPU 3.388300ms; 1280x720 CPU mask 376.551000ms smooth 73.454700ms GPU 4.692100ms; 1920x1080 CPU mask 846.478400ms smooth 142.495900ms GPU 4.508900ms;  [CPU=1519.22ms GPU=12.5893ms Total=0ms]
-MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU EXECUTED 403.079100ms, GPU EXECUTED texture per face 3.599200ms ΓÇö MEASURED Windows 0 faces CPU 0.000000ms GPU 0.000100ms; 1 faces CPU 65.640800ms GPU 2.365900ms; 2 faces CPU 134.885300ms GPU 0.592900ms; 3 faces CPU 202.553000ms GPU 0.640300ms;  [CPU=403.079ms GPU=3.5992ms Total=0ms]
-ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU EXECUTED 1743.188600ms, GPU EXECUTED AcquireTexture/RT 2.930900ms ΓÇö MEASURED Windows 400x400 CPU 63.379000ms GPU 2.088900ms; 1280x720 CPU 379.424500ms GPU 0.414500ms; 1920x1080 CPU 859.019900ms GPU 0.424900ms; 1280x720 CPU 377.476900ms GPU 0.001500ms; 400x400 CPU 63.888300ms GPU 0.001100ms;  [CPU=1743.19ms GPU=2.9309ms Total=0ms]
+PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 66.888095ms, smoothing 52.657918ms, texture 6.216006ms, blemish 6.761550ms, total CPU beauty 132.523569ms, GPU texture 0.150352ms, RT 0.019176ms, shader 2.511745ms, draw 0.369384ms, total GPU 3.050657ms ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup [CPU=132.524ms GPU=3.05066ms Total=132.524ms]
+ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p ΓÇö mask/beauty valid, no crash, CPU EXECUTED 1578.224600ms, GPU EXECUTED texture+RT creation 11.896700ms ΓÇö MEASURED Windows 400x400 CPU mask 65.398300ms smooth 17.713500ms GPU 2.954200ms; 1280x720 CPU mask 386.414800ms smooth 74.802200ms GPU 3.269200ms; 1920x1080 CPU mask 886.536700ms smooth 147.359100ms GPU 5.673300ms;  [CPU=1578.22ms GPU=11.8967ms Total=0ms]
+MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU EXECUTED 412.617900ms, GPU EXECUTED texture per face 3.133000ms ΓÇö MEASURED Windows 0 faces CPU 0.000000ms GPU 0.000100ms; 1 faces CPU 67.609600ms GPU 2.263600ms; 2 faces CPU 137.100200ms GPU 0.367700ms; 3 faces CPU 207.908100ms GPU 0.501600ms;  [CPU=412.618ms GPU=3.133ms Total=0ms]
+ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU EXECUTED 1792.226200ms, GPU EXECUTED AcquireTexture/RT 3.303400ms ΓÇö MEASURED Windows 400x400 CPU 66.173300ms GPU 2.309200ms; 1280x720 CPU 394.634700ms GPU 0.543600ms; 1920x1080 CPU 878.674500ms GPU 0.448900ms; 1280x720 CPU 385.448800ms GPU 0.000900ms; 400x400 CPU 67.294900ms GPU 0.000800ms;  [CPU=1792.23ms GPU=3.3034ms Total=0ms]
 ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
 
 === Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16 ===
@@ -342,7 +400,7 @@ ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shade
 Method: Warm-up 10 frames, Measured 100 frames avg, chrono high_resolution_clock, D3D11 timestamp queries for GPU
 | Resolution | CPU Mask | CPU Smoothing | CPU Texture | CPU Blemish | CPU Total | GPU Texture | GPU RT | GPU Shader | GPU Draw | GPU Total |
 |------------|----------|---------------|-------------|-------------|-----------|-------------|--------|------------|----------|-----------|
-| 400x400 | 64.684 | 51.6831 | 6.05217 | 6.5303 | 128.95 | 0.176898 | 0.014815 | 2.25026 | 0.315239 | 2.75721 |
-| 1280x720 | 380.992 | 222.897 | 27.3794 | 29.1797 | 660.448 | 0.477376 | 0.017395 | 2.41085 | 0.338406 | 3.24403 |
-| 1920x1080 | 864.723 | 433.481 | 55.1662 | 58.2738 | 1411.64 | 0.965931 | 0.021335 | 2.55371 | 0.324399 | 3.86537 |
+| 400x400 | 65.6216 | 52.8372 | 6.14423 | 6.71577 | 131.319 | 0.196735 | 0.015511 | 2.51424 | 0.36265 | 3.08913 |
+| 1280x720 | 392.761 | 230.005 | 28.3636 | 30.0514 | 681.18 | 0.48318 | 0.018859 | 2.46221 | 0.356381 | 3.32063 |
+| 1920x1080 | 888.25 | 444.6 | 55.8531 | 59.0316 | 1447.73 | 1.15699 | 0.029197 | 2.91784 | 0.386477 | 4.4905 |
 PS D:\sdk\HuanFace\build>

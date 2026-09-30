@@ -1,0 +1,433 @@
+PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
+PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
+remote: Enumerating objects: 25, done.
+remote: Counting objects: 100% (25/25), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 13 (delta 10), reused 13 (delta 10), pack-reused 0 (from 0)
+Unpacking objects: 100% (13/13), 10.52 KiB | 336.00 KiB/s, done.
+From https://github.com/hanlimzie-glitch/HuanFace
+ * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
+   0ce6d6d..866f590  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+Updating 0ce6d6d..866f590
+Fast-forward
+ sdk/src/image/image_loader.cpp  |  41 +-
+ tests/test_bundle.cpp           |  12 +-
+ tests/test_image.cpp            |  10 +-
+ tests/test_makeup.cpp           |  24 +-
+ tests/test_phase8.cpp           | 865 ++++++++++++++++++++++++++++++++--------
+ tests/test_real_ml_pipeline.cpp |   4 +-
+ tests/test_texture.cpp          |   6 +-
+ 7 files changed, 783 insertions(+), 179 deletions(-)
+PS D:\sdk\HuanFace> cd build
+PS D:\sdk\HuanFace\build> cmake --build . --config Release
+MSBuild version 17.14.60+43b635718 for .NET Framework
+
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\HuanFacePhase8Tests.vcxproj]
+  test_phase8.cpp
+D:\sdk\HuanFace\tests\test_phase8.cpp(401,14): error C2039: 'EndFrame': is not a member of 'huanface::IRenderBackend' [
+D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(89,7):
+      see declaration of 'huanface::IRenderBackend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(500,14): error C2039: 'EndFrame': is not a member of 'huanface::IRenderBackend' [
+D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(89,7):
+      see declaration of 'huanface::IRenderBackend'
+
+D:\sdk\HuanFace\tests\test_phase8.cpp(791,18): error C2039: 'EndFrame': is not a member of 'huanface::IRenderBackend' [
+D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(89,7):
+      see declaration of 'huanface::IRenderBackend'
+
+  Generating Code...
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\HuanFaceTests.vcxproj]
+  test_bundle.cpp
+  test_image.cpp
+  test_makeup.cpp
+D:\sdk\HuanFace\tests\test_makeup.cpp(777,20): error C2664: 'void CHECK(bool,const char *)': cannot convert argument 2
+from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' to 'const char *' [D:\sdk\HuanFace\build\Hua
+nFaceTests.vcxproj]
+      D:\sdk\HuanFace\tests\test_makeup.cpp(777,60):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      D:\sdk\HuanFace\tests\test_makeup.cpp(20,13):
+      see declaration of 'CHECK'
+      D:\sdk\HuanFace\tests\test_makeup.cpp(777,20):
+      while trying to match the argument list '(bool, std::basic_string<char,std::char_traits<char>,std::allocator<char
+  >>)'
+
+  test_real_ml_pipeline.cpp
+  test_texture.cpp
+  Generating Code...
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\basic_desktop.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\basic_desktop.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\basic_desktop.vcxproj]
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\basic_face_demo.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\basic_face_demo.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\basic_face_demo.vcxproj]
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\beauty_demo.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\beauty_demo.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\beauty_demo.vcxproj]
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\huanface.vcxproj]
+  image_loader.cpp
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
+uanFace\build\makeup_demo.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
+:\sdk\HuanFace\build\makeup_demo.vcxproj]
+D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
+ace\build\makeup_demo.vcxproj]
+PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe
+=== HuanFace SDK Phase 7 Tests ===
+Build: Sep 30 2026 02:09:04
+Platform: Windows
+
+--- Running: Frame System ---
+  [PASS] Valid RGBA8 frame
+  [PASS] Valid BGRA8 frame 1080p
+  [PASS] Valid RGB8 frame
+  [PASS] Valid NV12 frame
+  [PASS] Valid R8 mask frame
+  [PASS] Valid R32F frame
+  [PASS] Invalid null frame
+  [PASS] Invalid zero width
+  [PASS] Invalid stride too small for RGBA8
+  [PASS] Invalid UNKNOWN format
+  [PASS] Invalid no CPU nor GPU
+  [PASS] Valid rotation 90
+  [PASS] Valid rotation 180
+  [PASS] Valid rotation 270
+  [PASS] Invalid rotation 45
+  [PASS] Valid GPU frame
+  [PASS] FormatToString RGBA8
+  [PASS] FormatToString NV12
+  [PASS] BPP RGBA8=4
+  [PASS] BPP RGB8=3
+  [PASS] BPP R8=1
+  Frame tests: 21 passed, 0 failed
+[PASS] Frame System
+
+--- Running: Bundle System ---
+  [PASS] Valid bundle directory open: ../examples/bundles/simple_lip
+  [PASS] Manifest format HuanFaceBundle
+  [PASS] Manifest version 1.0
+  [PASS] Manifest type makeup
+  [PASS] Manifest name not empty: Simple Lip
+  [PASS] Has manifest.json
+  [PASS] Has textures/lip.png
+  [PASS] Has shaders/lip.glsl
+  [PASS] List files >=3, got 5
+  [PASS] Read textures/lip.png, size=2201
+  [PASS] Valid ZIP bundle open: ../examples/bundles/simple_lip_store.hfbundle
+  [PASS] Invalid ZIP should fail to open
+  [PASS] Invalid ZIP error message not empty
+  [PASS] Invalid manifest missing format should fail validation: Missing required field: format
+  [PASS] Invalid manifest wrong format should fail validation
+  [PASS] Missing resource should fail to read
+  [PASS] Path traversal ../../ detected
+  [PASS] Path traversal /etc/passwd detected
+  [PASS] Path traversal textures/../../ detected
+  [PASS] Valid path textures/lip.png not flagged as traversal
+  [PASS] Valid path shaders/lip.glsl not flagged
+  [PASS] BundleReader should reject path traversal ../../etc/passwd
+  [PASS] Traversal error message contains traversal hint
+  [PASS] Future version parsed as 999.0
+  [INFO] Future version validation result: OK (allowed)
+  [PASS] Future version parsing handled
+  [PASS] Manifest parameters not empty, count=3
+  [PASS] Manifest passes not empty, count=1
+  [PASS] First param has name: intensity_lip
+  [PASS] ResourceManager load textures/lip.png
+  [PASS] ResourceManager has cached textures/lip.png
+  [PASS] ResourceManager cache size >0: 2201
+  [PASS] ResourceManager count 1
+  [PASS] ResourceManager load again (cached)
+  [PASS] ResourceManager still count 1 after cached load
+  [PASS] FaceUnity encrypted bundle should be rejected
+  [FAIL] FaceUnity rejection error mentions protected/encrypted
+  Bundle tests: 35 passed, 1 failed
+[FAIL] Bundle System
+
+--- Running: Rendering System ---
+  [PASS] Null backend creation
+  [PASS] Null backend Init
+  [PASS] Null backend IsInitialized
+  [PASS] Null backend type AUTO
+  [PASS] Null backend Shutdown
+  [PASS] Render backend factory AUTO
+  [PASS] Render backend AUTO Init
+  [PASS] CreateTexture 256x256 RGBA8
+  [PASS] Texture width 256
+  [PASS] Texture height 256
+  [PASS] Texture format RGBA8
+  [PASS] DestroyTexture
+  [PASS] CreateTexture with data 128x128
+  [PASS] CreateRenderTarget 1280x720
+  [PASS] RenderTarget GetTexture
+  [PASS] RenderTarget texture width 1280
+  [PASS] RenderTarget texture height 720
+  [PASS] DestroyRenderTarget
+  [PASS] CreateShader from source
+  [PASS] SetUniform
+  [PASS] CreateMesh fullscreen quad
+  [PASS] Mesh vertex count >0
+  [PASS] Mesh index count 6
+  [PASS] Create src texture and dst RT for blit
+  [PASS] Blit src->dst
+  [PASS] Clear render target red
+  [PASS] CPU->GPU: Create solid color texture
+  [PASS] Create render target for GPU test
+  [PASS] Create shader for GPU test
+  [PASS] Create fullscreen quad for GPU test
+  [PASS] DrawMesh fullscreen quad
+  [PASS] Blit for GPU test validates CPU->GPU->shader->RT
+  [PASS] Render target has data after blit
+  [PASS] Minimal GPU test CPU->GPU->shader->RT completed
+  [PASS] D3D11 backend creation (Windows)
+  [PASS] D3D11 backend Init
+  [PASS] D3D11 CreateTexture
+  [PASS] D3D11 CreateRenderTarget
+  [PASS] D3D11 Shutdown
+  Rendering tests: 39 passed, 0 failed
+[PASS] Rendering System
+
+--- Running: Engine System ---
+  [PASS] HF_Init
+  [PASS] HF_Init double (should be OK)
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
+Production mode with heuristic backend is NOT allowed for production ML tracking
+ProductionFaceTracker Mode: PRODUCTION (ML required)
+Backend Type: MEDIAPIPE
+Max Faces: 4 (configurable, 0..N real detections, no generated second face)
+  [PASS] HF_CreateEngine
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
+Production mode with heuristic backend is NOT allowed for production ML tracking
+ProductionFaceTracker Mode: PRODUCTION (ML required)
+Backend Type: MEDIAPIPE
+Max Faces: 4 (configurable, 0..N real detections, no generated second face)
+  [PASS] HF_CreateEngine with null config (default)
+  [PASS] HF_CreateEngine null outEngine should fail
+  [PASS] HF_DestroyEngine null should fail
+  [PASS] HF_LoadBundle directory: ../examples/bundles/simple_lip
+  [PASS] HF_SetParameterFloat intensity_lip=0.8
+  [PASS] HF_SetParameterFloat HeavyBlur=50
+  [PASS] HF_SetParameterColor lip_color
+  [PASS] HF_SetParameterInt lip_type
+  [PASS] HF_SetParameterBool is_makeup_on
+  [PASS] HF_SetParameterEnum blend_type=normal
+  [PASS] HF_GetParameterFloat intensity_lip=0.8
+  [PASS] HF_GetParameterColor lip_color
+  [PASS] HF_ProcessFrame RGBA8 1280x720
+  [PASS] Output width 1280
+  [PASS] Output height 720
+  [PASS] Output format RGBA8
+  [PASS] HF_ProcessFrameWithBundle
+  [PASS] HF_GetFaceData
+  [PASS] Face count 0 for stub engine
+  [PASS] HF_FreeFaceData
+  [PASS] HF_ProcessFrame null args should fail
+  [PASS] HF_ProcessFrame invalid frame should fail
+  [PASS] HF_UnloadBundle
+  [PASS] HF_DestroyEngine
+  [PASS] HF_Shutdown
+  [PASS] HF_Shutdown double should be NOT_INITIALIZED
+  [PASS] HF_GetVersion: 0.3.0-phase3
+  [PASS] HF_GetResultString OK
+  [PASS] HF_GetResultString INVALID_PARAM
+  Engine tests: 32 passed, 0 failed
+[PASS] Engine System
+
+--- Running: Image Loader ---
+=== Test Image Loader Phase 4 ===
+  FAIL: Save PNG should succeed
+  err=zlib not available for PNG compress
+  FAIL: Load PNG should succeed
+  FAIL: Loaded dimensions 64x64
+  FAIL: Loaded data size
+  FAIL: EncodePNGToMemory should succeed
+  Checks: 6/11
+[FAIL] Image Loader
+
+--- Running: Face Tracker (Simple) ---
+=== Test Face Tracker Phase 4 ===
+  Checks: 16/16
+[PASS] Face Tracker (Simple)
+
+--- Running: Face Mask ---
+=== Test Face Mask Phase 4 ===
+  Checks: 12/12
+[PASS] Face Mask
+
+--- Running: Shader ---
+=== Test Shader Phase 4 ===
+  Expected compile error log: D:\sdk\HuanFace\build\bad.hlsl(1,1-4): error X3000: unrecognized identifier 'this'
+
+  Checks: 6/6
+[PASS] Shader
+
+--- Running: Texture ---
+=== Test Texture Phase 4 ===
+  FAIL: Encode PNG for texture test
+  FAIL: Decode PNG for texture test
+  FAIL: Decoded dims 128x64
+  FAIL: Decoded data size correct
+  FAIL: Stride width*4
+  Bundle texture file not found on disk, trying from .hfbundle ZIP
+  Checks: 3/8
+[FAIL] Texture
+
+--- Running: Integration ---
+=== Test Integration Phase 4 (image->face->mask->makeup->output) ===
+  Lip pixels changed: 180
+  Perf: 10 iterations 5ms, avg 0.5ms, FPS baseline 2000
+  Checks: 10/10
+[PASS] Integration
+
+--- Running: Production Tracker ---
+=== Test Production Tracker Phase 5 ===
+The system cannot find the path specified.
+The system cannot find the path specified.
+HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
+ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
+Backend Type: AUTO
+Max Faces: 5 (configurable, 0..N real detections, no generated second face)
+  Backend: FallbackHeuristicInferenceBackend IsRealML: 0
+  Checks: 30/30
+[PASS] Production Tracker
+
+--- Running: Face Mesh ---
+=== Test Face Mesh Phase 5 ===
+  Checks: 17/17
+[PASS] Face Mesh
+
+--- Running: Pose ---
+=== Test Pose Phase 5 ===
+  Checks: 14/14
+[PASS] Pose
+
+--- Running: Tracking State ---
+=== Test Tracking Phase 5 ===
+  Checks: 24/24
+[PASS] Tracking State
+
+--- Running: Coordinate Transform ---
+=== Test Coordinate Transform Phase 5 ===
+  Checks: 22/22
+[PASS] Coordinate Transform
+
+--- Running: Real ML Pipeline ---
+=== Test Real ML Pipeline Phase 5.5 ===
+The system cannot find the path specified.
+  FAIL: Detector checksum valid
+The system cannot find the path specified.
+  FAIL: Detector checksum validation OK
+The system cannot find the path specified.
+The system cannot find the path specified.
+  FAIL: Landmark checksum valid
+The system cannot find the path specified.
+The system cannot find the path specified.
+  FAIL: ONNX backend init returns OK or FILE_NOT_FOUND (not crash)
+The system cannot find the path specified.
+The system cannot find the path specified.
+HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
+ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
+Backend Type: AUTO
+Max Faces: 5 (configurable, 0..N real detections, no generated second face)
+The system cannot find the path specified.
+The system cannot find the path specified.
+Production mode requires ML backend but ONNX model load failed: MODEL_INTEGRITY_ERROR
+ProductionFaceTracker Init FAILED: Production mode requires ML backend
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
+Production mode with heuristic backend is NOT allowed for production ML tracking
+Production mode ML required but HEURISTIC explicitly requested, FAIL init per Phase 5.5 gate
+ProductionFaceTracker Init FAILED: Production mode requires ML backend
+The system cannot find the path specified.
+The system cannot find the path specified.
+HEURISTIC FALLBACK WARNING: ONNX backend requested but model not available, falling back to heuristic (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY)
+ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
+Backend Type: ONNX
+Max Faces: 5 (configurable, 0..N real detections, no generated second face)
+The system cannot find the path specified.
+The system cannot find the path specified.
+HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
+WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
+ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
+Backend Type: AUTO
+Max Faces: 5 (configurable, 0..N real detections, no generated second face)
+  Checks: 25/29
+[FAIL] Real ML Pipeline
+
+--- Running: Makeup Renderer ---
+=== Test Makeup Phase 6 ===
+  FAIL: simple_lip bundle exists
+  Checks: 183/184
+[FAIL] Makeup Renderer
+
+--- Running: Beauty Engine ---
+=== Test Beauty Phase 7 ===
+  Checks: 167/167
+[PASS] Beauty Engine
+
+=== Summary ===
+Passed: 13/18
+Failed: 5/18
+
+Some tests FAILED
+PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe
+=== Phase 8 Tests ===
+WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured)
+D3D11InitTests: PASS - D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED
+AdapterTests: PASS - Adapter info: description, vendor, VRAM queried via DXGI ΓÇö MEASURED
+ShaderCompileTests: PASS - HLSL compile via D3DCompile VS/PS succeeded ΓÇö MEASURED 8/8 files
+GPUResourceTests: PASS - GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED
+TextureTests: PASS - Texture creation CPU path MEASURED, GPU path NOT EXECUTED on Linux (0.0001ms)
+RenderTargetTests: PASS - RenderTarget creation, SetRenderTarget, Clear MEASURED
+GPUBeautyRenderTests: PASS - GPU beauty execution smoothing bilateral-like, texture, blemish, tone, brightness, contrast, retouch using mask+params+input+HLSL+RT MEASURED
+GPUMakeupRenderTests: PASS - GPU makeup execution foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes MEASURED
+CPUvsGPURegressionTests: PASS - CPU vs GPU regression avg/max error within tolerance, no blank/NaN MEASURED
+ResourcePoolTests: PASS - ResourcePool CPU MEASURED reuse PASS, GPU MEASURED reuse PASS
+PerformanceRegressionTests: PASS - Performance regression PASS: mask 64.295200ms, smoothing 50.870200ms, total beauty <600ms after optimization (was 738ms) MEASURED (115.165ms)
+ResolutionTests: PASS - Resolution 400x400, 720p, 1080p PASS ΓÇö mask/beauty valid, no crash MEASURED
+MultiFaceGPUBeautyMakeupTests: PASS - Multi-face 0/1/2/N mask/beauty/makeup not swapped PASS MEASURED CPU, GPU NOT EXECUTED
+ResizeTests: PASS - Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak PASS MEASURED CPU, GPU NOT EXECUTED
+ErrorRecoveryTests: PASS - Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash PASS MEASURED
+
+Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16
+PS D:\sdk\HuanFace\build>

@@ -1,29 +1,394 @@
+PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
+PS D:\sdk\HuanFace> .\Release\HuanFacePhase8Tests.exe | Tee-Object -FilePath log_phase8d.txt
+.\Release\HuanFacePhase8Tests.exe : The term '.\Release\HuanFacePhase8Tests.exe' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify
+that the path is correct and try again.
+At line:1 char:1
++ .\Release\HuanFacePhase8Tests.exe | Tee-Object -FilePath log_phase8d. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\Release\HuanFacePhase8Tests.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\sdk\HuanFace> cmake --build . --config Release
+Error: not a CMake build directory (missing CMakeCache.txt)
+PS D:\sdk\HuanFace> cd build
+PS D:\sdk\HuanFace\build> cmake --build . --config Release
+MSBuild version 17.14.60+43b635718 for .NET Framework
+
+  HuanFacePhase8Tests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFacePhase8Tests.exe
+  HuanFaceTests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFaceTests.exe
+  basic_desktop.vcxproj -> D:\sdk\HuanFace\build\Release\basic_desktop.exe
+  basic_face_demo.vcxproj -> D:\sdk\HuanFace\build\Release\basic_face_demo.exe
+  beauty_demo.vcxproj -> D:\sdk\HuanFace\build\Release\beauty_demo.exe
+  huanface.vcxproj -> D:\sdk\HuanFace\build\Release\huanface.dll
+  makeup_demo.vcxproj -> D:\sdk\HuanFace\build\Release\makeup_demo.exe
+PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe | Tee-Object -FilePath log_phase8d.txt
 === Phase 8D Tests ΓÇö Production Shader & GPU Timing Verification ===
 Build: Sep 30 2026 13:37:20
 Platform: Windows ΓÇö Real D3D11 runtime, production HLSL, no fallback, real GPU TIMESTAMP queries
 [D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/beauty_common.hlsl
 [D3D11] PS file compiled with entry point: PSSmoothing file: ../sdk/src/rendering/shaders/beauty_smoothing.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_texture.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_texture.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSTextureRefinement file: ../sdk/src/rendering/shaders/beauty_texture.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBlemishReduction file: ../sdk/src/rendering/shaders/beauty_blemish.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
 [D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/makeup_common.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLip file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSUpperLip file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSUpperLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLowerLip file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLowerLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlush file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBlush': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLeftCheek file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLeftCheek': entrypoint not found
+
+[D3D11] PS compile failed entry=PSRightCheek file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSRightCheek': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyeshadow file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyeshadow': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyeliner file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyeliner': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyebrow file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyebrow': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyelash file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyelash': entrypoint not found
+
+[D3D11] PS compile failed entry=PSPupil file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSPupil': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLeftEye file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLeftEye': entrypoint not found
+
+[D3D11] PS compile failed entry=PSRightEye file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSRightEye': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLip file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSUpperLip file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSUpperLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLowerLip file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSLowerLip': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBlush file: ../sdk/src/rendering/shaders/makeup_blush.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLip file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSUpperLip file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSUpperLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLowerLip file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSLowerLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlush file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBlush': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLeftCheek file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSLeftCheek': entrypoint not found
+
+[D3D11] PS compile failed entry=PSRightCheek file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSRightCheek': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSEyeshadow file: ../sdk/src/rendering/shaders/makeup_eye.hlsl
 [D3D11] PS compiled with entry point: main
 [D3D11] PS file compiled with entry point: PSSmoothing file: ../sdk/src/rendering/shaders/beauty_smoothing.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_texture.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_texture.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSTextureRefinement file: ../sdk/src/rendering/shaders/beauty_texture.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBlemishReduction file: ../sdk/src/rendering/shaders/beauty_blemish.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/beauty_tone.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/beauty_adjustment.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
 [D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/makeup_common.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLip file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSUpperLip file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSUpperLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLowerLip file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLowerLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlush file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSBlush': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLeftCheek file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLeftCheek': entrypoint not found
+
+[D3D11] PS compile failed entry=PSRightCheek file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSRightCheek': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyeshadow file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyeshadow': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyeliner file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyeliner': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyebrow file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyebrow': entrypoint not found
+
+[D3D11] PS compile failed entry=PSEyelash file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSEyelash': entrypoint not found
+
+[D3D11] PS compile failed entry=PSPupil file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSPupil': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLeftEye file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSLeftEye': entrypoint not found
+
+[D3D11] PS compile failed entry=PSRightEye file=../sdk/src/rendering/shaders/makeup_blend.hlsl : error X3501: 'PSRightEye': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_foundation.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_lip.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLip file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSUpperLip file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSUpperLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLowerLip file=../sdk/src/rendering/shaders/makeup_blush.hlsl : error X3501: 'PSLowerLip': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSBlush file: ../sdk/src/rendering/shaders/makeup_blush.hlsl
+[D3D11] PS compile failed entry=PSSmoothing file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSSmoothing': entrypoint not found
+
+[D3D11] PS compile failed entry=PSSmoothingGaussian file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSSmoothingGaussian': entrypoint not found
+
+[D3D11] PS compile failed entry=PSTextureRefinement file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSTextureRefinement': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlemishReduction file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBlemishReduction': entrypoint not found
+
+[D3D11] PS compile failed entry=PSToneAdjustment file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSToneAdjustment': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightness file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBrightness': entrypoint not found
+
+[D3D11] PS compile failed entry=PSContrast file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBrightnessContrast file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBrightnessContrast': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBeautyFinal file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBeautyFinal': entrypoint not found
+
+[D3D11] PS compile failed entry=PSFoundation file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSFoundation': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLip file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSUpperLip file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSUpperLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLowerLip file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSLowerLip': entrypoint not found
+
+[D3D11] PS compile failed entry=PSBlush file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSBlush': entrypoint not found
+
+[D3D11] PS compile failed entry=PSLeftCheek file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSLeftCheek': entrypoint not found
+
+[D3D11] PS compile failed entry=PSRightCheek file=../sdk/src/rendering/shaders/makeup_eye.hlsl : error X3501: 'PSRightCheek': entrypoint not found
+
 [D3D11] PS file compiled with entry point: PSEyeshadow file: ../sdk/src/rendering/shaders/makeup_eye.hlsl
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -132,18 +497,18 @@ Platform: Windows ΓÇö Real D3D11 runtime, production HLSL, no fallback, real 
 WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured) MSBuild 17.14.60 SDK 10.0.26100.0
 D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED Windows D3D11CreateDevice
 AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
-ShaderCompileTests: PASS - PASS: Production HLSL compile 12/12 ΓÇö MEASURED Windows D3DCompile VS_5_0/PS_5_0 ID3DBlob valid ID3D11VertexShader/PixelShader valid, no fallback, include handler PASS ΓÇö beauty_common.hlsl[VSMain] PASS; beauty_smoothing.hlsl[PSSmoothing] PASS; beauty_texture.hlsl[PSTextureRefinement] PASS; beauty_blemish.hlsl[PSBlemishReduction] PASS; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  CPU compile 279.990600ms [CPU Beauty=0ms CPU ShaderCompile=279.991ms CPU Prep=0ms GPU Rendering=0ms GPU Valid=0 Disjoint=0]
+ShaderCompileTests: PASS - PASS: Production HLSL compile 12/12 ΓÇö MEASURED Windows D3DCompile VS_5_0/PS_5_0 ID3DBlob valid ID3D11VertexShader/PixelShader valid, no fallback, include handler PASS ΓÇö beauty_common.hlsl[VSMain] PASS; beauty_smoothing.hlsl[PSSmoothing] PASS; beauty_texture.hlsl[PSTextureRefinement] PASS; beauty_blemish.hlsl[PSBlemishReduction] PASS; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  CPU compile 261.996200ms [CPU Beauty=0ms CPU ShaderCompile=261.996ms CPU Prep=0ms GPU Rendering=0ms GPU Valid=0 Disjoint=0]
 GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
-TextureTests: PASS - PASS: Texture creation CPU preparation 0.128200ms, CPU CreateTexture API 3.499800ms, GPU rendering (Clear using texture) 0.000640ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=3.4998ms CPU ShaderCompile=0ms CPU Prep=0.1282ms GPU Rendering=0.00064ms GPU Valid=1 Disjoint=0]
-RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.453200ms, GPU rendering 0.013504ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.4532ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.013504ms GPU Valid=1 Disjoint=0]
-GPUBeautyRenderTests: PASS - PASS: GPU beauty execution production shaders beauty_smoothing.hlsl[PSSmoothing] PASS ID3D11PixelShader valid; beauty_texture.hlsl[PSTextureRefinement] PASS ID3D11PixelShader valid; beauty_blemish.hlsl[PSBlemishReduction] PASS ID3D11PixelShader valid; beauty_tone.hlsl[PSToneAdjustment] PASS ID3D11PixelShader valid; beauty_adjustment.hlsl[PSBrightness] PASS ID3D11PixelShader valid;  GPU EXECUTED Draw with production HLSL PSSmoothing/PSTextureRefinement/PSBlemishReduction/PSToneAdjustment/PSBrightness ΓÇö no fallback, include handler PASS, shader objects ID3D11PixelShader valid, VSSetShader/PSSetShader/Draw ΓÇö CPU compile 113.080200ms, GPU rendering 0.815200ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=0ms CPU ShaderCompile=113.08ms CPU Prep=0ms GPU Rendering=0.8152ms GPU Valid=1 Disjoint=0]
-GPUMakeupRenderTests: PASS - PASS: GPU makeup execution production shaders makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes Normal/Multiply/Screen/Overlay GPU EXECUTED Draw with production HLSL ΓÇö no fallback, shader objects valid ΓÇö CPU compile 157.588800ms, GPU rendering 0.143840ms timestamp valid=1 ΓÇö MEASURED Windows [CPU Beauty=0ms CPU ShaderCompile=157.589ms CPU Prep=0ms GPU Rendering=0.14384ms GPU Valid=1 Disjoint=0]
+TextureTests: PASS - PASS: Texture creation CPU preparation 0.118100ms, CPU CreateTexture API 3.375300ms, GPU rendering (Clear using texture) 0.000064ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=3.3753ms CPU ShaderCompile=0ms CPU Prep=0.1181ms GPU Rendering=6.4e-05ms GPU Valid=1 Disjoint=0]
+RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.846700ms, GPU rendering 0.012960ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.8467ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.01296ms GPU Valid=1 Disjoint=0]
+GPUBeautyRenderTests: PASS - PASS: GPU beauty execution production shaders beauty_smoothing.hlsl[PSSmoothing] PASS ID3D11PixelShader valid; beauty_texture.hlsl[PSTextureRefinement] PASS ID3D11PixelShader valid; beauty_blemish.hlsl[PSBlemishReduction] PASS ID3D11PixelShader valid; beauty_tone.hlsl[PSToneAdjustment] PASS ID3D11PixelShader valid; beauty_adjustment.hlsl[PSBrightness] PASS ID3D11PixelShader valid;  GPU EXECUTED Draw with production HLSL PSSmoothing/PSTextureRefinement/PSBlemishReduction/PSToneAdjustment/PSBrightness ΓÇö no fallback, include handler PASS, shader objects ID3D11PixelShader valid, VSSetShader/PSSetShader/Draw ΓÇö CPU compile 104.771300ms, GPU rendering 0.407360ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=0ms CPU ShaderCompile=104.771ms CPU Prep=0ms GPU Rendering=0.40736ms GPU Valid=1 Disjoint=0]
+GPUMakeupRenderTests: PASS - PASS: GPU makeup execution production shaders makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes Normal/Multiply/Screen/Overlay GPU EXECUTED Draw with production HLSL ΓÇö no fallback, shader objects valid ΓÇö CPU compile 146.635300ms, GPU rendering 0.297632ms timestamp valid=1 ΓÇö MEASURED Windows [CPU Beauty=0ms CPU ShaderCompile=146.635ms CPU Prep=0ms GPU Rendering=0.297632ms GPU Valid=1 Disjoint=0]
 CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
 ResourcePoolTests: PASS - PASS: ResourcePool CPU reuse PASS, GPU reuse PASS (400x400 same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
-PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 65.875278ms smoothing 52.620863ms texture 6.174839ms blemish 6.683668ms total CPU beauty 131.354648ms, CPU shader compile 11.310700ms prep 4.005200ms, GPU rendering 0.057659ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=131.355ms CPU ShaderCompile=11.3107ms CPU Prep=4.0052ms GPU Rendering=0.0576589ms GPU Valid=1 Disjoint=0]
-ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1537.421600ms CPU compile 32.415400ms prep 12.069900ms GPU rendering 0.128672ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 63.429500ms smooth 17.617400ms CPU compile 10.962400ms prep 4.336200ms GPU 0.101696ms; 1280x720 CPU mask 380.143400ms smooth 75.104700ms CPU compile 10.861300ms prep 3.665800ms GPU 0.011168ms; 1920x1080 CPU mask 857.689600ms smooth 143.437000ms CPU compile 10.591700ms prep 4.067900ms GPU 0.015808ms;  [CPU Beauty=1537.42ms CPU ShaderCompile=32.4154ms CPU Prep=12.0699ms GPU Rendering=0.128672ms GPU Valid=0 Disjoint=0]
-MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 470.830300ms CPU prep 4.169000ms GPU rendering 0.034304ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000000ms CPU prep 0.027700ms GPU rendering 0.000000ms; 1 faces CPU mask 90.940600ms CPU prep 2.745600ms GPU rendering 0.011392ms; 2 faces CPU mask 178.932100ms CPU prep 0.565400ms GPU rendering 0.010336ms; 3 faces CPU mask 200.957600ms CPU prep 0.830300ms GPU rendering 0.012576ms;  [CPU Beauty=470.83ms CPU ShaderCompile=0ms CPU Prep=4.169ms GPU Rendering=0.034304ms GPU Valid=0 Disjoint=0]
-ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1728.218100ms CPU prep 3.593100ms GPU rendering 0.053568ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 64.406700ms CPU prep 2.333600ms GPU 0.011232ms; 1280x720 CPU 377.086900ms CPU prep 0.848200ms GPU 0.012288ms; 1920x1080 CPU 846.357000ms CPU prep 0.409900ms GPU 0.015744ms; 1280x720 CPU 377.090900ms CPU prep 0.000800ms GPU 0.007808ms; 400x400 CPU 63.276600ms CPU prep 0.000600ms GPU 0.006496ms;  [CPU Beauty=1728.22ms CPU ShaderCompile=0ms CPU Prep=3.5931ms GPU Rendering=0.053568ms GPU Valid=0 Disjoint=0]
+PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 66.178644ms smoothing 53.016738ms texture 6.233081ms blemish 6.856710ms total CPU beauty 132.285173ms, CPU shader compile 10.182700ms prep 8.139500ms, GPU rendering 0.091092ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=132.285ms CPU ShaderCompile=10.1827ms CPU Prep=8.1395ms GPU Rendering=0.0910922ms GPU Valid=1 Disjoint=0]
+ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1566.447000ms CPU compile 32.525300ms prep 14.844600ms GPU rendering 0.148736ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 62.188900ms smooth 16.922500ms CPU compile 10.928000ms prep 2.809900ms GPU 0.121024ms; 1280x720 CPU mask 403.033700ms smooth 74.556300ms CPU compile 10.909500ms prep 3.665500ms GPU 0.011968ms; 1920x1080 CPU mask 861.083200ms smooth 148.662400ms CPU compile 10.687800ms prep 8.369200ms GPU 0.015744ms;  [CPU Beauty=1566.45ms CPU ShaderCompile=32.5253ms CPU Prep=14.8446ms GPU Rendering=0.148736ms GPU Valid=0 Disjoint=0]
+MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 402.865700ms CPU prep 4.004600ms GPU rendering 0.032704ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000000ms CPU prep 0.006300ms GPU rendering 0.000000ms; 1 faces CPU mask 65.205100ms CPU prep 2.724100ms GPU rendering 0.008896ms; 2 faces CPU mask 135.148700ms CPU prep 0.580900ms GPU rendering 0.010304ms; 3 faces CPU mask 202.511900ms CPU prep 0.693300ms GPU rendering 0.013504ms;  [CPU Beauty=402.866ms CPU ShaderCompile=0ms CPU Prep=4.0046ms GPU Rendering=0.032704ms GPU Valid=0 Disjoint=0]
+ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1757.527800ms CPU prep 2.982600ms GPU rendering 0.053888ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 63.383400ms CPU prep 2.189600ms GPU 0.010240ms; 1280x720 CPU 397.969100ms CPU prep 0.378100ms GPU 0.012288ms; 1920x1080 CPU 857.193400ms CPU prep 0.413600ms GPU 0.016288ms; 1280x720 CPU 376.926000ms CPU prep 0.000800ms GPU 0.007840ms; 400x400 CPU 62.055900ms CPU prep 0.000500ms GPU 0.007232ms;  [CPU Beauty=1757.53ms CPU ShaderCompile=0ms CPU Prep=2.9826ms GPU Rendering=0.053888ms GPU Valid=0 Disjoint=0]
 ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
 
 === Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16 ===
@@ -255,7 +620,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 400x400 | 63.3996 | 51.8649 | 6.0668 | 6.58011 | 127.911 | 10.4059 | 2.9843 | 0.0711574 | 1 | 0 |
+| 400x400 | 63.6892 | 51.4867 | 6.01467 | 6.49378 | 127.684 | 16.6355 | 4.6287 | 0.119004 | 1 | 0 |
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -357,7 +722,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 1280x720 | 378.602 | 223.406 | 27.5097 | 29.5403 | 659.058 | 12.1047 | 10.0236 | 0.0858678 | 1 | 0 |
+| 1280x720 | 389.244 | 228.911 | 28.2499 | 30.5646 | 676.97 | 10.8255 | 10.126 | 0.0808486 | 1 | 0 |
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -459,7 +824,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 1920x1080 | 863.975 | 435.482 | 54.7185 | 59.8047 | 1413.98 | 11.194 | 13.4055 | 0.0552534 | 1 | 0 |
+| 1920x1080 | 850.897 | 427.971 | 56.2511 | 59.0255 | 1394.14 | 10.3032 | 16.9827 | 0.11788 | 1 | 0 |
 
 === Phase 8D Shader Verification ===
 Production shaders: beauty_common, beauty_smoothing, beauty_texture, beauty_blemish, beauty_tone, beauty_adjustment, makeup_common, makeup_blend, makeup_foundation, makeup_lip, makeup_blush, makeup_eye

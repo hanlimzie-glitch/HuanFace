@@ -1,74 +1,22 @@
-PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
-PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
-remote: Enumerating objects: 21, done.
-remote: Counting objects: 100% (21/21), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 14 (delta 12), reused 14 (delta 12), pack-reused 0 (from 0)
-Unpacking objects: 100% (14/14), 1.67 KiB | 47.00 KiB/s, done.
-From https://github.com/hanlimzie-glitch/HuanFace
- * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
-   c96f130..0809b13  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-Updating c96f130..0809b13
-Fast-forward
- sdk/src/rendering/d3d11/d3d11_backend.cpp | 79 +++++++++++++++++++++++++++----
- sdk/src/rendering/d3d11/d3d11_backend.h   |  2 +-
- 2 files changed, 72 insertions(+), 9 deletions(-)
-PS D:\sdk\HuanFace> cd build
-PS D:\sdk\HuanFace\build> cmake --build . --config Release
-MSBuild version 17.14.60+43b635718 for .NET Framework
-
-  test_phase8.cpp
-  d3d11_backend.cpp
-  Generating Code...
-  HuanFacePhase8Tests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFacePhase8Tests.exe
-  d3d11_backend.cpp
-  HuanFaceTests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFaceTests.exe
-  d3d11_backend.cpp
-  basic_desktop.vcxproj -> D:\sdk\HuanFace\build\Release\basic_desktop.exe
-  d3d11_backend.cpp
-  basic_face_demo.vcxproj -> D:\sdk\HuanFace\build\Release\basic_face_demo.exe
-  d3d11_backend.cpp
-  beauty_demo.vcxproj -> D:\sdk\HuanFace\build\Release\beauty_demo.exe
-  d3d11_backend.cpp
-  huanface.vcxproj -> D:\sdk\HuanFace\build\Release\huanface.dll
-  d3d11_backend.cpp
-  makeup_demo.vcxproj -> D:\sdk\HuanFace\build\Release\makeup_demo.exe
-PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe
 === Phase 8D Tests ΓÇö Production Shader & GPU Timing Verification ===
-Build: Sep 30 2026 13:27:17
+Build: Sep 30 2026 13:37:20
 Platform: Windows ΓÇö Real D3D11 runtime, production HLSL, no fallback, real GPU TIMESTAMP queries
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_common.hlsl : error X3501: 'main': entrypoint not found
-
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_smoothing.hlsl : error X3501: 'main': entrypoint not found
-
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_texture.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_texture.hlsl(47,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
-error X3501: 'main': entrypoint not found
-
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_blemish.hlsl(42,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
-error X3501: 'main': entrypoint not found
-
+[D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/beauty_common.hlsl
+[D3D11] PS file compiled with entry point: main file: 
 [D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
 [D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/makeup_common.hlsl : error X3501: 'main': entrypoint not found
-
+[D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/makeup_common.hlsl
+[D3D11] PS file compiled with entry point: main file: 
 [D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
 [D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
 [D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
 [D3D11] PS file compiled with entry point: PSBlush file: ../sdk/src/rendering/shaders/makeup_blush.hlsl
 [D3D11] PS file compiled with entry point: PSEyeshadow file: ../sdk/src/rendering/shaders/makeup_eye.hlsl
 [D3D11] PS compiled with entry point: main
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_smoothing.hlsl : error X3501: 'main': entrypoint not found
-
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_texture.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_texture.hlsl(47,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
-error X3501: 'main': entrypoint not found
-
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_blemish.hlsl(42,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
-error X3501: 'main': entrypoint not found
-
 [D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
 [D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
-[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/makeup_common.hlsl : error X3501: 'main': entrypoint not found
-
+[D3D11] VS file compiled with entry point: VSMain file: ../sdk/src/rendering/shaders/makeup_common.hlsl
+[D3D11] PS file compiled with entry point: main file: 
 [D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
 [D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
 [D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
@@ -181,21 +129,21 @@ error X3501: 'main': entrypoint not found
 WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured) MSBuild 17.14.60 SDK 10.0.26100.0
 D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED Windows D3D11CreateDevice
 AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
-ShaderCompileTests: FAIL - FAIL: Production HLSL compile 7/12 ΓÇö beauty_common.hlsl[VSMain] FAIL; beauty_smoothing.hlsl[PSSmoothing] FAIL; beauty_texture.hlsl[PSTextureRefinement] FAIL; beauty_blemish.hlsl[PSBlemishReduction] FAIL; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] FAIL; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  ΓÇö GATE 1 no fallback, must FIX root cause, include handler may have failed X1505
+ShaderCompileTests: FAIL - FAIL: Production HLSL compile 9/12 ΓÇö beauty_common.hlsl[VSMain] PASS; beauty_smoothing.hlsl[PSSmoothing] FAIL; beauty_texture.hlsl[PSTextureRefinement] FAIL; beauty_blemish.hlsl[PSBlemishReduction] FAIL; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  ΓÇö GATE 1 no fallback, must FIX root cause, include handler may have failed X1505
 GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
-TextureTests: PASS - PASS: Texture creation CPU preparation 0.096700ms, CPU CreateTexture API 2.737800ms, GPU rendering (Clear using texture) 0.000800ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=2.7378ms CPU ShaderCompile=0ms CPU Prep=0.0967ms GPU Rendering=0.0008ms GPU Valid=1 Disjoint=0]
-RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.601100ms, GPU rendering 0.013728ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.6011ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.013728ms GPU Valid=1 Disjoint=0]
+TextureTests: PASS - PASS: Texture creation CPU preparation 0.109600ms, CPU CreateTexture API 2.913300ms, GPU rendering (Clear using texture) 0.000000ms timestamp valid=0 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=2.9133ms CPU ShaderCompile=0ms CPU Prep=0.1096ms GPU Rendering=0ms GPU Valid=0 Disjoint=0]
+RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.352100ms, GPU rendering 0.014240ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.3521ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.01424ms GPU Valid=1 Disjoint=0]
 GPUBeautyRenderTests: FAIL - FAIL: Production HLSL compile failed ΓÇö beauty_smoothing.hlsl[PSSmoothing] FAIL compile no fallback; beauty_texture.hlsl[PSTextureRefinement] FAIL compile no fallback; beauty_blemish.hlsl[PSBlemishReduction] FAIL compile no fallback; beauty_tone.hlsl[PSToneAdjustment] PASS ID3D11PixelShader valid; beauty_adjustment.hlsl[PSBrightness] PASS ID3D11PixelShader valid;  ΓÇö GATE 1 no fallback, must FIX include handler X1505
-GPUMakeupRenderTests: FAIL - FAIL: Production makeup HLSL compile failed ΓÇö makeup_common.hlsl[VSMain] FAIL no fallback; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  ΓÇö no fallback allowed
+GPUMakeupRenderTests: PASS - PASS: GPU makeup execution production shaders makeup_common.hlsl[VSMain] PASS; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes Normal/Multiply/Screen/Overlay GPU EXECUTED Draw with production HLSL ΓÇö no fallback, shader objects valid ΓÇö CPU compile 146.145800ms, GPU rendering 0.149984ms timestamp valid=1 ΓÇö MEASURED Windows [CPU Beauty=0ms CPU ShaderCompile=146.146ms CPU Prep=0ms GPU Rendering=0.149984ms GPU Valid=1 Disjoint=0]
 CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
 ResourcePoolTests: PASS - PASS: ResourcePool CPU reuse PASS, GPU reuse PASS (400x400 same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
-PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 64.390104ms smoothing 51.572914ms texture 6.010235ms blemish 6.600595ms total CPU beauty 128.573848ms, CPU shader compile 10.897900ms prep 6.965600ms, GPU rendering 0.061134ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=128.574ms CPU ShaderCompile=10.8979ms CPU Prep=6.9656ms GPU Rendering=0.0611341ms GPU Valid=1 Disjoint=0]
-ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1536.792400ms CPU compile 34.070500ms prep 14.368000ms GPU rendering 0.038432ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 65.209700ms smooth 17.250100ms CPU compile 12.506000ms prep 4.939900ms GPU 0.009888ms; 1280x720 CPU mask 381.567700ms smooth 74.471100ms CPU compile 10.982000ms prep 4.018800ms GPU 0.012288ms; 1920x1080 CPU mask 854.186000ms smooth 144.107800ms CPU compile 10.582500ms prep 5.409300ms GPU 0.016256ms;  [CPU Beauty=1536.79ms CPU ShaderCompile=34.0705ms CPU Prep=14.368ms GPU Rendering=0.038432ms GPU Valid=0 Disjoint=0]
-MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 400.916600ms CPU prep 3.902100ms GPU rendering 0.080928ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000000ms CPU prep 0.005200ms GPU rendering 0.000000ms; 1 faces CPU mask 65.005600ms CPU prep 2.357800ms GPU rendering 0.057344ms; 2 faces CPU mask 133.887500ms CPU prep 0.808300ms GPU rendering 0.011040ms; 3 faces CPU mask 202.023500ms CPU prep 0.730800ms GPU rendering 0.012544ms;  [CPU Beauty=400.917ms CPU ShaderCompile=0ms CPU Prep=3.9021ms GPU Rendering=0.080928ms GPU Valid=0 Disjoint=0]
-ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1751.200600ms CPU prep 3.954800ms GPU rendering 0.396608ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 63.794800ms CPU prep 2.893700ms GPU 0.354304ms; 1280x720 CPU 380.164500ms CPU prep 0.391400ms GPU 0.012128ms; 1920x1080 CPU 863.271000ms CPU prep 0.668200ms GPU 0.016384ms; 1280x720 CPU 379.508600ms CPU prep 0.000700ms GPU 0.007040ms; 400x400 CPU 64.461700ms CPU prep 0.000800ms GPU 0.006752ms;  [CPU Beauty=1751.2ms CPU ShaderCompile=0ms CPU Prep=3.9548ms GPU Rendering=0.396608ms GPU Valid=0 Disjoint=0]
+PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 63.527367ms smoothing 51.226425ms texture 5.889878ms blemish 6.583177ms total CPU beauty 127.226847ms, CPU shader compile 10.413000ms prep 2.972100ms, GPU rendering 0.058865ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=127.227ms CPU ShaderCompile=10.413ms CPU Prep=2.9721ms GPU Rendering=0.0588653ms GPU Valid=1 Disjoint=0]
+ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1596.591100ms CPU compile 33.329900ms prep 10.130800ms GPU rendering 0.279456ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 64.132200ms smooth 17.605400ms CPU compile 10.959900ms prep 2.930100ms GPU 0.251744ms; 1280x720 CPU mask 387.832700ms smooth 75.246200ms CPU compile 10.764700ms prep 2.758600ms GPU 0.012160ms; 1920x1080 CPU mask 908.110500ms smooth 143.664100ms CPU compile 11.605300ms prep 4.442100ms GPU 0.015552ms;  [CPU Beauty=1596.59ms CPU ShaderCompile=33.3299ms CPU Prep=10.1308ms GPU Rendering=0.279456ms GPU Valid=0 Disjoint=0]
+MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 409.021500ms CPU prep 4.351400ms GPU rendering 0.254816ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000100ms CPU prep 0.008100ms GPU rendering 0.000000ms; 1 faces CPU mask 69.859500ms CPU prep 3.096400ms GPU rendering 0.231008ms; 2 faces CPU mask 136.560700ms CPU prep 0.655700ms GPU rendering 0.010976ms; 3 faces CPU mask 202.601200ms CPU prep 0.591200ms GPU rendering 0.012832ms;  [CPU Beauty=409.022ms CPU ShaderCompile=0ms CPU Prep=4.3514ms GPU Rendering=0.254816ms GPU Valid=0 Disjoint=0]
+ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1727.174700ms CPU prep 3.525000ms GPU rendering 0.053440ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 62.160800ms CPU prep 2.272800ms GPU 0.009216ms; 1280x720 CPU 375.586900ms CPU prep 0.370600ms GPU 0.012288ms; 1920x1080 CPU 850.232600ms CPU prep 0.880200ms GPU 0.016128ms; 1280x720 CPU 376.618000ms CPU prep 0.000900ms GPU 0.007936ms; 400x400 CPU 62.576400ms CPU prep 0.000500ms GPU 0.007872ms;  [CPU Beauty=1727.17ms CPU ShaderCompile=0ms CPU Prep=3.525ms GPU Rendering=0.05344ms GPU Valid=0 Disjoint=0]
 ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
 
-=== Summary: PASS=13 FAIL=3 NOT_EXECUTED=0 Total=16 ===
+=== Summary: PASS=14 FAIL=2 NOT_EXECUTED=0 Total=16 ===
 
 === Real Performance Benchmark ΓÇö 3 Resolutions ΓÇö MEASURED ===
 Method: Warm-up 10 frames, Measured 100 frames avg, CPU chrono, GPU ID3D11Query TIMESTAMP_DISJOINT/TIMESTAMP per GATE 5,7,8
@@ -304,7 +252,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 400x400 | 64.2833 | 51.8207 | 6.05108 | 6.59957 | 128.755 | 10.9056 | 5.543 | 0.0795917 | 1 | 0 |
+| 400x400 | 63.5486 | 51.7186 | 6.01829 | 6.48352 | 127.769 | 10.433 | 4.4374 | 0.0445082 | 1 | 0 |
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -406,7 +354,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 1280x720 | 395.59 | 232.464 | 28.3238 | 30.7488 | 687.127 | 11.3751 | 7.002 | 0.0561792 | 1 | 0 |
+| 1280x720 | 378.607 | 224.844 | 27.1142 | 29.3576 | 659.923 | 13.8052 | 9.932 | 0.05688 | 1 | 0 |
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
@@ -508,7 +456,7 @@ GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequ
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
 [D3D11] PS compiled with entry point: main
-| 1920x1080 | 873.278 | 438.252 | 55.3835 | 59.0633 | 1425.98 | 12.3781 | 15.4258 | 0.0671901 | 1 | 0 |
+| 1920x1080 | 861.749 | 435.939 | 53.9369 | 58.2993 | 1409.92 | 11.5549 | 9.6823 | 0.0545514 | 1 | 0 |
 
 === Phase 8D Shader Verification ===
 Production shaders: beauty_common, beauty_smoothing, beauty_texture, beauty_blemish, beauty_tone, beauty_adjustment, makeup_common, makeup_blend, makeup_foundation, makeup_lip, makeup_blush, makeup_eye
@@ -523,283 +471,3 @@ GPU timing: ID3D11Query D3D11_QUERY_TIMESTAMP_DISJOINT/TIMESTAMP, Begin/End/GetG
 Disjoint handling: if Disjoint==TRUE measurement invalid marked 0, not used as benchmark per GATE 7
 GPU execution measurement: Begin timestamp -> SetRT/Clear/Bind production shaders/Bind resources/Draw/EndFrame -> End timestamp per GATE 8
 Shader compilation excluded from GPU time: CPU Shader Compile separate from GPU Rendering per GATE 6
-PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe
-=== HuanFace SDK Phase 7 Tests ===
-Build: Sep 30 2026 02:09:04
-Platform: Windows
-
---- Running: Frame System ---
-  [PASS] Valid RGBA8 frame
-  [PASS] Valid BGRA8 frame 1080p
-  [PASS] Valid RGB8 frame
-  [PASS] Valid NV12 frame
-  [PASS] Valid R8 mask frame
-  [PASS] Valid R32F frame
-  [PASS] Invalid null frame
-  [PASS] Invalid zero width
-  [PASS] Invalid stride too small for RGBA8
-  [PASS] Invalid UNKNOWN format
-  [PASS] Invalid no CPU nor GPU
-  [PASS] Valid rotation 90
-  [PASS] Valid rotation 180
-  [PASS] Valid rotation 270
-  [PASS] Invalid rotation 45
-  [PASS] Valid GPU frame
-  [PASS] FormatToString RGBA8
-  [PASS] FormatToString NV12
-  [PASS] BPP RGBA8=4
-  [PASS] BPP RGB8=3
-  [PASS] BPP R8=1
-  Frame tests: 21 passed, 0 failed
-[PASS] Frame System
-
---- Running: Bundle System ---
-  [PASS] Valid bundle directory open: ../examples/bundles/simple_lip
-  [PASS] Manifest format HuanFaceBundle
-  [PASS] Manifest version 1.0
-  [PASS] Manifest type makeup
-  [PASS] Manifest name not empty: Simple Lip
-  [PASS] Has manifest.json
-  [PASS] Has textures/lip.png
-  [PASS] Has shaders/lip.glsl
-  [PASS] List files >=3, got 5
-  [PASS] Read textures/lip.png, size=2201
-  [PASS] Valid ZIP bundle open: ../examples/bundles/simple_lip_store.hfbundle
-  [PASS] Invalid ZIP should fail to open
-  [PASS] Invalid ZIP error message not empty
-  [PASS] Invalid manifest missing format should fail validation: Missing required field: format
-  [PASS] Invalid manifest wrong format should fail validation
-  [PASS] Missing resource should fail to read
-  [PASS] Path traversal ../../ detected
-  [PASS] Path traversal /etc/passwd detected
-  [PASS] Path traversal textures/../../ detected
-  [PASS] Valid path textures/lip.png not flagged as traversal
-  [PASS] Valid path shaders/lip.glsl not flagged
-  [PASS] BundleReader should reject path traversal ../../etc/passwd
-  [PASS] Traversal error message contains traversal hint
-  [PASS] Future version parsed as 999.0
-  [INFO] Future version validation result: OK (allowed)
-  [PASS] Future version parsing handled
-  [PASS] Manifest parameters not empty, count=3
-  [PASS] Manifest passes not empty, count=1
-  [PASS] First param has name: intensity_lip
-  [PASS] ResourceManager load textures/lip.png
-  [PASS] ResourceManager has cached textures/lip.png
-  [PASS] ResourceManager cache size >0: 2201
-  [PASS] ResourceManager count 1
-  [PASS] ResourceManager load again (cached)
-  [PASS] ResourceManager still count 1 after cached load
-  [PASS] FaceUnity encrypted bundle should be rejected
-  [PASS] FaceUnity rejection error mentions protected/encrypted: Detected FaceUnity encrypted bundle (magic F3 5B 06 12 PROTECTED). This tool only handles HuanFace .hfbundle ZIP open format. No DRM bypass.
-  Bundle tests: 36 passed, 0 failed
-[PASS] Bundle System
-
---- Running: Rendering System ---
-  [PASS] Null backend creation
-  [PASS] Null backend Init
-  [PASS] Null backend IsInitialized
-  [PASS] Null backend type AUTO
-  [PASS] Null backend Shutdown
-  [PASS] Render backend factory AUTO
-  [PASS] Render backend AUTO Init
-  [PASS] CreateTexture 256x256 RGBA8
-  [PASS] Texture width 256
-  [PASS] Texture height 256
-  [PASS] Texture format RGBA8
-  [PASS] DestroyTexture
-  [PASS] CreateTexture with data 128x128
-  [PASS] CreateRenderTarget 1280x720
-  [PASS] RenderTarget GetTexture
-  [PASS] RenderTarget texture width 1280
-  [PASS] RenderTarget texture height 720
-  [PASS] DestroyRenderTarget
-  [PASS] CreateShader from source
-  [PASS] SetUniform
-  [PASS] CreateMesh fullscreen quad
-  [PASS] Mesh vertex count >0
-  [PASS] Mesh index count 6
-  [PASS] Create src texture and dst RT for blit
-  [PASS] Blit src->dst
-  [PASS] Clear render target red
-  [PASS] CPU->GPU: Create solid color texture
-  [PASS] Create render target for GPU test
-  [PASS] Create shader for GPU test
-  [PASS] Create fullscreen quad for GPU test
-  [PASS] DrawMesh fullscreen quad
-  [PASS] Blit for GPU test validates CPU->GPU->shader->RT
-  [PASS] Render target has data after blit
-  [PASS] Minimal GPU test CPU->GPU->shader->RT completed
-  [PASS] D3D11 backend creation (Windows)
-  [PASS] D3D11 backend Init
-  [PASS] D3D11 CreateTexture
-  [PASS] D3D11 CreateRenderTarget
-  [PASS] D3D11 Shutdown
-  Rendering tests: 39 passed, 0 failed
-[PASS] Rendering System
-
---- Running: Engine System ---
-  [PASS] HF_Init
-  [PASS] HF_Init double (should be OK)
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
-Production mode with heuristic backend is NOT allowed for production ML tracking
-ProductionFaceTracker Mode: PRODUCTION (ML required)
-Backend Type: MEDIAPIPE
-Max Faces: 4 (configurable, 0..N real detections, no generated second face)
-  [PASS] HF_CreateEngine
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
-Production mode with heuristic backend is NOT allowed for production ML tracking
-ProductionFaceTracker Mode: PRODUCTION (ML required)
-Backend Type: MEDIAPIPE
-Max Faces: 4 (configurable, 0..N real detections, no generated second face)
-  [PASS] HF_CreateEngine with null config (default)
-  [PASS] HF_CreateEngine null outEngine should fail
-  [PASS] HF_DestroyEngine null should fail
-  [PASS] HF_LoadBundle directory: ../examples/bundles/simple_lip
-  [PASS] HF_SetParameterFloat intensity_lip=0.8
-  [PASS] HF_SetParameterFloat HeavyBlur=50
-  [PASS] HF_SetParameterColor lip_color
-  [PASS] HF_SetParameterInt lip_type
-  [PASS] HF_SetParameterBool is_makeup_on
-  [PASS] HF_SetParameterEnum blend_type=normal
-  [PASS] HF_GetParameterFloat intensity_lip=0.8
-  [PASS] HF_GetParameterColor lip_color
-  [PASS] HF_ProcessFrame RGBA8 1280x720
-  [PASS] Output width 1280
-  [PASS] Output height 720
-  [PASS] Output format RGBA8
-  [PASS] HF_ProcessFrameWithBundle
-  [PASS] HF_GetFaceData
-  [PASS] Face count 0 for stub engine
-  [PASS] HF_FreeFaceData
-  [PASS] HF_ProcessFrame null args should fail
-  [PASS] HF_ProcessFrame invalid frame should fail
-  [PASS] HF_UnloadBundle
-  [PASS] HF_DestroyEngine
-  [PASS] HF_Shutdown
-  [PASS] HF_Shutdown double should be NOT_INITIALIZED
-  [PASS] HF_GetVersion: 0.3.0-phase3
-  [PASS] HF_GetResultString OK
-  [PASS] HF_GetResultString INVALID_PARAM
-  Engine tests: 32 passed, 0 failed
-[PASS] Engine System
-
---- Running: Image Loader ---
-=== Test Image Loader Phase 4 ===
-  Checks: 12/12
-[PASS] Image Loader
-
---- Running: Face Tracker (Simple) ---
-=== Test Face Tracker Phase 4 ===
-  Checks: 16/16
-[PASS] Face Tracker (Simple)
-
---- Running: Face Mask ---
-=== Test Face Mask Phase 4 ===
-  Checks: 12/12
-[PASS] Face Mask
-
---- Running: Shader ---
-=== Test Shader Phase 4 ===
-  Expected compile error log: D:\sdk\HuanFace\build\bad.hlsl(1,1-4): error X3000: unrecognized identifier 'this'
-
-  Checks: 6/6
-[PASS] Shader
-
---- Running: Texture ---
-=== Test Texture Phase 4 ===
-  Bundle texture file not found on disk, trying from .hfbundle ZIP
-  Checks: 8/8
-[PASS] Texture
-
---- Running: Integration ---
-=== Test Integration Phase 4 (image->face->mask->makeup->output) ===
-  Lip pixels changed: 180
-  Perf: 10 iterations 5ms, avg 0.5ms, FPS baseline 2000
-  Checks: 10/10
-[PASS] Integration
-
---- Running: Production Tracker ---
-=== Test Production Tracker Phase 5 ===
-The system cannot find the path specified.
-HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
-ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
-Backend Type: AUTO
-Max Faces: 5 (configurable, 0..N real detections, no generated second face)
-  Backend: FallbackHeuristicInferenceBackend IsRealML: 0
-  Checks: 30/30
-[PASS] Production Tracker
-
---- Running: Face Mesh ---
-=== Test Face Mesh Phase 5 ===
-  Checks: 17/17
-[PASS] Face Mesh
-
---- Running: Pose ---
-=== Test Pose Phase 5 ===
-  Checks: 14/14
-[PASS] Pose
-
---- Running: Tracking State ---
-=== Test Tracking Phase 5 ===
-  Checks: 24/24
-[PASS] Tracking State
-
---- Running: Coordinate Transform ---
-=== Test Coordinate Transform Phase 5 ===
-  Checks: 22/22
-[PASS] Coordinate Transform
-
---- Running: Real ML Pipeline ---
-=== Test Real ML Pipeline Phase 5.5 ===
-The system cannot find the path specified.
-The system cannot find the path specified.
-HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
-ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
-Backend Type: AUTO
-Max Faces: 5 (configurable, 0..N real detections, no generated second face)
-The system cannot find the path specified.
-Production mode requires ML backend but ONNX model load failed: MODEL_LOAD_FAILED
-ProductionFaceTracker Init FAILED: Production mode requires ML backend
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
-Production mode with heuristic backend is NOT allowed for production ML tracking
-Production mode ML required but HEURISTIC explicitly requested, FAIL init per Phase 5.5 gate
-ProductionFaceTracker Init FAILED: Production mode requires ML backend
-The system cannot find the path specified.
-HEURISTIC FALLBACK WARNING: ONNX backend requested but model not available, falling back to heuristic (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY)
-ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
-Backend Type: ONNX
-Max Faces: 5 (configurable, 0..N real detections, no generated second face)
-The system cannot find the path specified.
-HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
-WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
-ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
-Backend Type: AUTO
-Max Faces: 5 (configurable, 0..N real detections, no generated second face)
-  Checks: 29/29
-[PASS] Real ML Pipeline
-
---- Running: Makeup Renderer ---
-=== Test Makeup Phase 6 ===
-  Checks: 184/184
-[PASS] Makeup Renderer
-
---- Running: Beauty Engine ---
-=== Test Beauty Phase 7 ===
-  Checks: 167/167
-[PASS] Beauty Engine
-
-=== Summary ===
-Passed: 18/18
-Failed: 0/18
-
-All tests PASSED
-PS D:\sdk\HuanFace\build>

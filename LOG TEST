@@ -1,111 +1,43 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
 PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
-remote: Enumerating objects: 25, done.
-remote: Counting objects: 100% (25/25), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 13 (delta 10), reused 13 (delta 10), pack-reused 0 (from 0)
-Unpacking objects: 100% (13/13), 10.52 KiB | 336.00 KiB/s, done.
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 9 (delta 7), reused 9 (delta 7), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 2.48 KiB | 105.00 KiB/s, done.
 From https://github.com/hanlimzie-glitch/HuanFace
  * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
-   0ce6d6d..866f590  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-Updating 0ce6d6d..866f590
+   866f590..82f5c08  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+Updating 866f590..82f5c08
 Fast-forward
- sdk/src/image/image_loader.cpp  |  41 +-
- tests/test_bundle.cpp           |  12 +-
- tests/test_image.cpp            |  10 +-
- tests/test_makeup.cpp           |  24 +-
- tests/test_phase8.cpp           | 865 ++++++++++++++++++++++++++++++++--------
- tests/test_real_ml_pipeline.cpp |   4 +-
- tests/test_texture.cpp          |   6 +-
- 7 files changed, 783 insertions(+), 179 deletions(-)
+ sdk/src/image/image_loader.cpp | 114 +++++++++++++++++++++++++++++++----------
+ tests/test_makeup.cpp          |   3 ++
+ tests/test_phase8.cpp          |  18 +++++--
+ 3 files changed, 104 insertions(+), 31 deletions(-)
 PS D:\sdk\HuanFace> cd build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
-  image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\HuanFacePhase8Tests.vcxproj]
   test_phase8.cpp
-D:\sdk\HuanFace\tests\test_phase8.cpp(401,14): error C2039: 'EndFrame': is not a member of 'huanface::IRenderBackend' [
-D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(89,7):
-      see declaration of 'huanface::IRenderBackend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(500,14): error C2039: 'EndFrame': is not a member of 'huanface::IRenderBackend' [
-D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(89,7):
-      see declaration of 'huanface::IRenderBackend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(791,18): error C2039: 'EndFrame': is not a member of 'huanface::IRenderBackend' [
-D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(89,7):
-      see declaration of 'huanface::IRenderBackend'
-
-  Generating Code...
   image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\HuanFaceTests.vcxproj]
-  test_bundle.cpp
-  test_image.cpp
+  Generating Code...
+  HuanFacePhase8Tests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFacePhase8Tests.exe
   test_makeup.cpp
-D:\sdk\HuanFace\tests\test_makeup.cpp(777,20): error C2664: 'void CHECK(bool,const char *)': cannot convert argument 2
-from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' to 'const char *' [D:\sdk\HuanFace\build\Hua
-nFaceTests.vcxproj]
-      D:\sdk\HuanFace\tests\test_makeup.cpp(777,60):
-      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-      D:\sdk\HuanFace\tests\test_makeup.cpp(20,13):
-      see declaration of 'CHECK'
-      D:\sdk\HuanFace\tests\test_makeup.cpp(777,20):
-      while trying to match the argument list '(bool, std::basic_string<char,std::char_traits<char>,std::allocator<char
-  >>)'
-
-  test_real_ml_pipeline.cpp
-  test_texture.cpp
+  image_loader.cpp
   Generating Code...
+  HuanFaceTests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFaceTests.exe
   image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\basic_desktop.vcxproj]
+  basic_desktop.vcxproj -> D:\sdk\HuanFace\build\Release\basic_desktop.exe
   image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\basic_face_demo.vcxproj]
+  basic_face_demo.vcxproj -> D:\sdk\HuanFace\build\Release\basic_face_demo.exe
   image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\beauty_demo.vcxproj]
+  beauty_demo.vcxproj -> D:\sdk\HuanFace\build\Release\beauty_demo.exe
   image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\huanface.vcxproj]
+  huanface.vcxproj -> D:\sdk\HuanFace\build\Release\huanface.dll
   image_loader.cpp
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(144,22): error C3861: 'mz_compressBound': identifier not found [D:\sdk\H
-uanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,78): error C2065: 'MZ_DEFAULT_COMPRESSION': undeclared identifier [D
-:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\image\image_loader.cpp(147,15): error C3861: 'mz_compress2': identifier not found [D:\sdk\HuanF
-ace\build\makeup_demo.vcxproj]
-PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe
+  makeup_demo.vcxproj -> D:\sdk\HuanFace\build\Release\makeup_demo.exe
+PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe > test_output.txt 2>&1
+PS D:\sdk\HuanFace\build> type test_output.txt
 === HuanFace SDK Phase 7 Tests ===
 Build: Sep 30 2026 02:09:04
 Platform: Windows
@@ -172,9 +104,9 @@ Platform: Windows
   [PASS] ResourceManager load again (cached)
   [PASS] ResourceManager still count 1 after cached load
   [PASS] FaceUnity encrypted bundle should be rejected
-  [FAIL] FaceUnity rejection error mentions protected/encrypted
-  Bundle tests: 35 passed, 1 failed
-[FAIL] Bundle System
+  [PASS] FaceUnity rejection error mentions protected/encrypted: Detected FaceUnity encrypted bundle (magic F3 5B 06 12 PROTECTED). This tool only handles HuanFace .hfbundle ZIP open format. No DRM bypass.
+  Bundle tests: 36 passed, 0 failed
+[PASS] Bundle System
 
 --- Running: Rendering System ---
   [PASS] Null backend creation
@@ -269,14 +201,8 @@ Max Faces: 4 (configurable, 0..N real detections, no generated second face)
 
 --- Running: Image Loader ---
 === Test Image Loader Phase 4 ===
-  FAIL: Save PNG should succeed
-  err=zlib not available for PNG compress
-  FAIL: Load PNG should succeed
-  FAIL: Loaded dimensions 64x64
-  FAIL: Loaded data size
-  FAIL: EncodePNGToMemory should succeed
-  Checks: 6/11
-[FAIL] Image Loader
+  Checks: 12/12
+[PASS] Image Loader
 
 --- Running: Face Tracker (Simple) ---
 === Test Face Tracker Phase 4 ===
@@ -297,14 +223,9 @@ Max Faces: 4 (configurable, 0..N real detections, no generated second face)
 
 --- Running: Texture ---
 === Test Texture Phase 4 ===
-  FAIL: Encode PNG for texture test
-  FAIL: Decode PNG for texture test
-  FAIL: Decoded dims 128x64
-  FAIL: Decoded data size correct
-  FAIL: Stride width*4
   Bundle texture file not found on disk, trying from .hfbundle ZIP
-  Checks: 3/8
-[FAIL] Texture
+  Checks: 8/8
+[PASS] Texture
 
 --- Running: Integration ---
 === Test Integration Phase 4 (image->face->mask->makeup->output) ===
@@ -315,7 +236,13 @@ Max Faces: 4 (configurable, 0..N real detections, no generated second face)
 
 --- Running: Production Tracker ---
 === Test Production Tracker Phase 5 ===
-The system cannot find the path specified.
+.\Release\HuanFaceTests.exe : The system cannot find the path specified.
+At line:1 char:1
++ .\Release\HuanFaceTests.exe > test_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (The system cann...path specified.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
 The system cannot find the path specified.
 HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
 Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
@@ -396,9 +323,8 @@ Max Faces: 5 (configurable, 0..N real detections, no generated second face)
 
 --- Running: Makeup Renderer ---
 === Test Makeup Phase 6 ===
-  FAIL: simple_lip bundle exists
-  Checks: 183/184
-[FAIL] Makeup Renderer
+  Checks: 184/184
+[PASS] Makeup Renderer
 
 --- Running: Beauty Engine ---
 === Test Beauty Phase 7 ===
@@ -406,28 +332,8 @@ Max Faces: 5 (configurable, 0..N real detections, no generated second face)
 [PASS] Beauty Engine
 
 === Summary ===
-Passed: 13/18
-Failed: 5/18
+Passed: 17/18
+Failed: 1/18
 
 Some tests FAILED
-PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe
-=== Phase 8 Tests ===
-WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured)
-D3D11InitTests: PASS - D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED
-AdapterTests: PASS - Adapter info: description, vendor, VRAM queried via DXGI ΓÇö MEASURED
-ShaderCompileTests: PASS - HLSL compile via D3DCompile VS/PS succeeded ΓÇö MEASURED 8/8 files
-GPUResourceTests: PASS - GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED
-TextureTests: PASS - Texture creation CPU path MEASURED, GPU path NOT EXECUTED on Linux (0.0001ms)
-RenderTargetTests: PASS - RenderTarget creation, SetRenderTarget, Clear MEASURED
-GPUBeautyRenderTests: PASS - GPU beauty execution smoothing bilateral-like, texture, blemish, tone, brightness, contrast, retouch using mask+params+input+HLSL+RT MEASURED
-GPUMakeupRenderTests: PASS - GPU makeup execution foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes MEASURED
-CPUvsGPURegressionTests: PASS - CPU vs GPU regression avg/max error within tolerance, no blank/NaN MEASURED
-ResourcePoolTests: PASS - ResourcePool CPU MEASURED reuse PASS, GPU MEASURED reuse PASS
-PerformanceRegressionTests: PASS - Performance regression PASS: mask 64.295200ms, smoothing 50.870200ms, total beauty <600ms after optimization (was 738ms) MEASURED (115.165ms)
-ResolutionTests: PASS - Resolution 400x400, 720p, 1080p PASS ΓÇö mask/beauty valid, no crash MEASURED
-MultiFaceGPUBeautyMakeupTests: PASS - Multi-face 0/1/2/N mask/beauty/makeup not swapped PASS MEASURED CPU, GPU NOT EXECUTED
-ResizeTests: PASS - Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak PASS MEASURED CPU, GPU NOT EXECUTED
-ErrorRecoveryTests: PASS - Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash PASS MEASURED
-
-Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16
-PS D:\sdk\HuanFace\build>
+PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe > phase8_output.txt 2>&1

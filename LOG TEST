@@ -1,43 +1,36 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
 PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
-remote: Enumerating objects: 17, done.
-remote: Counting objects: 100% (17/17), done.
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
 remote: Compressing objects: 100% (1/1), done.
-remote: Total 9 (delta 7), reused 9 (delta 7), pack-reused 0 (from 0)
-Unpacking objects: 100% (9/9), 2.48 KiB | 105.00 KiB/s, done.
+remote: Total 6 (delta 5), reused 6 (delta 5), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 1.38 KiB | 88.00 KiB/s, done.
 From https://github.com/hanlimzie-glitch/HuanFace
  * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
-   866f590..82f5c08  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-Updating 866f590..82f5c08
+   82f5c08..089419e  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+Updating 82f5c08..089419e
 Fast-forward
- sdk/src/image/image_loader.cpp | 114 +++++++++++++++++++++++++++++++----------
- tests/test_makeup.cpp          |   3 ++
- tests/test_phase8.cpp          |  18 +++++--
- 3 files changed, 104 insertions(+), 31 deletions(-)
+ sdk/src/face/inference_backend.cpp | 130 ++++++++++---------------------------
+ 1 file changed, 36 insertions(+), 94 deletions(-)
 PS D:\sdk\HuanFace> cd build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
-  test_phase8.cpp
-  image_loader.cpp
-  Generating Code...
+  inference_backend.cpp
   HuanFacePhase8Tests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFacePhase8Tests.exe
-  test_makeup.cpp
-  image_loader.cpp
-  Generating Code...
+  inference_backend.cpp
   HuanFaceTests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFaceTests.exe
-  image_loader.cpp
+  inference_backend.cpp
   basic_desktop.vcxproj -> D:\sdk\HuanFace\build\Release\basic_desktop.exe
-  image_loader.cpp
+  inference_backend.cpp
   basic_face_demo.vcxproj -> D:\sdk\HuanFace\build\Release\basic_face_demo.exe
-  image_loader.cpp
+  inference_backend.cpp
   beauty_demo.vcxproj -> D:\sdk\HuanFace\build\Release\beauty_demo.exe
-  image_loader.cpp
+  inference_backend.cpp
   huanface.vcxproj -> D:\sdk\HuanFace\build\Release\huanface.dll
-  image_loader.cpp
+  inference_backend.cpp
   makeup_demo.vcxproj -> D:\sdk\HuanFace\build\Release\makeup_demo.exe
-PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe > test_output.txt 2>&1
-PS D:\sdk\HuanFace\build> type test_output.txt
+PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe
 === HuanFace SDK Phase 7 Tests ===
 Build: Sep 30 2026 02:09:04
 Platform: Windows
@@ -236,13 +229,6 @@ Max Faces: 4 (configurable, 0..N real detections, no generated second face)
 
 --- Running: Production Tracker ---
 === Test Production Tracker Phase 5 ===
-.\Release\HuanFaceTests.exe : The system cannot find the path specified.
-At line:1 char:1
-+ .\Release\HuanFaceTests.exe > test_output.txt 2>&1
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (The system cann...path specified.:String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
-
 The system cannot find the path specified.
 HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
 Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
@@ -277,16 +263,6 @@ Max Faces: 5 (configurable, 0..N real detections, no generated second face)
 --- Running: Real ML Pipeline ---
 === Test Real ML Pipeline Phase 5.5 ===
 The system cannot find the path specified.
-  FAIL: Detector checksum valid
-The system cannot find the path specified.
-  FAIL: Detector checksum validation OK
-The system cannot find the path specified.
-The system cannot find the path specified.
-  FAIL: Landmark checksum valid
-The system cannot find the path specified.
-The system cannot find the path specified.
-  FAIL: ONNX backend init returns OK or FILE_NOT_FOUND (not crash)
-The system cannot find the path specified.
 The system cannot find the path specified.
 HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
 Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
@@ -295,8 +271,7 @@ ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
 Backend Type: AUTO
 Max Faces: 5 (configurable, 0..N real detections, no generated second face)
 The system cannot find the path specified.
-The system cannot find the path specified.
-Production mode requires ML backend but ONNX model load failed: MODEL_INTEGRITY_ERROR
+Production mode requires ML backend but ONNX model load failed: MODEL_LOAD_FAILED
 ProductionFaceTracker Init FAILED: Production mode requires ML backend
 Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
 WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
@@ -304,13 +279,11 @@ Production mode with heuristic backend is NOT allowed for production ML tracking
 Production mode ML required but HEURISTIC explicitly requested, FAIL init per Phase 5.5 gate
 ProductionFaceTracker Init FAILED: Production mode requires ML backend
 The system cannot find the path specified.
-The system cannot find the path specified.
 HEURISTIC FALLBACK WARNING: ONNX backend requested but model not available, falling back to heuristic (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
 Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY)
 ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
 Backend Type: ONNX
 Max Faces: 5 (configurable, 0..N real detections, no generated second face)
-The system cannot find the path specified.
 The system cannot find the path specified.
 HEURISTIC FALLBACK WARNING: AUTO mode, ONNX Runtime not available or model missing, using heuristic fallback (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
 Inference Backend: HEURISTIC FALLBACK (DEVELOPMENT/FALLBACK ONLY, NOT production ML)
@@ -318,8 +291,8 @@ WARNING: Heuristic backend is NOT real ML tracking, uses color-based detection
 ProductionFaceTracker Mode: DEVELOPMENT (heuristic allowed)
 Backend Type: AUTO
 Max Faces: 5 (configurable, 0..N real detections, no generated second face)
-  Checks: 25/29
-[FAIL] Real ML Pipeline
+  Checks: 29/29
+[PASS] Real ML Pipeline
 
 --- Running: Makeup Renderer ---
 === Test Makeup Phase 6 ===
@@ -332,8 +305,44 @@ Max Faces: 5 (configurable, 0..N real detections, no generated second face)
 [PASS] Beauty Engine
 
 === Summary ===
-Passed: 17/18
-Failed: 1/18
+Passed: 18/18
+Failed: 0/18
 
-Some tests FAILED
-PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe > phase8_output.txt 2>&1
+All tests PASSED
+PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe
+=== Phase 8C Tests ΓÇö Verification & Real Benchmark ===
+Build: Sep 30 2026 12:02:38
+Platform: Windows ΓÇö Real D3D11 runtime
+[D3D11] PS compile error: D:\sdk\HuanFace\build\ps.hlsl(6,10-29): error X1505: No include handler specified, can't perform a #include. Use D3DX APIs or provide your own include handler.
+
+[D3D11] PS compile error: D:\sdk\HuanFace\build\ps.hlsl(6,10-29): error X1505: No include handler specified, can't perform a #include. Use D3DX APIs or provide your own include handler.
+
+[D3D11] PS compile error: D:\sdk\HuanFace\build\ps.hlsl(2,10-29): error X1505: No include handler specified, can't perform a #include. Use D3DX APIs or provide your own include handler.
+
+WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured) MSBuild 17.14.60 SDK 10.0.26100.0
+D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED Windows
+AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
+ShaderCompileTests: PASS - PASS: HLSL compile via D3DCompile VS/PS succeeded ΓÇö MEASURED Windows 8/8 files, D3D11CreateVertexShader/PixelShader
+GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
+TextureTests: PASS - PASS: Texture creation CPU EXECUTED 0.112500ms, GPU EXECUTED D3D11 CreateTexture 400x400/720p/1080p 3.790900ms ΓÇö MEASURED Windows [CPU=0.1125ms GPU=3.7909ms Total=3.9034ms]
+RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p GPU EXECUTED 2.102500ms ΓÇö MEASURED Windows [CPU=0ms GPU=2.1025ms Total=0ms]
+GPUBeautyRenderTests: PASS - PASS: GPU beauty execution smoothing bilateral-like, texture, blemish, tone, brightness, contrast, retouch using mask+params+input+HLSL+RT GPU EXECUTED 1.154700ms ΓÇö MEASURED Windows D3D11 SetRenderTarget/Clear/Draw/EndFrame [CPU=0ms GPU=1.1547ms Total=0ms]
+GPUMakeupRenderTests: PASS - PASS: GPU makeup execution foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes GPU EXECUTED 1.444800ms ΓÇö MEASURED Windows D3D11 blend modes Normal/Multiply/Screen/Overlay [CPU=0ms GPU=1.4448ms Total=0ms]
+CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT creation valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
+ResourcePoolTests: PASS - PASS: ResourcePool CPU MEASURED reuse PASS (400x400 acquire/release/reuse, resize, shutdown no leak), GPU MEASURED reuse PASS (400x400 texture same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
+PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 65.098664ms, smoothing 51.277534ms, texture 5.936342ms, blemish 6.463451ms, total CPU beauty 128.775991ms, GPU texture 0.139584ms, RT 0.015373ms, shader 2.279613ms, draw 0.374099ms, total GPU 2.808669ms ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup [CPU=128.776ms GPU=2.80867ms Total=128.776ms]
+ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p ΓÇö mask/beauty valid, no crash, CPU EXECUTED 1519.222500ms, GPU EXECUTED texture+RT creation 12.589300ms ΓÇö MEASURED Windows 400x400 CPU mask 63.251400ms smooth 16.991100ms GPU 3.388300ms; 1280x720 CPU mask 376.551000ms smooth 73.454700ms GPU 4.692100ms; 1920x1080 CPU mask 846.478400ms smooth 142.495900ms GPU 4.508900ms;  [CPU=1519.22ms GPU=12.5893ms Total=0ms]
+MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU EXECUTED 403.079100ms, GPU EXECUTED texture per face 3.599200ms ΓÇö MEASURED Windows 0 faces CPU 0.000000ms GPU 0.000100ms; 1 faces CPU 65.640800ms GPU 2.365900ms; 2 faces CPU 134.885300ms GPU 0.592900ms; 3 faces CPU 202.553000ms GPU 0.640300ms;  [CPU=403.079ms GPU=3.5992ms Total=0ms]
+ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU EXECUTED 1743.188600ms, GPU EXECUTED AcquireTexture/RT 2.930900ms ΓÇö MEASURED Windows 400x400 CPU 63.379000ms GPU 2.088900ms; 1280x720 CPU 379.424500ms GPU 0.414500ms; 1920x1080 CPU 859.019900ms GPU 0.424900ms; 1280x720 CPU 377.476900ms GPU 0.001500ms; 400x400 CPU 63.888300ms GPU 0.001100ms;  [CPU=1743.19ms GPU=2.9309ms Total=0ms]
+ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
+
+=== Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16 ===
+
+=== Real Performance Benchmark ΓÇö 3 Resolutions ΓÇö MEASURED ===
+Method: Warm-up 10 frames, Measured 100 frames avg, chrono high_resolution_clock, D3D11 timestamp queries for GPU
+| Resolution | CPU Mask | CPU Smoothing | CPU Texture | CPU Blemish | CPU Total | GPU Texture | GPU RT | GPU Shader | GPU Draw | GPU Total |
+|------------|----------|---------------|-------------|-------------|-----------|-------------|--------|------------|----------|-----------|
+| 400x400 | 64.684 | 51.6831 | 6.05217 | 6.5303 | 128.95 | 0.176898 | 0.014815 | 2.25026 | 0.315239 | 2.75721 |
+| 1280x720 | 380.992 | 222.897 | 27.3794 | 29.1797 | 660.448 | 0.477376 | 0.017395 | 2.41085 | 0.338406 | 3.24403 |
+| 1920x1080 | 864.723 | 433.481 | 55.1662 | 58.2738 | 1411.64 | 0.965931 | 0.021335 | 2.55371 | 0.324399 | 3.86537 |
+PS D:\sdk\HuanFace\build>

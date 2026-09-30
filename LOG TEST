@@ -1,81 +1,26 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
 PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
-remote: Enumerating objects: 17, done.
-remote: Counting objects: 100% (17/17), done.
-remote: Compressing objects: 100% (1/1), done.
-remote: Total 9 (delta 8), reused 9 (delta 8), pack-reused 0 (from 0)
-Unpacking objects: 100% (9/9), 9.28 KiB | 380.00 KiB/s, done.
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 14 (delta 12), reused 14 (delta 12), pack-reused 0 (from 0)
+Unpacking objects: 100% (14/14), 1.67 KiB | 47.00 KiB/s, done.
 From https://github.com/hanlimzie-glitch/HuanFace
  * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
-   5a9c4d0..c96f130  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-Updating 5a9c4d0..c96f130
+   c96f130..0809b13  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+Updating c96f130..0809b13
 Fast-forward
- sdk/src/rendering/d3d11/d3d11_backend.cpp |  203 +++++-
- tests/test_phase8.cpp                     | 1018 +++++++++++++++--------------
- 2 files changed, 715 insertions(+), 506 deletions(-)
+ sdk/src/rendering/d3d11/d3d11_backend.cpp | 79 +++++++++++++++++++++++++++----
+ sdk/src/rendering/d3d11/d3d11_backend.h   |  2 +-
+ 2 files changed, 72 insertions(+), 9 deletions(-)
 PS D:\sdk\HuanFace> cd build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
-  d3d11_backend.cpp
   test_phase8.cpp
-D:\sdk\HuanFace\tests\test_phase8.cpp(265,25): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
-cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(324,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
-cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(452,20): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
-cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(570,20): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
-cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(796,24): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
-cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(921,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot ac
-cess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(1014,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot a
-ccess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
-D:\sdk\HuanFace\tests\test_phase8.cpp(1099,21): error C2248: 'huanface::D3D11Backend::CreateTimestampQueries': cannot a
-ccess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(186,14):
-      see declaration of 'huanface::D3D11Backend::CreateTimestampQueries'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.h(94,7):
-      see declaration of 'huanface::D3D11Backend'
-
+  d3d11_backend.cpp
   Generating Code...
+  HuanFacePhase8Tests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFacePhase8Tests.exe
   d3d11_backend.cpp
   HuanFaceTests.vcxproj -> D:\sdk\HuanFace\build\Release\HuanFaceTests.exe
   d3d11_backend.cpp
@@ -88,6 +33,496 @@ ccess private member declared in class 'huanface::D3D11Backend' [D:\sdk\HuanFace
   huanface.vcxproj -> D:\sdk\HuanFace\build\Release\huanface.dll
   d3d11_backend.cpp
   makeup_demo.vcxproj -> D:\sdk\HuanFace\build\Release\makeup_demo.exe
+PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe
+=== Phase 8D Tests ΓÇö Production Shader & GPU Timing Verification ===
+Build: Sep 30 2026 13:27:17
+Platform: Windows ΓÇö Real D3D11 runtime, production HLSL, no fallback, real GPU TIMESTAMP queries
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_common.hlsl : error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_smoothing.hlsl : error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_texture.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_texture.hlsl(47,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
+error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_blemish.hlsl(42,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
+error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
+[D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/makeup_common.hlsl : error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
+[D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
+[D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
+[D3D11] PS file compiled with entry point: PSBlush file: ../sdk/src/rendering/shaders/makeup_blush.hlsl
+[D3D11] PS file compiled with entry point: PSEyeshadow file: ../sdk/src/rendering/shaders/makeup_eye.hlsl
+[D3D11] PS compiled with entry point: main
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_smoothing.hlsl : error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_texture.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_texture.hlsl(47,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
+error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/beauty_blemish.hlsl : D:\sdk\HuanFace\sdk\src\rendering\shaders\beauty_blemish.hlsl(42,14): warning X3078: 'y': loop control variable conflicts with a previous declaration in the outer scope; most recent declaration will be used
+error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compiled with entry point: PSToneAdjustment file: ../sdk/src/rendering/shaders/beauty_tone.hlsl
+[D3D11] PS file compiled with entry point: PSBrightness file: ../sdk/src/rendering/shaders/beauty_adjustment.hlsl
+[D3D11] PS file compile error (all entry points failed) file=../sdk/src/rendering/shaders/makeup_common.hlsl : error X3501: 'main': entrypoint not found
+
+[D3D11] PS file compiled with entry point: PSBlend file: ../sdk/src/rendering/shaders/makeup_blend.hlsl
+[D3D11] PS file compiled with entry point: PSFoundation file: ../sdk/src/rendering/shaders/makeup_foundation.hlsl
+[D3D11] PS file compiled with entry point: PSLip file: ../sdk/src/rendering/shaders/makeup_lip.hlsl
+[D3D11] PS file compiled with entry point: PSBlush file: ../sdk/src/rendering/shaders/makeup_blush.hlsl
+[D3D11] PS file compiled with entry point: PSEyeshadow file: ../sdk/src/rendering/shaders/makeup_eye.hlsl
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured) MSBuild 17.14.60 SDK 10.0.26100.0
+D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED Windows D3D11CreateDevice
+AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
+ShaderCompileTests: FAIL - FAIL: Production HLSL compile 7/12 ΓÇö beauty_common.hlsl[VSMain] FAIL; beauty_smoothing.hlsl[PSSmoothing] FAIL; beauty_texture.hlsl[PSTextureRefinement] FAIL; beauty_blemish.hlsl[PSBlemishReduction] FAIL; beauty_tone.hlsl[PSToneAdjustment] PASS; beauty_adjustment.hlsl[PSBrightness] PASS; makeup_common.hlsl[VSMain] FAIL; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  ΓÇö GATE 1 no fallback, must FIX root cause, include handler may have failed X1505
+GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
+TextureTests: PASS - PASS: Texture creation CPU preparation 0.096700ms, CPU CreateTexture API 2.737800ms, GPU rendering (Clear using texture) 0.000800ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows CPU chrono + GPU ID3D11Query TIMESTAMP [CPU Beauty=2.7378ms CPU ShaderCompile=0ms CPU Prep=0.0967ms GPU Rendering=0.0008ms GPU Valid=1 Disjoint=0]
+RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p CPU API 2.601100ms, GPU rendering 0.013728ms timestamp valid=1 ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP [CPU Beauty=2.6011ms CPU ShaderCompile=0ms CPU Prep=0ms GPU Rendering=0.013728ms GPU Valid=1 Disjoint=0]
+GPUBeautyRenderTests: FAIL - FAIL: Production HLSL compile failed ΓÇö beauty_smoothing.hlsl[PSSmoothing] FAIL compile no fallback; beauty_texture.hlsl[PSTextureRefinement] FAIL compile no fallback; beauty_blemish.hlsl[PSBlemishReduction] FAIL compile no fallback; beauty_tone.hlsl[PSToneAdjustment] PASS ID3D11PixelShader valid; beauty_adjustment.hlsl[PSBrightness] PASS ID3D11PixelShader valid;  ΓÇö GATE 1 no fallback, must FIX include handler X1505
+GPUMakeupRenderTests: FAIL - FAIL: Production makeup HLSL compile failed ΓÇö makeup_common.hlsl[VSMain] FAIL no fallback; makeup_blend.hlsl[PSBlend] PASS; makeup_foundation.hlsl[PSFoundation] PASS; makeup_lip.hlsl[PSLip] PASS; makeup_blush.hlsl[PSBlush] PASS; makeup_eye.hlsl[PSEyeshadow] PASS;  ΓÇö no fallback allowed
+CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
+ResourcePoolTests: PASS - PASS: ResourcePool CPU reuse PASS, GPU reuse PASS (400x400 same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
+PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 64.390104ms smoothing 51.572914ms texture 6.010235ms blemish 6.600595ms total CPU beauty 128.573848ms, CPU shader compile 10.897900ms prep 6.965600ms, GPU rendering 0.061134ms timestamp valid=1 disjoint=0 ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup CPU chrono + GPU TIMESTAMP [CPU Beauty=128.574ms CPU ShaderCompile=10.8979ms CPU Prep=6.9656ms GPU Rendering=0.0611341ms GPU Valid=1 Disjoint=0]
+ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p mask/beauty valid no crash CPU 1536.792400ms CPU compile 34.070500ms prep 14.368000ms GPU rendering 0.038432ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU mask 65.209700ms smooth 17.250100ms CPU compile 12.506000ms prep 4.939900ms GPU 0.009888ms; 1280x720 CPU mask 381.567700ms smooth 74.471100ms CPU compile 10.982000ms prep 4.018800ms GPU 0.012288ms; 1920x1080 CPU mask 854.186000ms smooth 144.107800ms CPU compile 10.582500ms prep 5.409300ms GPU 0.016256ms;  [CPU Beauty=1536.79ms CPU ShaderCompile=34.0705ms CPU Prep=14.368ms GPU Rendering=0.038432ms GPU Valid=0 Disjoint=0]
+MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU mask 400.916600ms CPU prep 3.902100ms GPU rendering 0.080928ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 0 faces CPU mask 0.000000ms CPU prep 0.005200ms GPU rendering 0.000000ms; 1 faces CPU mask 65.005600ms CPU prep 2.357800ms GPU rendering 0.057344ms; 2 faces CPU mask 133.887500ms CPU prep 0.808300ms GPU rendering 0.011040ms; 3 faces CPU mask 202.023500ms CPU prep 0.730800ms GPU rendering 0.012544ms;  [CPU Beauty=400.917ms CPU ShaderCompile=0ms CPU Prep=3.9021ms GPU Rendering=0.080928ms GPU Valid=0 Disjoint=0]
+ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU 1751.200600ms CPU prep 3.954800ms GPU rendering 0.396608ms ΓÇö MEASURED Windows CPU chrono + GPU TIMESTAMP 400x400 CPU 63.794800ms CPU prep 2.893700ms GPU 0.354304ms; 1280x720 CPU 380.164500ms CPU prep 0.391400ms GPU 0.012128ms; 1920x1080 CPU 863.271000ms CPU prep 0.668200ms GPU 0.016384ms; 1280x720 CPU 379.508600ms CPU prep 0.000700ms GPU 0.007040ms; 400x400 CPU 64.461700ms CPU prep 0.000800ms GPU 0.006752ms;  [CPU Beauty=1751.2ms CPU ShaderCompile=0ms CPU Prep=3.9548ms GPU Rendering=0.396608ms GPU Valid=0 Disjoint=0]
+ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
+
+=== Summary: PASS=13 FAIL=3 NOT_EXECUTED=0 Total=16 ===
+
+=== Real Performance Benchmark ΓÇö 3 Resolutions ΓÇö MEASURED ===
+Method: Warm-up 10 frames, Measured 100 frames avg, CPU chrono, GPU ID3D11Query TIMESTAMP_DISJOINT/TIMESTAMP per GATE 5,7,8
+CPU timing: D3DCompile, CreateShader, CreateTexture API, preparation via chrono
+GPU timing: Draw, shader execution, render pass via ID3D11Query TIMESTAMP, Frequency, Disjoint check
+| Resolution | CPU Mask | CPU Smoothing | CPU Texture | CPU Blemish | CPU Total | CPU Shader Compile | CPU Prep | GPU Rendering | GPU Valid | Disjoint |
+|------------|----------|---------------|-------------|-------------|-----------|--------------------|----------|---------------|-----------|----------|
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+| 400x400 | 64.2833 | 51.8207 | 6.05108 | 6.59957 | 128.755 | 10.9056 | 5.543 | 0.0795917 | 1 | 0 |
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+| 1280x720 | 395.59 | 232.464 | 28.3238 | 30.7488 | 687.127 | 11.3751 | 7.002 | 0.0561792 | 1 | 0 |
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+[D3D11] PS compiled with entry point: main
+| 1920x1080 | 873.278 | 438.252 | 55.3835 | 59.0633 | 1425.98 | 12.3781 | 15.4258 | 0.0671901 | 1 | 0 |
+
+=== Phase 8D Shader Verification ===
+Production shaders: beauty_common, beauty_smoothing, beauty_texture, beauty_blemish, beauty_tone, beauty_adjustment, makeup_common, makeup_blend, makeup_foundation, makeup_lip, makeup_blush, makeup_eye
+Compile: via D3DCompile with ID3DInclude handler for #include, no fallback per GATE 1
+Fallback: NONE
+Include handling: ID3DIncludeHandler searches baseDir + searchPaths, Open/Close, fileDataMap kept alive
+Production shader execution: VSSetShader/PSSetShader/Draw with production entry points PSSmoothing/PSTextureRefinement/etc
+
+=== Phase 8D GPU Timing Verification ===
+CPU timing: chrono high_resolution_clock for D3DCompile, CreateShader, CreateTexture API, preparation
+GPU timing: ID3D11Query D3D11_QUERY_TIMESTAMP_DISJOINT/TIMESTAMP, Begin/End/GetGPUTimestampMs, Frequency, Disjoint check, GetData S_OK vs S_FALSE, timestamp ordering start<end
+Disjoint handling: if Disjoint==TRUE measurement invalid marked 0, not used as benchmark per GATE 7
+GPU execution measurement: Begin timestamp -> SetRT/Clear/Bind production shaders/Bind resources/Draw/EndFrame -> End timestamp per GATE 8
+Shader compilation excluded from GPU time: CPU Shader Compile separate from GPU Rendering per GATE 6
 PS D:\sdk\HuanFace\build> .\Release\HuanFaceTests.exe
 === HuanFace SDK Phase 7 Tests ===
 Build: Sep 30 2026 02:09:04
@@ -367,40 +802,4 @@ Passed: 18/18
 Failed: 0/18
 
 All tests PASSED
-PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase8Tests.exe
-=== Phase 8C Tests ΓÇö Verification & Real Benchmark ===
-Build: Sep 30 2026 12:02:38
-Platform: Windows ΓÇö Real D3D11 runtime
-[D3D11] PS compile error: D:\sdk\HuanFace\build\ps.hlsl(6,10-29): error X1505: No include handler specified, can't perform a #include. Use D3DX APIs or provide your own include handler.
-
-[D3D11] PS compile error: D:\sdk\HuanFace\build\ps.hlsl(6,10-29): error X1505: No include handler specified, can't perform a #include. Use D3DX APIs or provide your own include handler.
-
-[D3D11] PS compile error: D:\sdk\HuanFace\build\ps.hlsl(2,10-29): error X1505: No include handler specified, can't perform a #include. Use D3DX APIs or provide your own include handler.
-
-WindowsBuildTests: PASS - Windows x64 MSVC C++17 CMake Release ΓÇö BUILD SUCCESS (measured) MSBuild 17.14.60 SDK 10.0.26100.0
-D3D11InitTests: PASS - PASS: D3D11 device/context created, feature level checked, adapter queried ΓÇö MEASURED Windows
-AdapterTests: PASS - PASS: Adapter info description, vendor, VRAM queried via DXGI IDXGIAdapter::GetDesc ΓÇö MEASURED Windows
-ShaderCompileTests: PASS - PASS: HLSL compile via D3DCompile VS/PS succeeded ΓÇö MEASURED Windows 8/8 files, D3D11CreateVertexShader/PixelShader
-GPUResourceTests: PASS - PASS: GPU resources ID3D11Texture2D/SRV/RTV/Buffer/Sampler/VS/PS created with RAII/ComPtr ΓÇö MEASURED Windows
-TextureTests: PASS - PASS: Texture creation CPU EXECUTED 0.152600ms, GPU EXECUTED D3D11 CreateTexture 400x400/720p/1080p 2.777100ms ΓÇö MEASURED Windows [CPU=0.1526ms GPU=2.7771ms Total=2.9297ms]
-RenderTargetTests: PASS - PASS: RenderTarget creation, SetRenderTarget, Clear for 400x400/720p/1080p GPU EXECUTED 2.387400ms ΓÇö MEASURED Windows [CPU=0ms GPU=2.3874ms Total=0ms]
-GPUBeautyRenderTests: PASS - PASS: GPU beauty execution smoothing bilateral-like, texture, blemish, tone, brightness, contrast, retouch using mask+params+input+HLSL+RT GPU EXECUTED 1.046100ms ΓÇö MEASURED Windows D3D11 SetRenderTarget/Clear/Draw/EndFrame [CPU=0ms GPU=1.0461ms Total=0ms]
-GPUMakeupRenderTests: PASS - PASS: GPU makeup execution foundation/blush/eyeshadow/eyebrow/eyeliner/eyelash/lip/pupil blend modes GPU EXECUTED 1.372100ms ΓÇö MEASURED Windows D3D11 blend modes Normal/Multiply/Screen/Overlay [CPU=0ms GPU=1.3721ms Total=0ms]
-CPUvsGPURegressionTests: PASS - PASS: CPU vs GPU regression ΓÇö CPU output valid 400x400, GPU RT creation valid, dimensions match, no blank/NaN, avg/max error within tolerance ΓÇö MEASURED Windows CPU+GPU
-ResourcePoolTests: PASS - PASS: ResourcePool CPU MEASURED reuse PASS (400x400 acquire/release/reuse, resize, shutdown no leak), GPU MEASURED reuse PASS (400x400 texture same pointer, 720p new, RT reuse) ΓÇö MEASURED Windows
-PerformanceRegressionTests: PASS - PASS: Performance regression ΓÇö CPU mask 66.888095ms, smoothing 52.657918ms, texture 6.216006ms, blemish 6.761550ms, total CPU beauty 132.523569ms, GPU texture 0.150352ms, RT 0.019176ms, shader 2.511745ms, draw 0.369384ms, total GPU 3.050657ms ΓÇö MEASURED Windows 400x400 100 frames avg after 10 warmup [CPU=132.524ms GPU=3.05066ms Total=132.524ms]
-ResolutionTests: PASS - PASS: Resolution 400x400/720p/1080p ΓÇö mask/beauty valid, no crash, CPU EXECUTED 1578.224600ms, GPU EXECUTED texture+RT creation 11.896700ms ΓÇö MEASURED Windows 400x400 CPU mask 65.398300ms smooth 17.713500ms GPU 2.954200ms; 1280x720 CPU mask 386.414800ms smooth 74.802200ms GPU 3.269200ms; 1920x1080 CPU mask 886.536700ms smooth 147.359100ms GPU 5.673300ms;  [CPU=1578.22ms GPU=11.8967ms Total=0ms]
-MultiFaceGPUBeautyMakeupTests: PASS - PASS: Multi-face 0/1/2/3 faces mask/beauty/makeup not swapped ΓÇö CPU EXECUTED 412.617900ms, GPU EXECUTED texture per face 3.133000ms ΓÇö MEASURED Windows 0 faces CPU 0.000000ms GPU 0.000100ms; 1 faces CPU 67.609600ms GPU 2.263600ms; 2 faces CPU 137.100200ms GPU 0.367700ms; 3 faces CPU 207.908100ms GPU 0.501600ms;  [CPU=412.618ms GPU=3.133ms Total=0ms]
-ResizeTests: PASS - PASS: Resize 400->720p->1080p->720p->400 RT recreation pool valid no leak ΓÇö CPU EXECUTED 1792.226200ms, GPU EXECUTED AcquireTexture/RT 3.303400ms ΓÇö MEASURED Windows 400x400 CPU 66.173300ms GPU 2.309200ms; 1280x720 CPU 394.634700ms GPU 0.543600ms; 1920x1080 CPU 878.674500ms GPU 0.448900ms; 1280x720 CPU 385.448800ms GPU 0.000900ms; 400x400 CPU 67.294900ms GPU 0.000800ms;  [CPU=1792.23ms GPU=3.3034ms Total=0ms]
-ErrorRecoveryTests: PASS - PASS: Error recovery invalid texture/resolution/shader/allocation/model/bundle/param/device failure no crash ΓÇö MEASURED Windows+Linux
-
-=== Summary: PASS=16 FAIL=0 NOT_EXECUTED=0 Total=16 ===
-
-=== Real Performance Benchmark ΓÇö 3 Resolutions ΓÇö MEASURED ===
-Method: Warm-up 10 frames, Measured 100 frames avg, chrono high_resolution_clock, D3D11 timestamp queries for GPU
-| Resolution | CPU Mask | CPU Smoothing | CPU Texture | CPU Blemish | CPU Total | GPU Texture | GPU RT | GPU Shader | GPU Draw | GPU Total |
-|------------|----------|---------------|-------------|-------------|-----------|-------------|--------|------------|----------|-----------|
-| 400x400 | 65.6216 | 52.8372 | 6.14423 | 6.71577 | 131.319 | 0.196735 | 0.015511 | 2.51424 | 0.36265 | 3.08913 |
-| 1280x720 | 392.761 | 230.005 | 28.3636 | 30.0514 | 681.18 | 0.48318 | 0.018859 | 2.46221 | 0.356381 | 3.32063 |
-| 1920x1080 | 888.25 | 444.6 | 55.8531 | 59.0316 | 1447.73 | 1.15699 | 0.029197 | 2.91784 | 0.386477 | 4.4905 |
 PS D:\sdk\HuanFace\build>

@@ -1,547 +1,245 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
-PS D:\sdk\HuanFace> git checkout main
-branch 'main' set up to track 'origin/main'.
-Switched to a new branch 'main'
-PS D:\sdk\HuanFace> git branch -D arena/01a0e5f5-huanface -ErrorAction SilentlyContinue
-error: unknown switch `E'
-usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
-   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
-   or: git branch [<options>] [-l] [<pattern>...]
-   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
-   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
-   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
-   or: git branch [<options>] [-r | -a] [--points-at]
-   or: git branch [<options>] [-r | -a] [--format]
-
-Generic options
-    -v, --[no-]verbose    show hash and subject, give twice for upstream branch
-    -q, --[no-]quiet      suppress informational messages
-    -t, --[no-]track[=(direct|inherit)]
-                          set branch tracking configuration
-    -u, --[no-]set-upstream-to <upstream>
-                          change the upstream info
-    --[no-]unset-upstream unset the upstream info
-    --[no-]color[=<when>] use colored output
-    -r, --remotes         act on remote-tracking branches
-    --contains <commit>   print only branches that contain the commit
-    --no-contains <commit>
-                          print only branches that don't contain the commit
-    --[no-]abbrev[=<n>]   use <n> digits to display object names
-
-Specific git-branch actions:
-    -a, --all             list both remote-tracking and local branches
-    -d, --[no-]delete     delete fully merged branch
-    -D                    delete branch (even if not merged)
-    -m, --[no-]move       move/rename a branch and its reflog
-    -M                    move/rename a branch, even if target exists
-    --[no-]omit-empty     do not output a newline after empty formatted refs
-    -c, --[no-]copy       copy a branch and its reflog
-    -C                    copy a branch, even if target exists
-    -l, --[no-]list       list branch names
-    --[no-]show-current   show current branch name
-    --[no-]create-reflog  create the branch's reflog
-    --[no-]edit-description
-                          edit the description for the branch
-    -f, --[no-]force      force creation, move/rename, deletion
-    --merged <commit>     print only branches that are merged
-    --no-merged <commit>  print only branches that are not merged
-    --[no-]column[=<style>]
-                          list branches in columns
-    --[no-]sort <key>     field name to sort on
-    --[no-]points-at <object>
-                          print only branches of the object
-    -i, --[no-]ignore-case
-                          sorting and filtering are case insensitive
-    --[no-]recurse-submodules
-                          recurse through submodules
-    --[no-]format <format>
-                          format to use for the output
-
-PS D:\sdk\HuanFace> git fetch origin +refs/heads/arena/01a0e5f5-huanface:refs/heads/arena/01a0e5f5-huanface --force
-remote: Enumerating objects: 31, done.
-remote: Counting objects: 100% (31/31), done.
-remote: Compressing objects: 100% (1/1), done.
-remote: Total 16 (delta 15), reused 16 (delta 15), pack-reused 0 (from 0)
-Unpacking objects: 100% (16/16), 3.74 KiB | 91.00 KiB/s, done.
-From https://github.com/hanlimzie-glitch/HuanFace
-   ed7c31c..ad63ff4  arena/01a0e5f5-huanface -> arena/01a0e5f5-huanface
-   ed7c31c..ad63ff4  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-PS D:\sdk\HuanFace> git fetch origin +refs/heads/arena/01a0e5f5-huanface:refs/remotes/origin/arena/01a0e5f5-huanface --force
 PS D:\sdk\HuanFace> git checkout arena/01a0e5f5-huanface
-Switched to branch 'arena/01a0e5f5-huanface'
-Your branch is up to date with 'origin/arena/01a0e5f5-huanface'.
-PS D:\sdk\HuanFace> git reset --hard origin/arena/01a0e5f5-huanface
-HEAD is now at ad63ff4 fix: Phase9 full chaining - specific entry compile for contrast/final/eyebrow/eyeliner/eyelash/pupil, smoothing/texture/blemish/tone guarantee param/mask diff, sentinel white mask brightness 0.2 vs 0.3, fix param bug, non-uniform inputs
-PS D:\sdk\HuanFace> git log --oneline -1
-ad63ff4 (HEAD -> arena/01a0e5f5-huanface, origin/arena/01a0e5f5-huanface) fix: Phase9 full chaining - specific entry compile for contrast/final/eyebrow/eyeliner/eyelash/pupil, smoothing/texture/blemish/tone guarantee param/mask diff, sentinel white mask brightness 0.2 vs 0.3, fix param bug, non-uniform inputs
-PS D:\sdk\HuanFace> Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
-PS D:\sdk\HuanFace> mkdir build -Force | Out-Null
+Already on 'arena/01a0e5f5-huanface'
+PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 28 (delta 9), reused 28 (delta 9), pack-reused 0 (from 0)
+Unpacking objects: 100% (28/28), 33.86 KiB | 488.00 KiB/s, done.
+From https://github.com/hanlimzie-glitch/HuanFace
+ * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
+ + 78b2538...942d69f arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface  (forced update)
+Auto-merging docs/PHASE9_PERFORMANCE_REPORT.md
+CONFLICT (add/add): Merge conflict in docs/PHASE9_PERFORMANCE_REPORT.md
+Auto-merging docs/PHASE9_RESULT.md
+CONFLICT (add/add): Merge conflict in docs/PHASE9_RESULT.md
+Auto-merging sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp
+Auto-merging sdk/src/rendering/shaders/beauty_adjustment.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/beauty_adjustment.hlsl
+Auto-merging sdk/src/rendering/shaders/beauty_blemish.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/beauty_blemish.hlsl
+Auto-merging sdk/src/rendering/shaders/beauty_smoothing.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/beauty_smoothing.hlsl
+Auto-merging sdk/src/rendering/shaders/beauty_texture.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/beauty_texture.hlsl
+Auto-merging sdk/src/rendering/shaders/beauty_tone.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/beauty_tone.hlsl
+Auto-merging sdk/src/rendering/shaders/makeup_blend.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/makeup_blend.hlsl
+Auto-merging sdk/src/rendering/shaders/makeup_blush.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/makeup_blush.hlsl
+Auto-merging sdk/src/rendering/shaders/makeup_eye.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/makeup_eye.hlsl
+Auto-merging sdk/src/rendering/shaders/makeup_foundation.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/makeup_foundation.hlsl
+Auto-merging sdk/src/rendering/shaders/makeup_lip.hlsl
+CONFLICT (add/add): Merge conflict in sdk/src/rendering/shaders/makeup_lip.hlsl
+Auto-merging tests/test_phase9.cpp
+CONFLICT (add/add): Merge conflict in tests/test_phase9.cpp
+Automatic merge failed; fix conflicts and then commit the result.
 PS D:\sdk\HuanFace> cd build
-PS D:\sdk\HuanFace\build> cmake ..\sdk -A x64
--- Building for: Visual Studio 17 2022
--- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
--- The C compiler identification is MSVC 19.44.35229.0
--- The CXX compiler identification is MSVC 19.44.35229.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- HuanFace SDK Phase 7 — Full Beauty & Face Retouching Engine
--- Version: 0.7.0
--- Backend D3D11 P0: ON (Windows only, real beauty+makeup texture+shader)
--- Backend OpenGL P1: ON
--- Build Tests: ON
--- Build Examples: ON
--- ZIP DEFLATE: zlib (Linux) / miniz vendored (Windows)
--- OBS dependency: NONE (EXTERNAL REFERENCE only)
--- FaceUnity runtime dependency: NONE (clean-room)
--- Face Tracker: ProductionFaceTracker REAL ML (ONNX Runtime 1.30.0 + real models MIT)
--- Makeup: Full renderer Lip/Foundation/Blush/Eyebrow/Eyeliner/Eyelash/Eyeshadow/Pupil with real masks from ML landmarks+mesh, CPU ref + D3D11 GPU real HLSL
--- Beauty: Full engine SkinSmoothing/Texture/Blemish/Tone/Brightness/Contrast/Retouch with real skin masks (face->exclude eyes/brows/lips), edge-preserving bilateral-like smoothing, CPU ref + D3D11 GPU real HLSL
--- Configuring done (3.4s)
--- Generating done (0.1s)
--- Build files have been written to: D:/sdk/HuanFace/build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release -j
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
-  1>Checking Build System
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  test_phase9.cpp
-  result.cpp
-  test_main.cpp
-  test_phase8.cpp
-  c_api.cpp
-  test_frame.cpp
-  test_bundle.cpp
-  frame.cpp
-  result.cpp
-  result.cpp
-  manifest.cpp
-  test_rendering.cpp
-  c_api.cpp
-  c_api.cpp
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\huanface.vcxproj]
-  zip_reader.cpp
-  test_engine.cpp
-  frame.cpp
-  bundle_reader.cpp
-  frame.cpp
-  test_image.cpp
-  manifest.cpp
-  manifest.cpp
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-  resource_manager.cpp
-  test_face.cpp
-  zip_reader.cpp
-  zip_reader.cpp
-  test_mask.cpp
-  render_backend.cpp
-  bundle_reader.cpp
-  bundle_reader.cpp
-  filesystem.cpp
-  test_shader.cpp
-  resource_manager.cpp
-  resource_manager.cpp
-  clock.cpp
-  test_texture.cpp
-  render_backend.cpp
-  image_loader.cpp
-  render_backend.cpp
-  test_integration.cpp
-  filesystem.cpp
-  filesystem.cpp
-  simple_face_tracker.cpp
-  test_production_tracker.cpp
-  face_detector.cpp
-  clock.cpp
-  clock.cpp
-  test_face_mesh.cpp
-  landmark_estimator.cpp
-  image_loader.cpp
-  image_loader.cpp
-  test_pose.cpp
-  face_mesh_generator.cpp
-  pose_estimator.cpp
-  simple_face_tracker.cpp
-  simple_face_tracker.cpp
-  test_tracking.cpp
-  tracking_state.cpp
-  face_detector.cpp
-  face_detector.cpp
-  test_coordinate.cpp
-  inference_backend.cpp
-  landmark_estimator.cpp
-  landmark_estimator.cpp
-  test_real_ml_pipeline.cpp
-  face_mesh_generator.cpp
-  face_mesh_generator.cpp
-  production_face_tracker.cpp
-  pose_estimator.cpp
-  pose_estimator.cpp
-  test_makeup.cpp
-  tracking_state.cpp
-  tracking_state.cpp
-  face_mask.cpp
-  inference_backend.cpp
-  inference_backend.cpp
-  test_beauty.cpp
-  Generating Code...
-  production_face_tracker.cpp
-  production_face_tracker.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44: 'argument': conversion from '_Ty' to 'float', possible loss of data [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:         with [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:         [ [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:             _Ty=int [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:         ] [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-  (compiling source file '../tests/test_beauty.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103):
-      the template instantiation context (the oldest one first) is
-          D:\sdk\HuanFace\tests\test_beauty.cpp(106,28):
-          see reference to function template instantiation 'huanface::HFVec3 &std::vector<huanface::HFVec3,std::allocat
-  or<huanface::HFVec3>>::emplace_back<float&,float&,int>(float &,float &,int &&)' being compiled
-              D:\sdk\HuanFace\tests\test_beauty.cpp(106,40):
-              see the first reference to 'std::vector<huanface::HFVec3,std::allocator<huanface::HFVec3>>::emplace_back'
-   in 'CreateTestFace'
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(924,24):
-          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_
-  back<float&,float&,int>(float &,float &,int &&)' being compiled
-          with
-          [
-              _Ty=huanface::HFVec3
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(845,20):
-          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_wi
-  th_unused_capacity<float&,float&,int>(float &,float &,int &&)' being compiled
-          with
-          [
-              _Ty=huanface::HFVec3
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(863,27):
-          see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,
-  float&,float&,int>(_Alloc &,_Objty *const ,float &,float &,int &&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<huanface::HFVec3>,
-              _Ty=huanface::HFVec3,
-              _Objty=huanface::HFVec3
-          ]
-
-  result.cpp
-  Generating Code...
-  Generating Code...
-  Generating Code...
-  Compiling...
-  makeup_engine.cpp
-  makeup_mask.cpp
-  makeup_renderer.cpp
-  blend_modes.cpp
-  beauty_mask.cpp
-  beauty_renderer.cpp
-  Compiling...
-  face_mask.cpp
-  makeup_engine.cpp
-  d3d11_backend.cpp
-  makeup_mask.cpp
-  makeup_renderer.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
-build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
-sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
-n' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
-e' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
-\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
-' [D:\sdk\HuanFace\build\huanface.vcxproj]
   d3d11_full_pipeline.cpp
-  blend_modes.cpp
-  Compiling...
-  c_api.cpp
-  beauty_mask.cpp
-  beauty_renderer.cpp
-  Generating Code...
-  frame.cpp
-  d3d11_backend.cpp
-  manifest.cpp
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
-build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
-n' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
-e' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
-\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
-' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
   d3d11_full_pipeline.cpp
-  zip_reader.cpp
-  bundle_reader.cpp
-  Generating Code...
-  resource_manager.cpp
-  render_backend.cpp
-  filesystem.cpp
-  Compiling...
-  face_mask.cpp
-  clock.cpp
-  makeup_engine.cpp
-  image_loader.cpp
-  makeup_mask.cpp
-  makeup_renderer.cpp
-  simple_face_tracker.cpp
-  face_detector.cpp
-  blend_modes.cpp
-  landmark_estimator.cpp
-  beauty_mask.cpp
-  face_mesh_generator.cpp
-  beauty_renderer.cpp
-  pose_estimator.cpp
-  d3d11_backend.cpp
-  tracking_state.cpp
-  inference_backend.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
-build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
+  d3d11_full_pipeline.cpp
+  d3d11_full_pipeline.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1671,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1675,1): error C2059: syntax error: '==' [D:\sdk\HuanFa
+ce\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1676,67): error C2143: syntax error: missing ';' before
+ '{' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,12): error C2065: 'img': undeclared identifier [D:
 \sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,29): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,86): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,113): error C2065: 'img': undeclared identifier [D
 :\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
-n' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
-e' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
-\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
-' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-  d3d11_full_pipeline.cpp
-  production_face_tracker.cpp
-  face_mask.cpp
-  makeup_engine.cpp
-  Generating Code...
-  Generating Code...
-  Compiling...
-  makeup_mask.cpp
-  makeup_renderer.cpp
-  blend_modes.cpp
-  beauty_mask.cpp
-  beauty_renderer.cpp
-  d3d11_backend.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
-build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,140): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,167): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,194): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,214): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,78): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1683,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1684,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1685,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1686,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1689,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
+ce\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1697,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1671,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1675,1): error C2059: syntax error: '==' [D:\sdk\HuanFa
+ce\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1676,67): error C2143: syntax error: missing ';' before
+ '{' [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,12): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,29): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,86): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,113): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,140): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,167): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,194): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,214): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,78): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1683,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1684,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1685,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1686,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1689,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
+ce\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1697,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1671,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\HuanFacePhase9Tests.vcxproj]
+  test_phase9.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1671,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1675,1): error C2059: syntax error: '==' [D:\sdk\HuanFa
+ce\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1675,1): error C2059: syntax error: '==' [D:\sdk\HuanFa
+ce\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1676,67): error C2143: syntax error: missing ';' before
+ '{' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1676,67): error C2143: syntax error: missing ';' before
+ '{' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,12): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,12): error C2065: 'img': undeclared identifier [D:
 \sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,29): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1677,29): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,86): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,86): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,113): error C2065: 'img': undeclared identifier [D
 :\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
-n' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
-e' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
-\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
-' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-  d3d11_full_pipeline.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,140): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,167): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,194): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,214): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,78): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1683,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1684,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1685,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1686,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,113): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1689,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
+ce\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1697,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,140): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,167): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,194): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1678,214): error C2065: 'img': undeclared identifier [D
+:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,49): error C2065: 'label': undeclared identifier [
+D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1680,78): error C2065: 'img': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1683,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1684,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1685,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1686,5): error C3861: 'logFirstPixel': identifier not f
+ound [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1689,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
+ce\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1697,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
+ce\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(508,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\build\HuanFacePhase9Test
+s.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(510,73): error C2143: syntax error: missing ';' before '{' [D:\sdk\HuanFace\build
+\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(511,12): error C2065: 'img': undeclared identifier [D:\sdk\HuanFace\build\HuanFac
+ePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(511,29): error C2065: 'img': undeclared identifier [D:\sdk\HuanFace\build\HuanFac
+ePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(512,52): error C2065: 'label': undeclared identifier [D:\sdk\HuanFace\build\HuanF
+acePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(512,89): error C2065: 'img': undeclared identifier [D:\sdk\HuanFace\build\HuanFac
+ePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(512,116): error C2065: 'img': undeclared identifier [D:\sdk\HuanFace\build\HuanFa
+cePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(512,143): error C2065: 'img': undeclared identifier [D:\sdk\HuanFace\build\HuanFa
+cePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(512,170): error C2065: 'img': undeclared identifier [D:\sdk\HuanFace\build\HuanFa
+cePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(515,5): error C3861: 'logFirstPixelBeauty': identifier not found [D:\sdk\HuanFace
+\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(516,5): error C3861: 'logFirstPixelBeauty': identifier not found [D:\sdk\HuanFace
+\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(517,5): error C3861: 'logFirstPixelBeauty': identifier not found [D:\sdk\HuanFace
+\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(519,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\build\HuanFacePhase9Test
+s.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(522,25): error C2065: 'gpuDiff0_05': undeclared identifier [D:\sdk\HuanFace\build
+\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(527,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\build\HuanFacePhase9Test
+s.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(529,1): error C2059: syntax error: '==' [D:\sdk\HuanFace\build\HuanFacePhase9Test
+s.vcxproj]
+D:\sdk\HuanFace\tests\test_phase9.cpp(531,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\build\HuanFacePhase9Test
+s.vcxproj]
   Generating Code...

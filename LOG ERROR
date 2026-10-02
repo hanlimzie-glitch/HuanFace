@@ -1,1604 +1,389 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
-PS D:\sdk\HuanFace> git pull origin arena/01a0e5f5-huanface
-remote: Enumerating objects: 8, done.
-remote: Counting objects: 100% (8/8), done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 8 (delta 1), reused 6 (delta 1), pack-reused 0 (from 0)
-Unpacking objects: 100% (8/8), 12.26 KiB | 627.00 KiB/s, done.
+PS D:\sdk\HuanFace>
+PS D:\sdk\HuanFace> # 1. Reset ke remote terbaru yang udah include SDK
+PS D:\sdk\HuanFace> git fetch origin
+remote: Enumerating objects: 179, done.
+remote: Counting objects: 100% (179/179), done.
+remote: Compressing objects: 100% (127/127), done.
+remote: Total 174 (delta 44), reused 174 (delta 44), pack-reused 0 (from 0)
+Receiving objects: 100% (174/174), 231.01 KiB | 10.50 MiB/s, done.
+Resolving deltas: 100% (44/44), completed with 1 local object.
 From https://github.com/hanlimzie-glitch/HuanFace
- * branch            arena/01a0e5f5-huanface -> FETCH_HEAD
- + b299205...72f9c49 arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface  (forced update)
-Auto-merging sdk/src/rendering/d3d11/d3d11_backend.cpp
-CONFLICT (add/add): Merge conflict in sdk/src/rendering/d3d11/d3d11_backend.cpp
-Auto-merging sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp
-CONFLICT (add/add): Merge conflict in sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp
-Automatic merge failed; fix conflicts and then commit the result.
+   72f9c49..b21a7d7  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+Enumerating objects: 407, done.
+Counting objects: 100% (241/241), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (129/129), done.
+Writing objects: 100% (241/241), done.
+Total 241 (delta 149), reused 166 (delta 107), pack-reused 0 (from 0)
+PS D:\sdk\HuanFace> git checkout arena/01a0e5f5-huanface
+Already on 'arena/01a0e5f5-huanface'
+Your branch is behind 'origin/arena/01a0e5f5-huanface' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+PS D:\sdk\HuanFace> git reset --hard origin/arena/01a0e5f5-huanface
+HEAD is now at b21a7d7 fix: track full sdk/ and tests/ for Windows build — CMakeLists was untracked causing build fail after clean
+PS D:\sdk\HuanFace>
+PS D:\sdk\HuanFace> # 2. Cek CMakeLists ada
+PS D:\sdk\HuanFace> dir sdk\CMakeLists.txt
+
+
+    Directory: D:\sdk\HuanFace\sdk
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         10/2/2026   7:05 AM          10149 CMakeLists.txt
+
+
+PS D:\sdk\HuanFace> # harus ada sekarang
+PS D:\sdk\HuanFace>
+PS D:\sdk\HuanFace> # 3. Hapus build lama
+PS D:\sdk\HuanFace> Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
+PS D:\sdk\HuanFace>
+PS D:\sdk\HuanFace> # 4. Configure (source = sdk)
+PS D:\sdk\HuanFace> mkdir build
+
+
+    Directory: D:\sdk\HuanFace
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         10/2/2026   7:05 AM                build
+
+
 PS D:\sdk\HuanFace> cd build
+PS D:\sdk\HuanFace\build> cmake ..\sdk -A x64
+-- Building for: Visual Studio 17 2022
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The C compiler identification is MSVC 19.44.35229.0
+-- The CXX compiler identification is MSVC 19.44.35229.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- HuanFace SDK Phase 7 — Full Beauty & Face Retouching Engine
+-- Version: 0.7.0
+-- Backend D3D11 P0: ON (Windows only, real beauty+makeup texture+shader)
+-- Backend OpenGL P1: ON
+-- Build Tests: ON
+-- Build Examples: ON
+-- ZIP DEFLATE: zlib (Linux) / miniz vendored (Windows)
+-- OBS dependency: NONE (EXTERNAL REFERENCE only)
+-- FaceUnity runtime dependency: NONE (clean-room)
+-- Face Tracker: ProductionFaceTracker REAL ML (ONNX Runtime 1.30.0 + real models MIT)
+-- Makeup: Full renderer Lip/Foundation/Blush/Eyebrow/Eyeliner/Eyelash/Eyeshadow/Pupil with real masks from ML landmarks+mesh, CPU ref + D3D11 GPU real HLSL
+-- Beauty: Full engine SkinSmoothing/Texture/Blemish/Tone/Brightness/Contrast/Retouch with real skin masks (face->exclude eyes/brows/lips), edge-preserving bilateral-like smoothing, CPU ref + D3D11 GPU real HLSL
+-- Configuring done (4.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/sdk/HuanFace/build
+PS D:\sdk\HuanFace\build>
+PS D:\sdk\HuanFace\build> # 5. Build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release -j
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
+  1>Checking Build System
+  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
+  test_phase8.cpp
+  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
+  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
+  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
+  result.cpp
+  test_phase9.cpp
+  test_main.cpp
+  c_api.cpp
+  test_frame.cpp
+  test_bundle.cpp
+  frame.cpp
+  result.cpp
+  result.cpp
+  manifest.cpp
+  c_api.cpp
+  test_rendering.cpp
+  c_api.cpp
+D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
+ter [D:\sdk\HuanFace\build\huanface.vcxproj]
+  zip_reader.cpp
+  test_engine.cpp
+  frame.cpp
+  bundle_reader.cpp
+  frame.cpp
+  test_image.cpp
+  manifest.cpp
+  manifest.cpp
+D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
+ter [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
+ter [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+  resource_manager.cpp
+  test_face.cpp
+  zip_reader.cpp
+  zip_reader.cpp
+  test_mask.cpp
+  render_backend.cpp
+  bundle_reader.cpp
+  bundle_reader.cpp
+  filesystem.cpp
+  test_shader.cpp
+  resource_manager.cpp
+  resource_manager.cpp
+  clock.cpp
+  test_texture.cpp
+  render_backend.cpp
+  image_loader.cpp
+  render_backend.cpp
+  test_integration.cpp
+  filesystem.cpp
+  filesystem.cpp
+  simple_face_tracker.cpp
+  test_production_tracker.cpp
+  face_detector.cpp
+  clock.cpp
+  clock.cpp
+  test_face_mesh.cpp
+  landmark_estimator.cpp
+  image_loader.cpp
+  image_loader.cpp
+  test_pose.cpp
+  face_mesh_generator.cpp
+  simple_face_tracker.cpp
+  pose_estimator.cpp
+  simple_face_tracker.cpp
+  test_tracking.cpp
+  tracking_state.cpp
+  face_detector.cpp
+  face_detector.cpp
+  test_coordinate.cpp
+  inference_backend.cpp
+  landmark_estimator.cpp
+  landmark_estimator.cpp
+  test_real_ml_pipeline.cpp
+  face_mesh_generator.cpp
+  face_mesh_generator.cpp
+  production_face_tracker.cpp
+  pose_estimator.cpp
+  pose_estimator.cpp
+  test_makeup.cpp
+  tracking_state.cpp
+  tracking_state.cpp
+  face_mask.cpp
+  inference_backend.cpp
+  inference_backend.cpp
+  test_beauty.cpp
+  Generating Code...
+  production_face_tracker.cpp
+  production_face_tracker.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
+44: 'argument': conversion from '_Ty' to 'float', possible loss of data [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
+44:         with [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
+44:         [ [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
+44:             _Ty=int [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
+44:         ] [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+  (compiling source file '../tests/test_beauty.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103):
+      the template instantiation context (the oldest one first) is
+          D:\sdk\HuanFace\tests\test_beauty.cpp(106,28):
+          see reference to function template instantiation 'huanface::HFVec3 &std::vector<huanface::HFVec3,std::allocat
+  or<huanface::HFVec3>>::emplace_back<float&,float&,int>(float &,float &,int &&)' being compiled
+              D:\sdk\HuanFace\tests\test_beauty.cpp(106,40):
+              see the first reference to 'std::vector<huanface::HFVec3,std::allocator<huanface::HFVec3>>::emplace_back'
+   in 'CreateTestFace'
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(924,24):
+          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_
+  back<float&,float&,int>(float &,float &,int &&)' being compiled
+          with
+          [
+              _Ty=huanface::HFVec3
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(845,20):
+          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_wi
+  th_unused_capacity<float&,float&,int>(float &,float &,int &&)' being compiled
+          with
+          [
+              _Ty=huanface::HFVec3
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(863,27):
+          see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,
+  float&,float&,int>(_Alloc &,_Objty *const ,float &,float &,int &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<huanface::HFVec3>,
+              _Ty=huanface::HFVec3,
+              _Objty=huanface::HFVec3
+          ]
+
+  result.cpp
+  Generating Code...
+  Generating Code...
+  Generating Code...
+  Compiling...
+  makeup_engine.cpp
+  makeup_mask.cpp
+  makeup_renderer.cpp
+  blend_modes.cpp
+  beauty_mask.cpp
+  Compiling...
+  face_mask.cpp
+  Compiling...
+  face_mask.cpp
+  beauty_renderer.cpp
+  makeup_engine.cpp
+  makeup_engine.cpp
+  makeup_mask.cpp
+  makeup_mask.cpp
   d3d11_backend.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+  makeup_renderer.cpp
+  makeup_renderer.cpp
+  blend_modes.cpp
+  Compiling...
+  c_api.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
 king 1 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
 d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
 :\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+  d3d11_full_pipeline.cpp
+  blend_modes.cpp
+  beauty_mask.cpp
+  beauty_mask.cpp
+  beauty_renderer.cpp
+  beauty_renderer.cpp
+  frame.cpp
+  d3d11_backend.cpp
+  d3d11_backend.cpp
+  manifest.cpp
+  Generating Code...
+D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
+ter [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+  zip_reader.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
 king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
 d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
 :\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
-:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+  d3d11_full_pipeline.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
 king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
 d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
 :\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+  d3d11_full_pipeline.cpp
+  bundle_reader.cpp
+  resource_manager.cpp
+  Generating Code...
+  Generating Code...
+  render_backend.cpp
+  filesystem.cpp
+  clock.cpp
+  image_loader.cpp
+  simple_face_tracker.cpp
+  face_detector.cpp
+  landmark_estimator.cpp
+  face_mesh_generator.cpp
+  pose_estimator.cpp
+  tracking_state.cpp
+  inference_backend.cpp
+  production_face_tracker.cpp
+  face_mask.cpp
+  makeup_engine.cpp
+  Generating Code...
+  Compiling...
+  makeup_mask.cpp
+  makeup_renderer.cpp
+  blend_modes.cpp
+  beauty_mask.cpp
+  beauty_renderer.cpp
+  d3d11_backend.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
 king 1 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
 d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
 :\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
   d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\basic_desktop.vcxproj]
-  d3d11_full_pipeline.cpp
-  d3d11_full_pipeline.cpp
-  d3d11_full_pipeline.cpp
-  d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
-:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\basic_desktop.vcxproj]
-  d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
-:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\makeup_demo.vcxproj]
-  d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(421,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(427,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(428,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(431,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(432,13): error C2143: syntax error: missing ';' before '}' [D
-:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(433,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(561,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(572,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(669,1): error C2059: syntax error: '<<' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(672,1): error C2059: syntax error: '>>' [D:\sdk\HuanFace\buil
-d\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(673,32): error C2143: syntax error: missing ';' before '{' [D
-:\sdk\HuanFace\build\beauty_demo.vcxproj]
-  d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\huanface.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
   Generating Code...
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\basic_face_demo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\basic_face_demo.vcxproj]
-  Generating Code...
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\makeup_demo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\makeup_demo.vcxproj]
-  Generating Code...
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-  Generating Code...
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\basic_desktop.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\basic_desktop.vcxproj]
-  Generating Code...
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\HuanFaceTests.vcxproj]
-  Generating Code...
-  Generating Code...
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(298,1): error C2059: syntax error: '<<' [D:\sdk\HuanFac
-e\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(303,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(304,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(305,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(306,9): error C2065: 'data': undeclared identifier [D:\
-sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,68): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(308,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,62): error C2065: 'data': undeclared identifier [D:
-\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(312,25):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(313,1): error C2059: syntax error: '==' [D:\sdk\HuanFac
-e\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(320,9): error C2065: 'dataR8': undeclared identifier [D
-:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,68): error C2065: 'dataR8': undeclared identifier [
-D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34): error C2660: 'huanface::IRenderBackend::Create
-Texture': function does not take 3 arguments [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(97,26):
-      see declaration of 'huanface::IRenderBackend::CreateTexture'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(326,34):
-      while trying to match the argument list '(int, int, HFFormat)'
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(330,1): error C2059: syntax error: '>>' [D:\sdk\HuanFac
-e\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(336,31): error C2601: 'huanface::FullGPUPipeline::Creat
-eTextureFromMakeupMask': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(353,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eBeautyConstants': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(393,23): error C2601: 'huanface::FullGPUPipeline::Updat
-eMakeupConstants': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(420,23): error C2601: 'huanface::FullGPUPipeline::BindB
-eautyTextures': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(453,23): error C2601: 'huanface::FullGPUPipeline::BindM
-akeupTextures': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(487,23): error C2601: 'huanface::FullGPUPipeline::Unbin
-dTextures': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(495,23): error C2601: 'huanface::FullGPUPipeline::DrawQ
-uad': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(501,25): error C2601: 'huanface::FullGPUPipeline::Execu
-tePassWithTiming': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(551,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teBeautyPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(895,56): error C2601: 'huanface::FullGPUPipeline::Execu
-teMakeupPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1358,54): error C2601: 'huanface::FullGPUPipeline::Exec
-uteFullPipeline': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1415,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateBeautyChaining': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1453,60): error C2601: 'huanface::FullGPUPipeline::Vali
-dateMakeupChaining': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1484,26): error C2601: 'huanface::FullGPUPipeline::Read
-backTexture': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1547,26): error C2601: 'huanface::FullGPUPipeline::Read
-backRenderTarget': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1553,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MAE': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1562,25): error C2601: 'huanface::FullGPUPipeline::Calc
-MaxError': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1572,25): error C2601: 'huanface::FullGPUPipeline::Calc
-RMSE': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1582,50): error C2601: 'huanface::FullGPUPipeline::Exec
-uteChainingSentinelTest': local function definitions are illegal [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(295,79):
-      this line contains a '{' which has not yet been matched
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1491,1): error C2059: syntax error: '<<' [D:\sdk\HuanFa
-ce\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1498,1): error C2059: syntax error: '>>' [D:\sdk\HuanFa
-ce\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,9): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1500,20): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1503,5): error C2065: 'd3dTex': undeclared identifier [
-D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,42): error C2065: 'd3dTex': undeclared identifier
-[D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14): error C2660: 'ID3D11DeviceContext::CopyResour
-ce': function does not take 1 arguments [D:\sdk\HuanFace\build\beauty_demo.vcxproj]
-      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(8074,40):
-      see declaration of 'ID3D11DeviceContext::CopyResource'
-      D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1518,14):
-      while trying to match the argument list '(T *)'
-          with
-          [
-              T=ID3D11Texture2D
-          ]
-
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(15,20): error C1075: '{': no matching token found [D:\s
-dk\HuanFace\build\beauty_demo.vcxproj]
-  Generating Code...
-PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase9Tests.exe --gtest_filter=*Chaining* > D:\LOG_PHASE9_GROUP_B.txt 2>&1
+PS D:\sdk\HuanFace\build>
+PS D:\sdk\HuanFace\build> # 6. Run Group A + B
+PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase9Tests.exe > D:\LOG_PHASE9_GROUP_B_FIXED.txt 2>&1
+.\Release\HuanFacePhase9Tests.exe : The term '.\Release\HuanFacePhase9Tests.exe' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify
+that the path is correct and try again.
+At line:1 char:1
++ .\Release\HuanFacePhase9Tests.exe > D:\LOG_PHASE9_GROUP_B_FIXED.txt 2 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\Release\HuanFacePhase9Tests.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\sdk\HuanFace\build>
+PS D:\sdk\HuanFace\build> # 7. Cek
+PS D:\sdk\HuanFace\build> Select-String -Pattern "FullGPU|Chaining|Sentinel|MAE|PASS|FAIL" -Path D:\LOG_PHASE9_GROUP_B_FIXED.txt | Select-Object -Last 40
+Select-String : Cannot find path 'D:\LOG_PHASE9_GROUP_B_FIXED.txt' because it does not exist.
+At line:1 char:1
++ Select-String -Pattern "FullGPU|Chaining|Sentinel|MAE|PASS|FAIL" -Pat ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\LOG_PHASE9_GROUP_B_FIXED.txt:String) [Select-String], ItemNotFoundEx
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SelectStringCommand
+
+PS D:\sdk\HuanFace\build>

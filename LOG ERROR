@@ -1,57 +1,81 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
-PS D:\sdk\HuanFace>
-PS D:\sdk\HuanFace> # 1. Reset ke remote terbaru yang udah include SDK
-PS D:\sdk\HuanFace> git fetch origin
-remote: Enumerating objects: 179, done.
-remote: Counting objects: 100% (179/179), done.
-remote: Compressing objects: 100% (127/127), done.
-remote: Total 174 (delta 44), reused 174 (delta 44), pack-reused 0 (from 0)
-Receiving objects: 100% (174/174), 231.01 KiB | 10.50 MiB/s, done.
-Resolving deltas: 100% (44/44), completed with 1 local object.
+PS D:\sdk\HuanFace> git checkout main
+branch 'main' set up to track 'origin/main'.
+Switched to a new branch 'main'
+PS D:\sdk\HuanFace> git branch -D arena/01a0e5f5-huanface -ErrorAction SilentlyContinue
+error: unknown switch `E'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
+   or: git branch [<options>] [-l] [<pattern>...]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --[no-]verbose    show hash and subject, give twice for upstream branch
+    -q, --[no-]quiet      suppress informational messages
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --[no-]set-upstream-to <upstream>
+                          change the upstream info
+    --[no-]unset-upstream unset the upstream info
+    --[no-]color[=<when>] use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --[no-]delete     delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --[no-]move       move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    --[no-]omit-empty     do not output a newline after empty formatted refs
+    -c, --[no-]copy       copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --[no-]list       list branch names
+    --[no-]show-current   show current branch name
+    --[no-]create-reflog  create the branch's reflog
+    --[no-]edit-description
+                          edit the description for the branch
+    -f, --[no-]force      force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --[no-]column[=<style>]
+                          list branches in columns
+    --[no-]sort <key>     field name to sort on
+    --[no-]points-at <object>
+                          print only branches of the object
+    -i, --[no-]ignore-case
+                          sorting and filtering are case insensitive
+    --[no-]recurse-submodules
+                          recurse through submodules
+    --[no-]format <format>
+                          format to use for the output
+
+PS D:\sdk\HuanFace> git fetch origin +refs/heads/arena/01a0e5f5-huanface:refs/heads/arena/01a0e5f5-huanface --force
+remote: Enumerating objects: 31, done.
+remote: Counting objects: 100% (31/31), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 16 (delta 15), reused 16 (delta 15), pack-reused 0 (from 0)
+Unpacking objects: 100% (16/16), 3.74 KiB | 91.00 KiB/s, done.
 From https://github.com/hanlimzie-glitch/HuanFace
-   72f9c49..b21a7d7  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
-Enumerating objects: 407, done.
-Counting objects: 100% (241/241), done.
-Delta compression using up to 6 threads
-Compressing objects: 100% (129/129), done.
-Writing objects: 100% (241/241), done.
-Total 241 (delta 149), reused 166 (delta 107), pack-reused 0 (from 0)
+   ed7c31c..ad63ff4  arena/01a0e5f5-huanface -> arena/01a0e5f5-huanface
+   ed7c31c..ad63ff4  arena/01a0e5f5-huanface -> origin/arena/01a0e5f5-huanface
+PS D:\sdk\HuanFace> git fetch origin +refs/heads/arena/01a0e5f5-huanface:refs/remotes/origin/arena/01a0e5f5-huanface --force
 PS D:\sdk\HuanFace> git checkout arena/01a0e5f5-huanface
-Already on 'arena/01a0e5f5-huanface'
-Your branch is behind 'origin/arena/01a0e5f5-huanface' by 1 commit, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
+Switched to branch 'arena/01a0e5f5-huanface'
+Your branch is up to date with 'origin/arena/01a0e5f5-huanface'.
 PS D:\sdk\HuanFace> git reset --hard origin/arena/01a0e5f5-huanface
-HEAD is now at b21a7d7 fix: track full sdk/ and tests/ for Windows build — CMakeLists was untracked causing build fail after clean
-PS D:\sdk\HuanFace>
-PS D:\sdk\HuanFace> # 2. Cek CMakeLists ada
-PS D:\sdk\HuanFace> dir sdk\CMakeLists.txt
-
-
-    Directory: D:\sdk\HuanFace\sdk
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a----         10/2/2026   7:05 AM          10149 CMakeLists.txt
-
-
-PS D:\sdk\HuanFace> # harus ada sekarang
-PS D:\sdk\HuanFace>
-PS D:\sdk\HuanFace> # 3. Hapus build lama
+HEAD is now at ad63ff4 fix: Phase9 full chaining - specific entry compile for contrast/final/eyebrow/eyeliner/eyelash/pupil, smoothing/texture/blemish/tone guarantee param/mask diff, sentinel white mask brightness 0.2 vs 0.3, fix param bug, non-uniform inputs
+PS D:\sdk\HuanFace> git log --oneline -1
+ad63ff4 (HEAD -> arena/01a0e5f5-huanface, origin/arena/01a0e5f5-huanface) fix: Phase9 full chaining - specific entry compile for contrast/final/eyebrow/eyeliner/eyelash/pupil, smoothing/texture/blemish/tone guarantee param/mask diff, sentinel white mask brightness 0.2 vs 0.3, fix param bug, non-uniform inputs
 PS D:\sdk\HuanFace> Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
-PS D:\sdk\HuanFace>
-PS D:\sdk\HuanFace> # 4. Configure (source = sdk)
-PS D:\sdk\HuanFace> mkdir build
-
-
-    Directory: D:\sdk\HuanFace
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----         10/2/2026   7:05 AM                build
-
-
+PS D:\sdk\HuanFace> mkdir build -Force | Out-Null
 PS D:\sdk\HuanFace> cd build
 PS D:\sdk\HuanFace\build> cmake ..\sdk -A x64
 -- Building for: Visual Studio 17 2022
@@ -80,23 +104,21 @@ PS D:\sdk\HuanFace\build> cmake ..\sdk -A x64
 -- Face Tracker: ProductionFaceTracker REAL ML (ONNX Runtime 1.30.0 + real models MIT)
 -- Makeup: Full renderer Lip/Foundation/Blush/Eyebrow/Eyeliner/Eyelash/Eyeshadow/Pupil with real masks from ML landmarks+mesh, CPU ref + D3D11 GPU real HLSL
 -- Beauty: Full engine SkinSmoothing/Texture/Blemish/Tone/Brightness/Contrast/Retouch with real skin masks (face->exclude eyes/brows/lips), edge-preserving bilateral-like smoothing, CPU ref + D3D11 GPU real HLSL
--- Configuring done (4.9s)
+-- Configuring done (3.4s)
 -- Generating done (0.1s)
 -- Build files have been written to: D:/sdk/HuanFace/build
-PS D:\sdk\HuanFace\build>
-PS D:\sdk\HuanFace\build> # 5. Build
 PS D:\sdk\HuanFace\build> cmake --build . --config Release -j
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
   1>Checking Build System
   Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  test_phase8.cpp
   Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
   Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
   Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  result.cpp
   test_phase9.cpp
+  result.cpp
   test_main.cpp
+  test_phase8.cpp
   c_api.cpp
   test_frame.cpp
   test_bundle.cpp
@@ -104,8 +126,8 @@ MSBuild version 17.14.60+43b635718 for .NET Framework
   result.cpp
   result.cpp
   manifest.cpp
-  c_api.cpp
   test_rendering.cpp
+  c_api.cpp
   c_api.cpp
 D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
 ter [D:\sdk\HuanFace\build\huanface.vcxproj]
@@ -118,9 +140,9 @@ ter [D:\sdk\HuanFace\build\huanface.vcxproj]
   manifest.cpp
   manifest.cpp
 D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
 ter [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
+ter [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
   resource_manager.cpp
   test_face.cpp
   zip_reader.cpp
@@ -152,8 +174,8 @@ ter [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
   image_loader.cpp
   test_pose.cpp
   face_mesh_generator.cpp
-  simple_face_tracker.cpp
   pose_estimator.cpp
+  simple_face_tracker.cpp
   simple_face_tracker.cpp
   test_tracking.cpp
   tracking_state.cpp
@@ -232,110 +254,230 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.3520
   makeup_renderer.cpp
   blend_modes.cpp
   beauty_mask.cpp
-  Compiling...
-  face_mask.cpp
-  Compiling...
-  face_mask.cpp
   beauty_renderer.cpp
+  Compiling...
+  face_mask.cpp
   makeup_engine.cpp
-  makeup_engine.cpp
-  makeup_mask.cpp
-  makeup_mask.cpp
   d3d11_backend.cpp
+  makeup_mask.cpp
   makeup_renderer.cpp
-  makeup_renderer.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
+build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
+d\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
+\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
+sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
+king 1 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+d\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
+d\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
+:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
+n' [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
+e' [D:\sdk\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
+\HuanFace\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\huanface.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
+' [D:\sdk\HuanFace\build\huanface.vcxproj]
+  d3d11_full_pipeline.cpp
   blend_modes.cpp
   Compiling...
   c_api.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
-:\sdk\HuanFace\build\huanface.vcxproj]
-  d3d11_full_pipeline.cpp
-  blend_modes.cpp
-  beauty_mask.cpp
   beauty_mask.cpp
   beauty_renderer.cpp
-  beauty_renderer.cpp
+  Generating Code...
   frame.cpp
   d3d11_backend.cpp
-  d3d11_backend.cpp
   manifest.cpp
-  Generating Code...
 D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
 ter [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-  zip_reader.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
-d\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
-:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-  d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
+build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
 d\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
 :\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
+sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
+king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+d\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
+d\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
+:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
+n' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
+e' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
+\HuanFace\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase9Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
+' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
   d3d11_full_pipeline.cpp
+  zip_reader.cpp
   bundle_reader.cpp
+  Generating Code...
   resource_manager.cpp
-  Generating Code...
-  Generating Code...
   render_backend.cpp
   filesystem.cpp
+  Compiling...
+  face_mask.cpp
   clock.cpp
+  makeup_engine.cpp
   image_loader.cpp
+  makeup_mask.cpp
+  makeup_renderer.cpp
   simple_face_tracker.cpp
   face_detector.cpp
+  blend_modes.cpp
   landmark_estimator.cpp
+  beauty_mask.cpp
   face_mesh_generator.cpp
+  beauty_renderer.cpp
   pose_estimator.cpp
+  d3d11_backend.cpp
   tracking_state.cpp
   inference_backend.cpp
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
+build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
+d\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
+sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
+king 1 arguments [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+d\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
+d\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
+:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
+n' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
+e' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
+\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFacePhase8Tests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
+' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
+  d3d11_full_pipeline.cpp
   production_face_tracker.cpp
   face_mask.cpp
   makeup_engine.cpp
   Generating Code...
+  Generating Code...
   Compiling...
   makeup_mask.cpp
   makeup_renderer.cpp
@@ -343,47 +485,63 @@ D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: 
   beauty_mask.cpp
   beauty_renderer.cpp
   d3d11_backend.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,43): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(661,44): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(662,5): error C2062: type 'bool' unexpected [D:\sdk\HuanFace\
+build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,88): error C2017: illegal escape sequence [D:\sdk\HuanFac
 e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(425,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(667,89): error C2001: newline in constant [D:\sdk\HuanFace\bu
 ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(424,19): error C2064: term does not evaluate to a function ta
-king 1 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(426,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,9): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
 d\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,30): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(429,31): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(430,13): error C2143: syntax error: missing ';' before '}' [D
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,36): error C2143: syntax error: missing ';' before '{' [D
 :\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(668,38): error C2065: 'vsCompiled': undeclared identifier [D:
+\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(670,8): error C2065: 'vsCompiled': undeclared identifier [D:\
+sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,18): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(675,19): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(674,19): error C2064: term does not evaluate to a function ta
+king 1 arguments [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(676,14): error C2059: syntax error: ';' [D:\sdk\HuanFace\buil
+d\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,84): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(687,85): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,5): error C2059: syntax error: 'if' [D:\sdk\HuanFace\buil
+d\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(688,32): error C2143: syntax error: missing ';' before '{' [D
+:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(691,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(692,13): error C2143: syntax error: missing ';' before 'retur
+n' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,26): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(694,27): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(695,13): error C2143: syntax error: missing ';' before 'delet
+e' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(698,7): error C2181: illegal else without matching if [D:\sdk
+\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
+e\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(701,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
+ild\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(702,9): error C2143: syntax error: missing ';' before 'delete
+' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
   d3d11_full_pipeline.cpp
   Generating Code...
-PS D:\sdk\HuanFace\build>
-PS D:\sdk\HuanFace\build> # 6. Run Group A + B
-PS D:\sdk\HuanFace\build> .\Release\HuanFacePhase9Tests.exe > D:\LOG_PHASE9_GROUP_B_FIXED.txt 2>&1
-.\Release\HuanFacePhase9Tests.exe : The term '.\Release\HuanFacePhase9Tests.exe' is not recognized as the name of a
-cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify
-that the path is correct and try again.
-At line:1 char:1
-+ .\Release\HuanFacePhase9Tests.exe > D:\LOG_PHASE9_GROUP_B_FIXED.txt 2 ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (.\Release\HuanFacePhase9Tests.exe:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
-
-PS D:\sdk\HuanFace\build>
-PS D:\sdk\HuanFace\build> # 7. Cek
-PS D:\sdk\HuanFace\build> Select-String -Pattern "FullGPU|Chaining|Sentinel|MAE|PASS|FAIL" -Path D:\LOG_PHASE9_GROUP_B_FIXED.txt | Select-Object -Last 40
-Select-String : Cannot find path 'D:\LOG_PHASE9_GROUP_B_FIXED.txt' because it does not exist.
-At line:1 char:1
-+ Select-String -Pattern "FullGPU|Chaining|Sentinel|MAE|PASS|FAIL" -Pat ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (D:\LOG_PHASE9_GROUP_B_FIXED.txt:String) [Select-String], ItemNotFoundEx
-   ception
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SelectStringCommand
-
-PS D:\sdk\HuanFace\build>

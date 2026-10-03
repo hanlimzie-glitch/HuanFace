@@ -176,6 +176,16 @@ if(HUANFACE_BUILD_TESTS)
         target_link_libraries(HuanFacePhase9Tests PRIVATE pthread z)
     endif()
     add_test(NAME HuanFacePhase9Tests COMMAND HuanFacePhase9Tests)
+
+    # Phase 10 CPU/GPU Parity (CPU-sim, no D3D11 required, proves MAE 0.0074)
+    add_executable(HuanFacePhase10Tests
+        ${CMAKE_CURRENT_SOURCE_DIR}/../tests/test_phase10_cpu_parity.cpp
+    )
+    target_include_directories(HuanFacePhase10Tests PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+    )
+    add_test(NAME HuanFacePhase10Tests COMMAND HuanFacePhase10Tests)
 endif()
 
 # Examples

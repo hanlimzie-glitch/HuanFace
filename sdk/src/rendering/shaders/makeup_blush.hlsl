@@ -1,25 +1,14 @@
 /**
- * makeup_blush.hlsl — Phase 9 global tint for sensitivity >0.1
+ * Makeup Blush HLSL — Phase 10 parity
  */
 #include "makeup_common.hlsl"
-
 float4 PSBlush(PS_INPUT input) : SV_Target
 {
     float4 base = inputTexture.Sample(samplerLinear, input.uv);
     float mask = maskTexture.Sample(samplerLinear, input.uv).r;
-    float intensity = makeupIntensity * makeupOpacity;
-    if (intensity < 0.001f) return base;
-    float3 makeup = makeupColor.rgb;
-    float3 blended = base.rgb + intensity * 0.15f;
-    if (mask > 0.001f) {
-        float alpha = saturate(mask * intensity);
-        blended = lerp(blended, makeup, alpha);
-        blended += mask * intensity * 0.5f;
-    }
-    return float4(saturate(blended), base.a);
+    int blendMode = (int)blendParams.x;
+    float softness = blendParams.y;
+    float softAlpha = mask * (1.0f - softness * 0.5f) + mask * mask * softness * 0.5f;
+    return BlendWithMask(base, makeupColor, softAlpha, blendMode, makeupIntensity, makeupOpacity);
 }
-
-float4 PSLeftCheek(PS_INPUT input) : SV_Target { return PSBlush(input); }
-float4 PSRightCheek(PS_INPUT input) : SV_Target { return PSBlush(input); }
-
 float4 PSMain(PS_INPUT input) : SV_Target { return PSBlush(input); }

@@ -1,5 +1,5 @@
 /**
- * Beauty Tone Adjustment HLSL — Phase 9 FIX guaranteed diff
+ * Beauty Tone Adjustment HLSL — Phase 10 parity with CPU reference
  */
 #include "beauty_common.hlsl"
 
@@ -11,14 +11,16 @@ float4 PSToneAdjustment(PSInput input) : SV_Target
     float intensity = g_ToneIntensity * g_BeautyOpacity * g_GlobalIntensity;
     if (intensity < 0.001f) return color;
     if (skinMask < 0.001f) return color;
-    float temp = g_ToneTemperature * intensity * 0.5f * skinMask;
-    float tint = g_ToneTint * intensity * 0.4f * skinMask;
-    float sat = g_ToneSaturation * intensity * 0.5f * skinMask;
-    color.r += temp + tint + sat * 0.3f + intensity * 0.25f * skinMask;
-    color.g += tint * 0.5f + intensity * 0.15f * skinMask;
-    color.b += -temp * 0.5f + intensity * 0.1f * skinMask;
-    color.rgb += skinMask * intensity * 0.2f;
+    float maskAlpha = skinMask * g_BeautyOpacity * intensity;
+    float3 rgb = color.rgb;
+    if (abs(g_ToneTemperature) > 0.001f) rgb = AdjustTemperature(rgb, g_ToneTemperature * maskAlpha);
+    if (abs(g_ToneTint) > 0.001f) rgb = AdjustTint(rgb, g_ToneTint * maskAlpha);
+    if (abs(g_ToneSaturation) > 0.001f) {
+        float luma = dot(rgb, float3(0.299f, 0.587f, 0.114f));
+        float satFactor = 1.0f + g_ToneSaturation * maskAlpha;
+        rgb = luma + (rgb - luma) * satFactor;
+    }
+    color.rgb = rgb;
     return saturate(color);
 }
-
 float4 PSMain(PSInput input) : SV_Target { return PSToneAdjustment(input); }

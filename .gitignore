@@ -1,0 +1,19 @@
+build/
+out/
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
+*.log
+*.zip
+Captures/
+AppData/
+ProgramData/
+bin/
+common/
+data/
+LOG*.txt
+LOG ERROR
+.vs/
+.vscode/

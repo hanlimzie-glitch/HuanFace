@@ -1,12 +1,6 @@
 PS C:\Users\fourk\source\repos> cd D:\sdk\HuanFace
-PS D:\sdk\HuanFace> git fetch origin; git checkout arena/01a0e5f5-huanface; git reset --hard origin/arena/01a0e5f5-huanface; git log --oneline -2
-Already on 'arena/01a0e5f5-huanface'
-HEAD is now at 27c9aef Phase 9 ROOT-CAUSE FIX: culling, vertex buffer, input layout, viewport, RTV, draw, readback, CB, sampler, SRV, chaining
-27c9aef (HEAD -> arena/01a0e5f5-huanface, origin/arena/01a0e5f5-huanface) Phase 9 ROOT-CAUSE FIX: culling, vertex buffer, input layout, viewport, RTV, draw, readback, CB, sampler, SRV, chaining
-a7b08c3 Upload folder 200mb
-PS D:\sdk\HuanFace> Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
-PS D:\sdk\HuanFace> cmake -B build -S sdk -A x64 -DHUANFACE_BUILD_TESTS=ON
--- Building for: Visual Studio 17 2022
+PS D:\sdk\HuanFace> Remove-Item -Recurse -Force apps\HuanFaceCamera\build -ErrorAction SilentlyContinue
+PS D:\sdk\HuanFace> cmake -S apps\HuanFaceCamera -B apps\HuanFaceCamera\build -G "Visual Studio 17 2022" -A x64
 -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
 -- The C compiler identification is MSVC 19.44.35229.0
 -- The CXX compiler identification is MSVC 19.44.35229.0
@@ -20,383 +14,405 @@ PS D:\sdk\HuanFace> cmake -B build -S sdk -A x64 -DHUANFACE_BUILD_TESTS=ON
 -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- HuanFace SDK Phase 7 — Full Beauty & Face Retouching Engine
--- Version: 0.7.0
--- Backend D3D11 P0: ON (Windows only, real beauty+makeup texture+shader)
--- Backend OpenGL P1: ON
--- Build Tests: ON
--- Build Examples: ON
--- ZIP DEFLATE: zlib (Linux) / miniz vendored (Windows)
--- OBS dependency: NONE (EXTERNAL REFERENCE only)
--- FaceUnity runtime dependency: NONE (clean-room)
--- Face Tracker: ProductionFaceTracker REAL ML (ONNX Runtime 1.30.0 + real models MIT)
--- Makeup: Full renderer Lip/Foundation/Blush/Eyebrow/Eyeliner/Eyelash/Eyeshadow/Pupil with real masks from ML landmarks+mesh, CPU ref + D3D11 GPU real HLSL
--- Beauty: Full engine SkinSmoothing/Texture/Blemish/Tone/Brightness/Contrast/Retouch with real skin masks (face->exclude eyes/brows/lips), edge-preserving bilateral-like smoothing, CPU ref + D3D11 GPU real HLSL
--- Configuring done (3.7s)
--- Generating done (0.1s)
--- Build files have been written to: D:/sdk/HuanFace/build
-PS D:\sdk\HuanFace> cmake --build build --config Release -j 8
+CMake Warning at CMakeLists.txt:17 (message):
+  Qt6 not found, UI will be stubbed for CI
+
+
+-- HuanFace Camera 1.0.0
+-- SDK Dir: D:/sdk/HuanFace/apps/HuanFaceCamera/../../sdk
+-- Qt6: OFF
+-- Build Type:
+-- Configuring done (5.4s)
+CMake Warning (author) in CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target HuanFaceCamera.  AUTOMOC,
+  AUTOUIC and AUTORCC disabled.  Consider adding:
+
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
+
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+-- Generating done (0.0s)
+-- Build files have been written to: D:/sdk/HuanFace/apps/HuanFaceCamera/build
+PS D:\sdk\HuanFace> cmake --build apps\HuanFaceCamera\build --config Release --clean-first -j 8
+MSBuild version 17.14.60+43b635718 for .NET Framework
+
 MSBuild version 17.14.60+43b635718 for .NET Framework
 
   1>Checking Build System
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  test_phase8.cpp
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  Building Custom Rule D:/sdk/HuanFace/sdk/CMakeLists.txt
-  test_phase9.cpp
-  result.cpp
-  test_main.cpp
-  c_api.cpp
-  test_frame.cpp
-  test_bundle.cpp
-  frame.cpp
-  result.cpp
-  result.cpp
-  c_api.cpp
-  manifest.cpp
-  test_rendering.cpp
-  c_api.cpp
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\huanface.vcxproj]
-  zip_reader.cpp
-  test_engine.cpp
-  frame.cpp
-  bundle_reader.cpp
-  frame.cpp
-  test_image.cpp
-  manifest.cpp
-  manifest.cpp
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-  resource_manager.cpp
-D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-  zip_reader.cpp
-  test_face.cpp
-  zip_reader.cpp
-  bundle_reader.cpp
-  test_mask.cpp
-  render_backend.cpp
-  bundle_reader.cpp
-  filesystem.cpp
-  test_shader.cpp
-  resource_manager.cpp
-  resource_manager.cpp
-  clock.cpp
-  test_texture.cpp
-  render_backend.cpp
-  image_loader.cpp
-  render_backend.cpp
-  test_integration.cpp
-  filesystem.cpp
-  filesystem.cpp
-  simple_face_tracker.cpp
-  test_production_tracker.cpp
-  face_detector.cpp
-  clock.cpp
-  test_face_mesh.cpp
-  clock.cpp
-  landmark_estimator.cpp
-  image_loader.cpp
-  test_pose.cpp
-  image_loader.cpp
-  face_mesh_generator.cpp
-  simple_face_tracker.cpp
-  pose_estimator.cpp
-  test_tracking.cpp
-  simple_face_tracker.cpp
-  tracking_state.cpp
-  face_detector.cpp
-  face_detector.cpp
-  test_coordinate.cpp
-  landmark_estimator.cpp
-  inference_backend.cpp
-  landmark_estimator.cpp
-  face_mesh_generator.cpp
-  test_real_ml_pipeline.cpp
-  face_mesh_generator.cpp
-  production_face_tracker.cpp
-  pose_estimator.cpp
-  pose_estimator.cpp
-  test_makeup.cpp
-  tracking_state.cpp
-  tracking_state.cpp
-  face_mask.cpp
-  inference_backend.cpp
-  inference_backend.cpp
-  test_beauty.cpp
-  Generating Code...
-  production_face_tracker.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44: 'argument': conversion from '_Ty' to 'float', possible loss of data [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:         with [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:         [ [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:             _Ty=int [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103): warning C42
-44:         ] [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-  (compiling source file '../tests/test_beauty.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory(732,103):
-      the template instantiation context (the oldest one first) is
-          D:\sdk\HuanFace\tests\test_beauty.cpp(106,28):
-          see reference to function template instantiation 'huanface::HFVec3 &std::vector<huanface::HFVec3,std::allocat
-  or<huanface::HFVec3>>::emplace_back<float&,float&,int>(float &,float &,int &&)' being compiled
-              D:\sdk\HuanFace\tests\test_beauty.cpp(106,40):
-              see the first reference to 'std::vector<huanface::HFVec3,std::allocator<huanface::HFVec3>>::emplace_back'
-   in 'CreateTestFace'
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(924,24):
-          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_
-  back<float&,float&,int>(float &,float &,int &&)' being compiled
-          with
-          [
-              _Ty=huanface::HFVec3
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(845,20):
-          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_wi
-  th_unused_capacity<float&,float&,int>(float &,float &,int &&)' being compiled
-          with
-          [
-              _Ty=huanface::HFVec3
-          ]
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\vector(863,27):
-          see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,
-  float&,float&,int>(_Alloc &,_Objty *const ,float &,float &,int &&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<huanface::HFVec3>,
-              _Ty=huanface::HFVec3,
-              _Objty=huanface::HFVec3
-          ]
+  Building Custom Rule D:/sdk/HuanFace/apps/HuanFaceCamera/CMakeLists.txt
+  main.cpp
+  MainWindow.cpp
+  CameraManager.cpp
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\MainWindow.h(105,25): error C2039: 'cout': is not a member of 'std' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/MainWindow.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(225,1):
+      see declaration of 'std'
 
-  production_face_tracker.cpp
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\MainWindow.h(105,25): error C2065: 'cout': undeclared identifier [D:\sdk\HuanFa
+ce\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/MainWindow.cpp')
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\MainWindow.h(105,73): error C2039: 'endl': is not a member of 'std' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/MainWindow.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(225,1):
+      see declaration of 'std'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\MainWindow.h(105,73): error C2065: 'endl': undeclared identifier [D:\sdk\HuanFa
+ce\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/MainWindow.cpp')
+
+  CameraDevice.cpp
+  HuanFaceAdapter.cpp
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.cpp(43,15): error C2039: 'HFResult': is not a member of 'huanfa
+ce' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.cpp(44,24): error C2039: 'HF_RESULT_OK': is not a member of 'hu
+anface' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.cpp(46,24): error C2039: 'HF_RESULT_OK': is not a member of 'hu
+anface' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.cpp(202,15): error C2039: 'HFResult': is not a member of 'huanf
+ace' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.cpp(203,22): error C2039: 'HF_RESULT_OK': is not a member of 'h
+uanface' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.cpp(223,22): error C2039: 'HF_RESULT_OK': is not a member of 'h
+uanface' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+  CameraRenderer.cpp
+D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(17,5): error C2059: syntax error: 'constant' [D:\sdk\HuanFace\apps\H
+uanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(21,1): error C2143: syntax error: missing ';' before '}' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(23,27): error C2187: syntax error: 'HFRenderBlendMode' was unexpecte
+d here [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(118,31): error C2061: syntax error: identifier 'HFRenderBlendMode' [
+D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(134,1): error C2059: syntax error: '}' [D:\sdk\HuanFace\apps\HuanFac
+eCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\rendering\render_backend.h(134,1): error C2143: syntax error: missing ';' before '}' [D:\sdk\Hu
+anFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_params.h(12,20): error C2143: syntax error: missing ';' before '{' [D:\sdk\HuanFa
+ce\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_params.h(12,20): error C2447: '{': missing function header (old-style formal list
+?) [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(39,33): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(39,33): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(43,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(43,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(47,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(47,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_renderer.h(104,62): error C2589: '(': illegal token on right side of '::' [D:\sdk
+\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_renderer.h(104,62): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFace
+Camera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(38,33): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(38,33): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(42,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(42,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(46,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(46,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\blend_modes.h(63,21): error C3646: 'BlendColor': unknown override specifier [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\blend_modes.h(63,32): error C2059: syntax error: 'const' [D:\sdk\HuanFace\apps\HuanFaceC
+amera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\blend_modes.h(63,145): error C2334: unexpected token(s) preceding '{'; skipping apparent
+ function body [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\blend_modes.h(47,24): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\blend_modes.h(47,24): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(64,26): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(64,50): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(72,31): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(72,55): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(78,24): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(78,47): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(80,31): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(80,55): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(83,26): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(83,45): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(86,28): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(86,49): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(89,29): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(89,51): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(92,28): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(92,49): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(95,30): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(95,53): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(98,26): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(98,45): error C2143: syntax error: missing ',' before '&' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(102,62): error C2589: '(': illegal token on right side of '::' [D:\sdk
+\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(102,62): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFace
+Camera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(121,29): error C4430: missing type specifier - int assumed. Note: C++
+does not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(121,53): error C2143: syntax error: missing ',' before '&' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(174,22): error C4430: missing type specifier - int assumed. Note: C++
+does not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(174,46): error C2143: syntax error: missing ',' before '&' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(181,25): error C4430: missing type specifier - int assumed. Note: C++
+does not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(181,49): error C2143: syntax error: missing ',' before '&' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(188,25): error C4430: missing type specifier - int assumed. Note: C++
+does not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(188,49): error C2143: syntax error: missing ',' before '&' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(198,24): error C4430: missing type specifier - int assumed. Note: C++
+does not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(198,48): error C2143: syntax error: missing ',' before '&' [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(199,24): error C3646: 'GetParameters': unknown override specifier [D:\
+sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(199,37): error C2059: syntax error: '(' [D:\sdk\HuanFace\apps\HuanFace
+Camera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(199,46): error C2334: unexpected token(s) preceding '{'; skipping appa
+rent function body [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(214,24): error C3646: 'params': unknown override specifier [D:\sdk\Hua
+nFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(214,5): error C4430: missing type specifier - int assumed. Note: C++ d
+oes not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(198,55): error C2065: 'params': undeclared identifier [D:\sdk\HuanFace
+\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(198,64): error C2065: 'p': undeclared identifier [D:\sdk\HuanFace\apps
+\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.h(67,15): error C2039: 'HFMakeupParameters': is not a member of
+ 'huanface' [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+      D:\sdk\HuanFace\sdk\src\makeup\makeup_renderer.h(19,11):
+      see declaration of 'huanface'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.h(67,34): error C3646: 'makeupParams_': unknown override specif
+ier [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\HuanFaceAdapter.h(67,15): error C4430: missing type specifier - int assumed. No
+te: C++ does not support default-int [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../src/CameraRenderer.cpp')
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\CameraRenderer.cpp(179,18): error C3861: 'D3DCompile': identifier not found [D:
+\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\CameraRenderer.cpp(191,10): error C3861: 'D3DCompile': identifier not found [D:
+\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\CameraRenderer.cpp(265,50): error C2660: 'ID3D11Texture2D::GetDesc': function d
+oes not take 0 arguments [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(2883,40):
+      see declaration of 'ID3D11Texture2D::GetDesc'
+      D:\sdk\HuanFace\apps\HuanFaceCamera\src\CameraRenderer.cpp(265,50):
+      while trying to match the argument list '()'
+
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\CameraRenderer.cpp(265,111): error C2660: 'ID3D11Texture2D::GetDesc': function
+does not take 0 arguments [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\d3d11.h(2883,40):
+      see declaration of 'ID3D11Texture2D::GetDesc'
+      D:\sdk\HuanFace\apps\HuanFaceCamera\src\CameraRenderer.cpp(265,111):
+      while trying to match the argument list '()'
+
+  CaptureManager.cpp
+D:\sdk\HuanFace\apps\HuanFaceCamera\src\CaptureManager.cpp(6,10): error C1083: Cannot open include file: '../../sdk/src
+/image/image_loader.h': No such file or directory [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
   result.cpp
-  Generating Code...
-  Generating Code...
-  Generating Code...
-  Compiling...
-  makeup_engine.cpp
-  makeup_mask.cpp
-  makeup_renderer.cpp
-  blend_modes.cpp
-  beauty_mask.cpp
-  beauty_renderer.cpp
-  Compiling...
-  face_mask.cpp
-  Compiling...
-  face_mask.cpp
-  makeup_engine.cpp
-  d3d11_backend.cpp
-  makeup_engine.cpp
-  makeup_mask.cpp
-  makeup_mask.cpp
-  makeup_renderer.cpp
-  makeup_renderer.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,71): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,72): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(416,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(418,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(794,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(795,9): error C2143: syntax error: missing ';' before 'return
-' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(830,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(831,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(836,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(837,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(843,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(844,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(846,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(847,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\huanface.vcxproj]
-  d3d11_full_pipeline.cpp
-  Compiling...
   c_api.cpp
-  blend_modes.cpp
-  blend_modes.cpp
-  beauty_mask.cpp
-  beauty_mask.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(183,18): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(184,5): error C2146: syntax error: missing ';' before i
-dentifier 'quadMesh_' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(186,22): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(187,5): error C2143: syntax error: missing ';' before '
-}' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,83): error C2017: illegal escape sequence [D:\sdk\
-HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,84): error C2001: newline in constant [D:\sdk\Huan
-Face\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1554,5): error C2146: syntax error: missing ';' before
-identifier 'D3D11_TEXTURE2D_DESC' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1565,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1566,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1576,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1577,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1617,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\huanface.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1618,5): error C2143: syntax error: missing ';' before
-'}' [D:\sdk\HuanFace\build\huanface.vcxproj]
-  Generating Code...
-  beauty_renderer.cpp
   frame.cpp
-  beauty_renderer.cpp
   manifest.cpp
-  d3d11_backend.cpp
-  d3d11_backend.cpp
 D:\sdk\HuanFace\sdk\src\bundle\manifest.cpp(20,1): warning C4010: single-line comment contains line-continuation charac
-ter [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+ter [D:\sdk\HuanFace\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
   zip_reader.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,71): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,72): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(416,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(418,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(794,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(795,9): error C2143: syntax error: missing ';' before 'return
-' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,71): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,72): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(830,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(831,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(836,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(837,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(843,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(844,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(846,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(847,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(416,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-  d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(418,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(794,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(795,9): error C2143: syntax error: missing ';' before 'return
-' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(830,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(831,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(836,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(837,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(843,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(844,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(846,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(847,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-  d3d11_full_pipeline.cpp
   bundle_reader.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(183,18): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(184,5): error C2146: syntax error: missing ';' before i
-dentifier 'quadMesh_' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(186,22): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(187,5): error C2143: syntax error: missing ';' before '
-}' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(183,18): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(184,5): error C2146: syntax error: missing ';' before i
-dentifier 'quadMesh_' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(186,22): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(187,5): error C2143: syntax error: missing ';' before '
-}' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,83): error C2017: illegal escape sequence [D:\sdk\
-HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,84): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1554,5): error C2146: syntax error: missing ';' before
-identifier 'D3D11_TEXTURE2D_DESC' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1565,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1566,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1576,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1577,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1617,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase8Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1618,5): error C2143: syntax error: missing ';' before
-'}' [D:\sdk\HuanFace\build\HuanFacePhase8Tests.vcxproj]
   resource_manager.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,83): error C2017: illegal escape sequence [D:\sdk\
-HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,84): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1554,5): error C2146: syntax error: missing ';' before
-identifier 'D3D11_TEXTURE2D_DESC' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1565,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1566,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1576,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1577,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1617,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFacePhase9Tests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1618,5): error C2143: syntax error: missing ';' before
-'}' [D:\sdk\HuanFace\build\HuanFacePhase9Tests.vcxproj]
-  Generating Code...
-  Generating Code...
   render_backend.cpp
   filesystem.cpp
   clock.cpp
   image_loader.cpp
   simple_face_tracker.cpp
   face_detector.cpp
+  Generating Code...
+  Compiling...
   landmark_estimator.cpp
   face_mesh_generator.cpp
   pose_estimator.cpp
@@ -405,94 +421,60 @@ D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1618,5): error C
   production_face_tracker.cpp
   face_mask.cpp
   makeup_engine.cpp
-  Generating Code...
-  Compiling...
   makeup_mask.cpp
   makeup_renderer.cpp
   blend_modes.cpp
   beauty_mask.cpp
   beauty_renderer.cpp
   d3d11_backend.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,71): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(415,72): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(416,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,22): error C2017: illegal escape sequence [D:\sdk\HuanFac
-e\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(417,23): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(418,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(794,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(795,9): error C2143: syntax error: missing ';' before 'return
-' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(830,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(831,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(836,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(837,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(843,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(844,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(846,22): error C2001: newline in constant [D:\sdk\HuanFace\bu
-ild\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_backend.cpp(847,5): error C2143: syntax error: missing ';' before '}' [D:
-\sdk\HuanFace\build\HuanFaceTests.vcxproj]
   d3d11_full_pipeline.cpp
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(183,18): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(184,5): error C2146: syntax error: missing ';' before i
-dentifier 'quadMesh_' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(186,22): error C2001: newline in constant [D:\sdk\HuanF
-ace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(187,5): error C2143: syntax error: missing ';' before '
-}' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,83): error C2017: illegal escape sequence [D:\sdk\
-HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1552,84): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1554,5): error C2146: syntax error: missing ';' before
-identifier 'D3D11_TEXTURE2D_DESC' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1565,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1566,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1576,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1577,9): error C2143: syntax error: missing ';' before
-'return' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1617,22): error C2001: newline in constant [D:\sdk\Huan
-Face\build\HuanFaceTests.vcxproj]
-D:\sdk\HuanFace\sdk\src\rendering\d3d11\d3d11_full_pipeline.cpp(1618,5): error C2143: syntax error: missing ';' before
-'}' [D:\sdk\HuanFace\build\HuanFaceTests.vcxproj]
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(39,33): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(39,33): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(43,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(43,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(47,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\beauty\beauty_mask.h(47,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(38,33): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(38,33): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(42,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(42,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(46,49): error C2589: '(': illegal token on right side of '::' [D:\sdk\Huan
+Face\apps\HuanFaceCamera\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
+D:\sdk\HuanFace\sdk\src\makeup\makeup_mask.h(46,49): error C2059: syntax error: ')' [D:\sdk\HuanFace\apps\HuanFaceCamer
+a\build\HuanFaceCamera.vcxproj]
+  (compiling source file '../../../sdk/src/rendering/d3d11/d3d11_full_pipeline.cpp')
+
   Generating Code...
-PS D:\sdk\HuanFace> dir build\Release\*.exe
-PS D:\sdk\HuanFace> .\build\Release\HuanFacePhase9Tests.exe > LOG_PHASE9_NEW5.txt 2>&1
-.\build\Release\HuanFacePhase9Tests.exe : The term '.\build\Release\HuanFacePhase9Tests.exe' is not recognized as the
-name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
-included, verify that the path is correct and try again.
-At line:1 char:1
-+ .\build\Release\HuanFacePhase9Tests.exe > LOG_PHASE9_NEW5.txt 2>&1
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (.\build\Release\HuanFacePhase9Tests.exe:String) [], CommandNotFoundExce
-   ption
-    + FullyQualifiedErrorId : CommandNotFoundException
-
-PS D:\sdk\HuanFace> Write-Host "=== PASS/FAIL ==="; Select-String -Path LOG_PHASE9_NEW5.txt -Pattern "PASS:|FAIL:" | Select-Object -Last 40
-=== PASS/FAIL ===
-Select-String : Cannot find path 'D:\sdk\HuanFace\LOG_PHASE9_NEW5.txt' because it does not exist.
-At line:1 char:33
-+ ... /FAIL ==="; Select-String -Path LOG_PHASE9_NEW5.txt -Pattern "PASS:|F ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (D:\sdk\HuanFace\LOG_PHASE9_NEW5.txt:String) [Select-String], ItemNotFou
-   ndException
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SelectStringCommand
-
-PS D:\sdk\HuanFace> git checkout main; git add LOG_PHASE9_NEW5.txt -f; git commit -m "LOG_PHASE9_NEW5 after cull fix 27c9aef"; git push origin main
+PS D:\sdk\HuanFace> .\apps\HuanFaceCamera\build\bin\Release\HuanFaceCamera.exe
